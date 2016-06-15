@@ -35,6 +35,10 @@ class FriendshipsController < ApplicationController
       @pending_invites = current_user.pending_invited
     end
 
+    def approve
+
+    end
+
     def destroy
       user = User.find_by_id(params[:id])
       if current_user.remove_friendship user
