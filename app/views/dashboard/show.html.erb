@@ -29,8 +29,6 @@
       <h3>
         friends' pending request
       </h3>
-
-
       <% @user.pending_invited_by.each do |pending|  %>
       <%= pending.email %>
       <%= form_tag friend_path(pending), method: :patch do %>

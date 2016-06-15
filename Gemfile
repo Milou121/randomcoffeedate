@@ -20,6 +20,14 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 
+# Cloudinary & Carrierwave
+gem 'cloudinary'
+gem 'carrierwave'
+
+
+# Figaro
+gem 'figaro'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -38,6 +46,7 @@ gem 'amistad'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+  gem 'devise'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -55,6 +64,9 @@ group :development do
   gem 'spring'
 
   # Devise; registration creating user
-  gem 'devise'
 end
 
+group :production do
+  gem 'rails_12factor'
+  gem 'puma'
+end
