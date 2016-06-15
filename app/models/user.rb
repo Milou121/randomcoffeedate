@@ -5,5 +5,6 @@ class User < ActiveRecord::Base
   :recoverable, :rememberable, :trackable, :validatable
 
   include Amistad::FriendModel
+  mount_uploader :photo, PhotoUploader
 
 end

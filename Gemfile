@@ -20,8 +20,10 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 
-# Cloudinary
+# Cloudinary & Carrierwave
 gem 'cloudinary'
+gem 'carrierwave'
+
 
 # Figaro
 gem 'figaro'
