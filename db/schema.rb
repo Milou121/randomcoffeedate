@@ -11,24 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160615125738) do
+ActiveRecord::Schema.define(version: 20160615151429) do
 
-  create_table "active_admin_comments", force: :cascade do |t|
-    t.string   "namespace"
-    t.text     "body"
-    t.string   "resource_id",   null: false
-    t.string   "resource_type", null: false
-    t.integer  "author_id"
-    t.string   "author_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
-  add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace"
-  add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
-
-  create_table "koffies", force: :cascade do |t|
+  create_table "cups", force: :cascade do |t|
     t.integer  "location_id"
     t.integer  "sender_id"
     t.integer  "receiver_id"
@@ -40,9 +25,9 @@ ActiveRecord::Schema.define(version: 20160615125738) do
     t.datetime "updated_at",      null: false
   end
 
-  add_index "koffies", ["location_id"], name: "index_koffies_on_location_id"
-  add_index "koffies", ["receiver_id"], name: "index_koffies_on_receiver_id"
-  add_index "koffies", ["sender_id"], name: "index_koffies_on_sender_id"
+  add_index "cups", ["location_id"], name: "index_cups_on_location_id"
+  add_index "cups", ["receiver_id"], name: "index_cups_on_receiver_id"
+  add_index "cups", ["sender_id"], name: "index_cups_on_sender_id"
 
   create_table "locations", force: :cascade do |t|
     t.string   "address"
