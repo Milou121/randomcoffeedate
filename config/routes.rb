@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   root 'pages#home'
   devise_for :users, controllers: { registrations: 'users/registrations'}
 
+  get "/dashboard", to: "dashboard#show"
+
   namespace :dashboard do
     resources :pots, only: [:index, :show, :new, :create, :destroy] do
       resources :pot_friends, only: [:new, :create]
