@@ -1,0 +1,36 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-4">
+    <h3>
+      friends
+    </h3>
+     <% @user.friends.each do |friend| %>
+     <%= friend.email %>
+   </div>
+   <% end %>
+
+   <div class="col-xs-4">
+   <h3>
+     your pending request
+   </h3>
+    <% @user.pending_invited.each do |pending| %>
+    <%= pending.email %>
+    <% end %>
+  </div>
+
+  <div class="col-xs-4">
+  <h3>
+    friends' pending request
+  </h3>
+  <%= link_to ,  %>
+    <% @user.pending_invited_by.each do |pending|  %>
+    <%= pending.email %>
+    <% end %>
+  </div>
+
+</div>
+</div>
+
+
+

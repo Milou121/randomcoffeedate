@@ -6,11 +6,11 @@ class FriendshipsController < ApplicationController
     end
 
     def new
-      @users = User.all :conditions => ["id != ?", current_user.id]
+      @users = User.all
     end
 
     def create
-      invitee = User.find_by_id(params[:user_id])
+      invitee = User.find_by_email(params[:user][:address])
       if current_user.invite invitee
         redirect_to new_friend_path, :notice => "Successfully invited friend!"
       else
@@ -19,7 +19,7 @@ class FriendshipsController < ApplicationController
     end
 
     def update
-      inviter = User.find_by_id(params[:id])
+      inviter = User.find_by_email(params[:user][:address])
       if current_user.approve inviter
         redirect_to new_friend_path, :notice => "Successfully confirmed friend!"
       else
@@ -33,6 +33,10 @@ class FriendshipsController < ApplicationController
 
     def invites
       @pending_invites = current_user.pending_invited
+    end
+
+    def approve
+
     end
 
     def destroy
