@@ -1,5 +1,13 @@
-<h1>UserMailer#welcome</h1>
-
 <p>
-  <%= @greeting %>, find me in app/views/user_mailer/welcome.html.erb
+  Hello! <%= @user.username %>
+  <br>
+  <br>
+  Thanks for signing up for Cuppa!
+  <br>
+  Now <%= link_to "Add friend", new_friend_path(@user) %> and set a surprise coffee date!
+  <br>
+  <br>
+  regards, <br>
+  Cuppa
 </p>
+
