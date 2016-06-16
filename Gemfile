@@ -74,6 +74,7 @@ end
 
  #Active Admin 
   gem 'activeadmin', github: "activeadmin/activeadmin"
+
   
 
 group :production do
