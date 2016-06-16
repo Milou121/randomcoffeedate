@@ -1,22 +1,26 @@
 class FriendshipsController < ApplicationController
-    before_filter :authenticate_user!
+  before_filter :authenticate_user!
 
-    def index
-      @friends = current_user.friends
-    end
+  def index
+    @friends = current_user.friends
+  end
 
-    def new
-      @users = User.all
-    end
+  def new
+    @users = User.all
+  end
 
-    def create
-      invitee = User.find_by_email(params[:user][:address])
+  def create
 
-      if current_user.invite invitee
+    @user = current_user
+    invitee = User.find_by_email(params[:user][:address])
+
+    if current_user.invite invitee
         #add the mailer to send the mail to current_user who sent the request
         # FriendshipsMailer.invite(invitee.id).deliver_now
         #send an email to the receiver
         # FriendshipsMailer.invitation_confirmation(current_user.id).deliver_now
+        UserMailer.friends_request(@user).deliver_now
+        UserMailer.friends_request_invitee(invitee).deliver_now
         redirect_to new_friend_path, :notice => "Successfully invited friend!"
       else
         redirect_to new_friend_path, :notice => "Sorry! You can't invite that user!"
@@ -27,6 +31,8 @@ class FriendshipsController < ApplicationController
       inviter = User.find(params[:id])
 
       if current_user.approve inviter
+
+        UserMailer.friends_confirm(inviter).deliver_now
         redirect_to dashboard_path
       else
         redirect_to dashboard_path
