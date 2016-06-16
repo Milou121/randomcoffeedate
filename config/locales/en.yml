@@ -21,3 +21,12 @@
 
 en:
   hello: "Hello world"
+  enumerize:
+    pots:
+      new:
+        time_6: "6pm - 8pm"
+        time_4: "4pm - 6pm"
+        time_2: "2pm - 4pm"
+        time_12: "12am - 2pm"
+        time_10: "10am - 12am"
+
