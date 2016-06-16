@@ -31,4 +31,10 @@ class UserMailer < ApplicationMailer
     mail(to: user.email, subject: 'Your friend confirmed you request!')
     # This will render a view in `app/views/user_mailer`!
   end
+
+  def match_confirm(user)
+    @user = user  # Instance variable => available in view
+    mail(to: user.email, subject: 'Your friend confirmed you request!')
+    # This will render a view in `app/views/user_mailer`!
+  end
 end
