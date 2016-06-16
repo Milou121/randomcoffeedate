@@ -5,11 +5,20 @@ class Dashboard::PotsController < ApplicationController
 
   def show
     @pot = current_user.pots.find(params[:id])
+    @cup = Cup.find(params[:id]) # how to show the date and time of this event
   end
 
   def new
     @pot = Pot.new
     @friends = current_user.friends
+    @locations = Location.all
+
+    # Let's DYNAMICALLY build the markers for the view.
+    @markers = Gmaps4rails.build_markers(@locations) do |location, marker|
+      marker.lat location.latitude
+      marker.lng location.longitude
+      marker.infowindow marker_string(location)
+    end
   end
 
   def create
@@ -36,17 +45,21 @@ class Dashboard::PotsController < ApplicationController
    @pot = current_user.pots.find(params[:id])
    @pot.destroy
    redirect_to pots_path
-  end
+ end
 
-  private
+ private
 
-  def check_for_pot_matching
+ def check_for_pot_matching
     # YOUR ALGO
     # matching_pot = FIND THE FIRST
     #
     # if matching_pot
     #   TODO: @cup = CREATE COFFEE
     # end
+  end
+
+  def marker_string(location)
+    "<div class='infomap-style'><p>" + location.name + "</p><p>" + location.address + "</p></div>"
   end
 
   def pot_params
