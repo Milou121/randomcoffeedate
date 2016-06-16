@@ -24,6 +24,8 @@ gem 'autoprefixer-rails'
 gem 'cloudinary'
 gem 'carrierwave'
 
+# Enumarize
+gem 'enumerize'
 
 # Figaro
 gem 'figaro'
