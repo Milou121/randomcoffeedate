@@ -65,16 +65,12 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
- 
+
 end
 
-
- # Devise; registration creating user
-  gem 'devise'
-
- #Active Admin 
+ #Active Admin
   gem 'activeadmin', github: "activeadmin/activeadmin"
-  
+
 
 group :production do
   gem 'rails_12factor'

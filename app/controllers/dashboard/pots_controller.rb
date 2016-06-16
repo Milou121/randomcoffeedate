@@ -19,9 +19,17 @@ class Dashboard::PotsController < ApplicationController
       @pot.pot_friends.new(friend_id: friend_id)
     end
 
-    @pot.save!
+    if @pot.save
+      check_for_pot_matching
 
-    redirect_to dashboard_pot_path(@pot)
+      if @cup
+        # redirect_to # YOUR COFFEE
+      else
+        redirect_to dashboard_pot_path(@pot)
+      end
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -31,6 +39,15 @@ class Dashboard::PotsController < ApplicationController
   end
 
   private
+
+  def check_for_pot_matching
+    # YOUR ALGO
+    # matching_pot = FIND THE FIRST
+    #
+    # if matching_pot
+    #   TODO: @cup = CREATE COFFEE
+    # end
+  end
 
   def pot_params
     params.require(:pot).permit(:location_id, :start_date, :end_date, :time_10, :time_6, :time_4, :time_2, :time_12)
