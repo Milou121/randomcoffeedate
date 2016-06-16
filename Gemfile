@@ -24,6 +24,8 @@ gem 'autoprefixer-rails'
 gem 'cloudinary'
 gem 'carrierwave'
 
+#geocoder
+gem "geocoder"
 
 # Figaro
 gem 'figaro'
