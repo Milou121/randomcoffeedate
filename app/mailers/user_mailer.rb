@@ -5,9 +5,10 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.welcome.subject
   #
-  def welcome
-    @greeting = "Hi"
+  def welcome(user)
+    @user = current_user  # Instance variable => available in view
 
-    mail to: "to@example.org"
+    mail(to: @user.email, subject: 'Welcome to Cuppa!')
+    # This will render a view in `app/views/user_mailer`!
   end
 end

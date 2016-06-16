@@ -1,3 +1,9 @@
-UserMailer#welcome
+Hello! <%= @user.username %>
 
-<%= @greeting %>, find me in app/views/user_mailer/welcome.text.erb
+Thanks for signing up for Cuppa!
+
+Now <%= link_to "Add friend", new_friend_path(@user) %> and set a surprise coffee date!
+
+
+regards,
+Cuppa
