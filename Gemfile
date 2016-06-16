@@ -53,9 +53,10 @@ gem 'amistad'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  gem 'better_errors'
-  gem 'pry-rails'
+  gem "better_errors"
   gem 'binding_of_caller'
+  gem 'pry-rails'
+
 end
 
 group :development do
@@ -64,11 +65,19 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-
-  # Devise; registration creating user
+ 
 end
+
+
+ # Devise; registration creating user
+  gem 'devise'
+
+ #Active Admin 
+  gem 'activeadmin', github: "activeadmin/activeadmin"
+  
 
 group :production do
   gem 'rails_12factor'
   gem 'puma'
 end
+
