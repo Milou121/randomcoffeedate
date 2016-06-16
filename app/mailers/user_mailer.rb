@@ -11,23 +11,23 @@ class UserMailer < ApplicationMailer
     # This will render a view in `app/views/user_mailer`!
   end
 
-  def friends_request(user)
+  def friends_request(user, invitee)
     @user = user  # Instance variable => available in view
-    @friend = user.friends.find_by_email(params[:user][:email])
+    @friend = invitee
     mail(to: user.email, subject: 'You sent a friend request!')
     # This will render a view in `app/views/user_mailer`!
   end
 
-  def friends_request_invitee(user)
+  def friends_request_invitee(user, invitee)
     @user = user  # Instance variable => available in view
-    @friend = @user.friends.find_by_email(params[:user][:email])
+    @friend = invitee
     mail(to: @friend.email, subject: 'You have a friend request!')
     # This will render a view in `app/views/user_mailer`!
   end
 
-  def friends_confirm(user)
+  def friends_confirm(user, friend)
     @user = user  # Instance variable => available in view
-    @friend = user.friends.find_by_email(params[:user][:email])
+    @friend = friend
     mail(to: user.email, subject: 'Your friend confirmed you request!')
     # This will render a view in `app/views/user_mailer`!
   end
