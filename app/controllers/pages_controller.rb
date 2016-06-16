@@ -1,6 +1,11 @@
-class PagesController < ActionController::Base
 
-	def home 
-	end 
+class PagesController < ApplicationController
 
-end 
+  skip_before_action :authenticate_user!, only: :home
+
+  def home
+    @users = User.all
+  end
+
+end
+

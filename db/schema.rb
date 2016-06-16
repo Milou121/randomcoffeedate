@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20160615151429) do
   add_index "cups", ["receiver_id"], name: "index_cups_on_receiver_id"
   add_index "cups", ["sender_id"], name: "index_cups_on_sender_id"
 
+
   create_table "locations", force: :cascade do |t|
     t.string   "address"
     t.string   "name"
@@ -43,8 +44,8 @@ ActiveRecord::Schema.define(version: 20160615151429) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "pot_friends", ["friend_id"], name: "index_pot_friends_on_friend_id"
-  add_index "pot_friends", ["pot_id"], name: "index_pot_friends_on_pot_id"
+  add_index "pot_friends", ["friend_id"], name: "index_pot_friends_on_friend_id", using: :btree
+  add_index "pot_friends", ["pot_id"], name: "index_pot_friends_on_pot_id", using: :btree
 
   create_table "pots", force: :cascade do |t|
     t.integer  "user_id"
@@ -60,8 +61,8 @@ ActiveRecord::Schema.define(version: 20160615151429) do
     t.datetime "updated_at",  null: false
   end
 
-  add_index "pots", ["location_id"], name: "index_pots_on_location_id"
-  add_index "pots", ["user_id"], name: "index_pots_on_user_id"
+  add_index "pots", ["location_id"], name: "index_pots_on_location_id", using: :btree
+  add_index "pots", ["user_id"], name: "index_pots_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
@@ -74,12 +75,21 @@ ActiveRecord::Schema.define(version: 20160615151429) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.boolean  "admin",                  default: false, null: false
+
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "koffies", "locations"
+  add_foreign_key "koffies", "users", column: "receiver_id"
+  add_foreign_key "koffies", "users", column: "sender_id"
+  add_foreign_key "pot_friends", "pots"
+  add_foreign_key "pot_friends", "users", column: "friend_id"
+  add_foreign_key "pots", "locations"
+  add_foreign_key "pots", "users"
 end

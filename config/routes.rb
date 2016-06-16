@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root 'pages#home'
-  devise_for :users, controllers: { registrations: 'users/registrations'}
+  devise_for :users#, controllers: { registrations: 'users/registrations'}
 
   get "/dashboard", to: "dashboard#show"
 
@@ -17,5 +17,10 @@ Rails.application.routes.draw do
         get :cancel
       end
     end
+  end
+
+  resources :friends, :controller => 'friendships', :except => [:show, :edit] do
+    get "requests", :on => :collection
+    get "invites", :on => :collection
   end
 end

@@ -1,0 +1,44 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-4">
+      <h3>
+        friends
+      </h3>
+      <% @user.friends.each do |friend| %>
+      <%= friend.email %>
+      <%= form_tag friend_path(friend), method: :delete do %>
+      <%= submit_tag("delete") %>
+      <% end %>
+      <% end %>
+    </div>
+
+      <div class="col-xs-4">
+       <h3>
+         your pending request
+       </h3>
+       <% @user.pending_invited.each do |pending| %>
+       <%= pending.email %>
+       <%= form_tag friend_path(pending), method: :delete do %>
+       <%= submit_tag("cancel") %>
+       <% end %>
+       <% end %>
+     </div>
+
+     <div class="col-xs-4">
+      <h3>
+        friends' pending request
+      </h3>
+      <% @user.pending_invited_by.each do |pending|  %>
+      <%= pending.email %>
+      <%= form_tag friend_path(pending), method: :patch do %>
+      <%= submit_tag "Approve friend" %>
+      <% end %>
+      <% end %>
+    </div>
+
+  </div>
+</div>
+
+
+
