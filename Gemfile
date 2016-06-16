@@ -48,14 +48,21 @@ gem 'amistad'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-  gem 'devise'
+gem 'devise'
+ #Active Admin
+ gem 'activeadmin', github: "activeadmin/activeadmin"
 
-group :development, :test do
+
+ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem "better_errors"
   gem 'binding_of_caller'
+
+  gem "letter_opener"
+
   gem 'pry-rails'
+
 
 end
 
@@ -70,7 +77,6 @@ end
 
  #Active Admin
   gem 'activeadmin', github: "activeadmin/activeadmin"
-
 
 group :production do
   gem 'rails_12factor'
