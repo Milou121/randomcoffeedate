@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   get "/dashboard", to: "dashboard#show"
 
   namespace :dashboard do
-    resources :pots, only: [:index, :show, :new, :create, :destroy] do
-      resources :pot_friends, only: [:new, :create]
-    end
+    resources :pots, only: [:index, :show, :new, :create, :destroy] #do
+      # resources :pot_friends, only: [:new, :create]
+    # end
 
     resources :cups, only: [:index, :show] do
       member do
