@@ -1,6 +1,7 @@
-class PotFriendsController < ApplicationController
+class Dashboard::PotFriendsController < ApplicationController
 
   def new
+    @friends
     @pot_friend = PotFriend.new
   end
 

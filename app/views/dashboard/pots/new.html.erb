@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <%= simple_form_for [:dashboard, @pot] do |form| %>
+        <% @friends.each do |friend| %>
+          <div>
+            <%= check_box_tag "friend_ids[]", friend.id, false, id: "friend_ids_#{friend.id}" %>
+            <%= label_tag "friend_ids_#{friend.id}", friend.email %>
+          </div>
+        <% end %>
+
+        <%= form.association :location %>
+        <%= form.input :start_date %>
+        <%= form.input :end_date %>
+        <%= form.input :time_10 %>
+        <%= form.input :time_12 %>
+        <%= form.input :time_2 %>
+        <%= form.input :time_4 %>
+        <%= form.input :time_6 %>
+
+        <%= form.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- MAP HERE (jay is going to do it!)-->
+
