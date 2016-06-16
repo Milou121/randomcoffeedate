@@ -13,6 +13,10 @@ class FriendshipsController < ApplicationController
       invitee = User.find_by_email(params[:user][:address])
 
       if current_user.invite invitee
+        #add the mailer to send the mail to current_user who sent the request
+        # FriendshipsMailer.invite(invitee.id).deliver_now
+        #send an email to the receiver
+        # FriendshipsMailer.invitation_confirmation(current_user.id).deliver_now
         redirect_to new_friend_path, :notice => "Successfully invited friend!"
       else
         redirect_to new_friend_path, :notice => "Sorry! You can't invite that user!"
