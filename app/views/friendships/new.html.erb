@@ -2,10 +2,15 @@
 <div class="container">
   <div class="row">
   <div class="col-xs-6 col-xs-offset-4">
+  <h1>
+  Add your friend!
+  </h1>
+  </div>
+  <div class="col-xs-6 col-xs-offset-4">
       <%= form_tag(friends_path) do %>
 
       <%= email_field(:user, :address) %>
-      <%= submit_tag("Add") %>
+      <%= submit_tag "Add", class: "button-blue" %>
 
       <% end %>
     </div>
