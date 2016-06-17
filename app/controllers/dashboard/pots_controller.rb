@@ -45,11 +45,8 @@ class Dashboard::PotsController < ApplicationController
   def destroy
    @pot = current_user.pots.find(params[:id])
    @pot.destroy
-<<<<<<< HEAD
    redirect_to dashboard_path
-=======
-   redirect_to pots_path
->>>>>>> master
+
  end
 
  private
