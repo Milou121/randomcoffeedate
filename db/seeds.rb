@@ -39,5 +39,5 @@ Location.create(name: "Gartine Amsterdam", address: "Taksteeg 7, Amsterdam")
 Location.create(name: "Vinnies", address: "Haarlemmerstraat 46 HS, Amsterdam")
 Location.create(name: "Quartier Putain", address: "Oudekerksplein 4, Amsterdam")
 Location.create(name: "Marie Stella Maris", address: "Keizersgracht 357, Amsterdam")
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+# AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 

@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 20160617135613) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   create_table "pot_friends", force: :cascade do |t|
@@ -93,6 +95,12 @@ ActiveRecord::Schema.define(version: 20160617135613) do
     t.string   "photo"
     t.string   "username"
     t.boolean  "admin",                  default: false, null: false
+
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
+
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
