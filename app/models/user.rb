@@ -1,7 +1,5 @@
 class User < ActiveRecord::Base
 
-  after_create :send_welcome_email
-
   has_many :pots
 
   # before_create :confirmation_token
