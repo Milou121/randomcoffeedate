@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160617091722) do
+ActiveRecord::Schema.define(version: 20160617135613) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,8 +72,10 @@ ActiveRecord::Schema.define(version: 20160617091722) do
     t.boolean  "time_6"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "cup_id"
   end
 
+  add_index "pots", ["cup_id"], name: "index_pots_on_cup_id", using: :btree
   add_index "pots", ["location_id"], name: "index_pots_on_location_id", using: :btree
   add_index "pots", ["user_id"], name: "index_pots_on_user_id", using: :btree
 
@@ -93,10 +95,12 @@ ActiveRecord::Schema.define(version: 20160617091722) do
     t.string   "photo"
     t.string   "username"
     t.boolean  "admin",                  default: false, null: false
+
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
+
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
@@ -107,6 +111,7 @@ ActiveRecord::Schema.define(version: 20160617091722) do
   add_foreign_key "cups", "users", column: "sender_id"
   add_foreign_key "pot_friends", "pots"
   add_foreign_key "pot_friends", "users", column: "friend_id"
+  add_foreign_key "pots", "cups"
   add_foreign_key "pots", "locations"
   add_foreign_key "pots", "users"
 end
