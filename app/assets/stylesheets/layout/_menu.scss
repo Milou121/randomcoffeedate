@@ -18,7 +18,7 @@ a{
   position: fixed;
   top: 20px;
   right: 30px;
-  min-width: 60px;
+  width: 79px;
 }
 
 %goo{
@@ -85,7 +85,7 @@ $hamburger-spacing:8px;
   @extend %goo;
   $width:650px;
   $height:150px;
-  position:absolute;
+  position:fixed;
   left:80px;
   padding-top:40px;
   width:$width;

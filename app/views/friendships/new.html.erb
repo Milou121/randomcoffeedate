@@ -1,17 +1,15 @@
 
 <div class="container">
   <div class="row">
-  <div class="col-xs-6 col-xs-offset-4">
-  <h1>
-  Add your friend!
-  </h1>
-  </div>
-  <div class="col-xs-6 col-xs-offset-4">
-      <%= form_tag(friends_path) do %>
-
-      <%= email_field(:user, :address) %>
-      <%= submit_tag "Add", class: "button-blue" %>
-
+    <div class="col-xs-4 col-xs-offset-4">
+    <h1 class="friendship-title">
+      Add your friend!
+    </h1>
+    </div>
+    <div class="col-xs-4 col-xs-offset-4">
+      <%= form_tag(friends_path, class: "friendship-form") do %>
+        <%= email_field(:user, :address, class: "friendship-email") %>
+        <%= submit_tag "Add", class: "button-blue" %>
       <% end %>
     </div>
   </div>
