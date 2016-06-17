@@ -5,6 +5,11 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.welcome.subject
   #
+  def registration_confirmation(user)
+    @user = user
+    mail(to: user.email, :subject => "Registration Confirmation")
+  end
+
   def welcome(user)
     @user = user  # Instance variable => available in view
     mail(to: user.email, subject: 'Welcome to Cuppa!')
