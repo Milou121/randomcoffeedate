@@ -18,6 +18,8 @@ class User < ActiveRecord::Base
 
   private
 
+  def send_on_create_confirmation_instructions
+  end
   # def send_welcome_email
   #   UserMailer.welcome(self).deliver_now
   # end
