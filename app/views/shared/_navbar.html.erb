@@ -14,12 +14,6 @@
     <% if user_signed_in? %>
 
     <!-- Notification -->
-    <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
-    <div class="badge-container">
-      <i class="fa fa-hand-peace-o"></i>
-      <div class="badge badge-blue">6</div>
-    </div>
-    <% end %>
 
     <!-- Profile picture and dropdown -->
     <div class="navbar-wagon-item">
@@ -39,8 +33,13 @@
             <% end %>
           </li>
           <li>
-          <%= link_to new_friend_path do %>
+            <%= link_to new_friend_path do %>
             <i class="fa fa-coffee"></i>  <%= t(".add_friend", default: "Add friend!") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_dashboard_pot_path do %>
+            <i class="fa fa-fire"></i>  <%= t(".new_pot", default: "Brew coffee date!") %>
             <% end %>
           </li>
           <li>
