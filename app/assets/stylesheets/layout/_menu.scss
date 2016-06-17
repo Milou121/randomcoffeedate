@@ -19,6 +19,8 @@ a{
   top: 20px;
   right: 30px;
   width: 79px;
+  z-index: 99999999;
+
 }
 
 %goo{
@@ -93,6 +95,7 @@ $hamburger-spacing:8px;
   box-sizing:border-box;
   font-size:20px;
   text-align:left;
+  z-index: 999999999;
 }
 
 
