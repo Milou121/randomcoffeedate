@@ -35,7 +35,7 @@ class Dashboard::PotsController < ApplicationController
         flash[:notice] = "You have a cup! Go check your emails ;)"
         redirect_to dashboard_cup_path(@cup)
         else
-        redirect_to dashboard_pot_path(@pot)
+        redirect_to dashboard_path
       end
     else
       render :new
@@ -77,25 +77,29 @@ class Dashboard::PotsController < ApplicationController
 
     # TODO: check time_4 ... time_12
     friends_pots = friends_pots.where("
-      (:pot_time_10 == true AND time_10 == true) OR
-      (:pot_time_12 == true AND time_12 == true) OR
-      (:pot_time_2 == true AND time_2 == true) OR
-      (:pot_time_4 == true AND time_4 == true) OR
-      (:pot_time_6 == true AND time_6 == true)
+      (:pot_time_10 = true AND time_10 = true) OR
+      (:pot_time_12 = true AND time_12 = true) OR
+      (:pot_time_2 = true AND time_2 = true) OR
+      (:pot_time_4 = true AND time_4 = true) OR
+      (:pot_time_6 = true AND time_6 = true)
       ", pot_time_10: @pot.time_10, pot_time_12: @pot.time_12, pot_time_2: @pot.time_2, pot_time_4: @pot.time_4, pot_time_6: @pot.time_6)
 
+    # location:
+    # friends_pots = friends_pots.where("
+    #   (:pot_location_id = location_id) OR
+
+    #   Geocoder::Calculations.distance_between([:pot_location_id.latidude,:pot_location_id.longitude], [location_id.latidude,location_id.longitude])
+
+
+    #   ", pot_location_id: @pot.location_id)
+
+    # matching_pot = friends_pots.sample
     matching_pot = friends_pots.order(:created_at).first
     return unless matching_pot
 
-    # location:
-    # array of friend_ids [2, 4, 5, 7]
-
-    # time:
-    # => check if matches also match on one or more of the times
-    #
     @cup = Cup.create!(
       # TODO:
-      # - time
+      # time: matching_pot.
       # - date
       # - location
       sender: current_user,
