@@ -5,8 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
-
 Location.create(name: "Clubkoffie Amsterdam", address: "Krugerplein 2, Amsterdam")
 Location.create(name: "Coffee Bru Amsterdam", address: "Beukenplein 14 H, Amsterdam")
 Location.create(name: "Boterham Amsterdam", address: "Andreas Bonnstraat 2, Amsterdam")
@@ -25,7 +23,7 @@ Location.create(name: "The Coffee Virus", address: "Overhoeksplein 2, Amsterdam"
 Location.create(name: "Koffie ende Koeck Amsterdam", address: "Haarlemmerweg 175, Amsterdam")
 Location.create(name: "Bar Spek", address: "Admiraal de Ruijterweg 1, Amsterdam")
 Location.create(name: "Koffie Academie Amsterdam", address: "Overtoom 95, Amsterdam")
-Location.create(name: "Trakteren Amsterdam", address: "Jan Pieter Heijestraat119 A, Amsterdam")
+Location.create(name: "Trakteren Amsterdam", address: "Jan Pieter Heijestraat 119 A, Amsterdam")
 Location.create(name: "White Label Coffee", address: "Jan Evertsenstraat 136, Amsterdam")
 Location.create(name: "Berry Amsterdam", address: "Bilderdijkkade 27, Amsterdam")
 Location.create(name: "Fietskantine", address: "Overtoom 141, Amsterdam")
