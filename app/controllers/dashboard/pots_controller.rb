@@ -52,21 +52,17 @@ class Dashboard::PotsController < ApplicationController
  private
 
  def check_for_pot_matching
-    # YOUR ALGO
-    # matching_pot = FIND THE FIRST
-    #
-    # if matching_pot
-    #   TODO: @cup = CREATE COFFEE
-    # end
-    #
+    location_ids = Location.near([@pot.location.latitude, @pot.location.longitude], 5, units: :km).map(&:id)
 
+    # FIXME: deal with canceled Cups
     friends_pots = Pot.joins(:pot_friends).where(
       user_id: @pot.friend_ids,
+      location_id: location_ids,
       cup_id: nil,
       pot_friends: {
         friend_id: @pot.user_id
       }
-      )
+    )
 
     friends_pots = friends_pots.where("
       (:pot_start_date <= start_date AND end_date <= :pot_end_date) OR
@@ -84,27 +80,50 @@ class Dashboard::PotsController < ApplicationController
       (:pot_time_6 = true AND time_6 = true)
       ", pot_time_10: @pot.time_10, pot_time_12: @pot.time_12, pot_time_2: @pot.time_2, pot_time_4: @pot.time_4, pot_time_6: @pot.time_6)
 
-    # location:
-    # friends_pots = friends_pots.where("
-    #   (:pot_location_id = location_id) OR
-
-    #   Geocoder::Calculations.distance_between([:pot_location_id.latidude,:pot_location_id.longitude], [location_id.latidude,location_id.longitude])
-
-
-    #   ", pot_location_id: @pot.location_id)
-
-    # matching_pot = friends_pots.sample
-    matching_pot = friends_pots.order(:created_at).first
+    # TODO: take one
+    # matching_pot = friends_pots.order(:created_at).first
+    matching_pot = friends_pots.sample
+    # if there is one
+    #   then ...
     return unless matching_pot
+
+    # do we need this first line?
+    if matching_pot.start_date == matching_pot.end_date
+      date = start_date
+    else
+      matching_date = ((matching_pot.start_date)..(matching_pot.end_date)).to_a
+      sender_pot_date = ((@pot.start_date)..(@pot.end_date)).to_a
+      dates = matching_date & sender_pot_date
+      matched_date = dates.sample
+      date = matched_date
+    end
+
+match_location = []
+
+match_location << matching_pot.location_id
+match_location << @pot.location_id
+
+location = match_location.sample
+
+matching_times = []
+
+%w(time_10 time_12 time_2 time_4 time_6).each do |time_column|
+if @pot[time_column] == true
+  if (@pot[time_column] == matching_pot[time_column])
+    matching_times << time_column
+  end
+end
+end
+
+matching_time = matching_times.sample
 
     @cup = Cup.create!(
       # TODO:
-      # time: matching_pot.
-      # - date
-      # - location
-      sender: current_user,
-      receiver: matching_pot.user,
-      location: matching_pot.location
+      time: matching_time,
+      date: date,
+      sender_id: current_user,
+      receiver_id: matching_pot.user,
+      location_id: location
       )
     @pot.update(cup: @cup)
     matching_pot.update(cup: @cup)
