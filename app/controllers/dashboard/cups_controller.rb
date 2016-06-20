@@ -1,10 +1,10 @@
 class Dashboard::CupsController < ApplicationController
   def index
-    @cups = current_user.cups.all
+    @cups = current_user.all_cups.all
   end
 
   def show
-    @cup = current_user.cups.find(params[:id])
+    @cup = current_user.all_cups.find(params[:id])
   end
 
   def accept

@@ -16,6 +16,10 @@ class User < ActiveRecord::Base
 
   validates :username, presence: true, uniqueness: true
 
+  def all_cups
+    Cup.where("sender_id = :id OR receiver_id = :id", id: id)
+  end
+
   private
 
   # def send_welcome_email

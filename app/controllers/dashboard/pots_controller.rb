@@ -98,33 +98,28 @@ class Dashboard::PotsController < ApplicationController
       date = matched_date
     end
 
-match_location = []
+    match_location = [matching_pot.location_id, @pot.location_id]
+    location = match_location.sample
 
-match_location << matching_pot.location_id
-match_location << @pot.location_id
+    matching_times = []
 
-location = match_location.sample
+    %w(time_10 time_12 time_2 time_4 time_6).each do |time_column|
+      if @pot[time_column] == true
+        if (@pot[time_column] == matching_pot[time_column])
+          matching_times << time_column
+        end
+      end
+    end
 
-matching_times = []
-
-%w(time_10 time_12 time_2 time_4 time_6).each do |time_column|
-if @pot[time_column] == true
-  if (@pot[time_column] == matching_pot[time_column])
-    matching_times << time_column
-  end
-end
-end
-
-matching_time = matching_times.sample
+    matching_time = matching_times.sample
 
     @cup = Cup.create!(
-      # TODO:
       time: matching_time,
       date: date,
-      sender_id: current_user,
-      receiver_id: matching_pot.user,
+      sender: current_user,
+      receiver: matching_pot.user,
       location_id: location
-      )
+    )
     @pot.update(cup: @cup)
     matching_pot.update(cup: @cup)
   end
