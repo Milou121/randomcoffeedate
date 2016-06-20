@@ -76,6 +76,13 @@ class Dashboard::PotsController < ApplicationController
       ", pot_start_date: @pot.start_date, pot_end_date: @pot.end_date)
 
     # TODO: check time_4 ... time_12
+    friends_pots = friends_pots.where("
+      (:pot_time_10 == true AND time_10 == true) OR
+      (:pot_time_12 == true AND time_12 == true) OR
+      (:pot_time_2 == true AND time_2 == true) OR
+      (:pot_time_4 == true AND time_4 == true) OR
+      (:pot_time_6 == true AND time_6 == true)
+      ", pot_time_10: @pot.time_10, pot_time_12: @pot.time_12, pot_time_2: @pot.time_2, pot_time_4: @pot.time_4, pot_time_6: @pot.time_6)
 
     matching_pot = friends_pots.order(:created_at).first
     return unless matching_pot
