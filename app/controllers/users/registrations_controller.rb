@@ -4,10 +4,10 @@ module Users
 
     protected
 
-    # def after_sign_up_path_for(resource)
-    #   UserMailer.registration_confirmation(resource).deliver_now
-    #   edit_profile_path
-    # end
+    def after_sign_up_path_for(resource)
+      UserMailer.registration_confirmation(resource).deliver_now
+      edit_profile_path
+    end
 
     def configure_permitted_parameters
       devise_parameter_sanitizer.for(:sign_up) do |u|
