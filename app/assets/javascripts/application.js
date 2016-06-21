@@ -9,13 +9,14 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
+
+// External libraries
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require underscore
 //= require gmaps/google
 //= require image-picker
-//= require_tree .
 
-$("select").imagepicker()
+// YOUR SCRIPTS
+//= require pots
