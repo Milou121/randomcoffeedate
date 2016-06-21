@@ -1,4 +1,10 @@
+<<<<<<< Updated upstream
 $(document).on('ready', function(){
+=======
+$(document).on('ready', function() {
+  $(".js-pot--friends-picker").imagepicker();
+
+>>>>>>> Stashed changes
   $('#map').on('click', '.js-pot--select-location', function(e){
     e.preventDefault();
     var locationId = $(this).data('location-id');
