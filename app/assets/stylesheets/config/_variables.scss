@@ -2,9 +2,9 @@
  * Fonts
  * ------------------------------------- */
 // Google fonts
-@import url("https://fonts.googleapis.com/css?family=Lekton|Yatra+One");
+@import url("https://fonts.googleapis.com/css?family=Lekton|Karla:700");
 $base-font: 'Lekton', sans-serif;
-$header-font: 'Yatra One', cursive;
+$header-font: 'Karla', sans-serif;
 
 // Local fonts (uncomment following lines)
 // @font-face {
@@ -15,7 +15,9 @@ $header-font: 'Yatra One', cursive;
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
-
+h3 {
+  color: #613720;
+}
 // Font-size and line-height
 $base-size: 16px;
 $base-height: 1.4;
