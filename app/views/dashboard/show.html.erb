@@ -1,42 +1,43 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-3 white-container">
+    <div class="col-xs-3">
+      <div class="white-container">
+        <h3>
+          Friends
+        </h3>
+        <% @user.friends.each do |friend| %>
+        <%= friend.email %>
+        <%= form_tag friend_path(friend), method: :delete do %>
+        <%= submit_tag("delete") %>
+        <% end %>
+        <% end %>
 
-      <h3>
-        Friends
+        <h3>
+         Your pending request
+       </h3>
+       <% @user.pending_invited.each do |pending| %>
+       <%= pending.email %>
+       <%= form_tag friend_path(pending), method: :delete do %>
+       <%= submit_tag("cancel") %>
+       <% end %>
+       <% end %>
+
+       <h3>
+        Friends' pending request
       </h3>
-      <% @user.friends.each do |friend| %>
-      <%= friend.email %>
-      <%= form_tag friend_path(friend), method: :delete do %>
-      <%= submit_tag("delete") %>
+      <% @user.pending_invited_by.each do |pending|  %>
+      <%= pending.email %>
+      <%= form_tag friend_path(pending), method: :patch do %>
+      <%= submit_tag "Approve friend" %>
       <% end %>
       <% end %>
+    </div>
 
-      <h3>
-       Your pending request
-     </h3>
-     <% @user.pending_invited.each do |pending| %>
-     <%= pending.email %>
-     <%= form_tag friend_path(pending), method: :delete do %>
-     <%= submit_tag("accept") %>
-     <%= submit_tag("cancel") %>
-
-     <% end %>
-     <% end %>
-
-     <h3>
-      Friends' pending request
-    </h3>
-    <% @user.pending_invited_by.each do |pending|  %>
-    <%= pending.email %>
-    <%= form_tag friend_path(pending), method: :patch do %>
-    <%= submit_tag "Approve friend" %>
-    <% end %>
-    <% end %>
     <br>
-    <br>
-    <%= link_to("Edit Profile", edit_user_registration_url, class: "profile-link") %>
+    <div class="button-blue text-center">
+      <%= link_to("Edit Profile", edit_user_registration_url, class: "profile-link") %>
+    </div>
 
   </div>
 
@@ -52,7 +53,9 @@
    <% end %>
    <% end %>
    <% else %>
+
    <%= puts "You don't have a cuppa! Make a pot!" %>
+
    <% end %>
  </div>
 
@@ -70,9 +73,14 @@
 
 </div>
 
-
 </div>
+<!-- <div class="row">
+  <div class="col-xs-3">
+  <div class="button-blue profile-style-dashboard">
+    <%= link_to("Edit Profile", edit_user_registration_url, class: "profile-link") %>
+  </div>
+  </div>
+</div> -->
 </div>
-
 
 
