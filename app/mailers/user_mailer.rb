@@ -10,8 +10,9 @@ class UserMailer < ApplicationMailer
     mail(to: user.email, :subject => "Registration Confirmation")
   end
 
-  def cuppa_match(user)
+  def cuppa_match(user, invitee)
     @user = user
+    @invitee = invitee
     mail(to: user.email, subject: 'You have a cuppa match!')
   end
 
@@ -21,26 +22,6 @@ class UserMailer < ApplicationMailer
   #   # This will render a view in `app/views/user_mailer`!
   # end
 
-  def friends_request(user, invitee)
-    @user = user  # Instance variable => available in view
-    @friend = invitee
-    mail(to: user.email, subject: 'You sent a friend request!')
-    # This will render a view in `app/views/user_mailer`!
-  end
-
-  def friends_request_invitee(user, invitee)
-    @user = user  # Instance variable => available in view
-    @friend = invitee
-    mail(to: @friend.email, subject: 'You have a friend request!')
-    # This will render a view in `app/views/user_mailer`!
-  end
-
-  def friends_confirm(user, friend)
-    @user = user  # Instance variable => available in view
-    @friend = friend
-    mail(to: user.email, subject: 'Your friend confirmed you request!')
-    # This will render a view in `app/views/user_mailer`!
-  end
 
   # def match_confirm(user)
   #   @user = user  # Instance variable => available in view

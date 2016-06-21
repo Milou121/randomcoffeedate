@@ -19,8 +19,8 @@ class FriendshipsController < ApplicationController
         # FriendshipsMailer.invite(invitee.id).deliver_now
         #send an email to the receiver
         # FriendshipsMailer.invitation_confirmation(current_user.id).deliver_now
-        UserMailer.friends_request(@user, invitee).deliver_now
-        UserMailer.friends_request_invitee(@user, invitee).deliver_now
+        FriendshipMailer.friends_request(@user, invitee).deliver_now
+        FriendshipMailer.friends_request_invitee(@user, invitee).deliver_now
         redirect_to new_friend_path, :notice => "Successfully invited friend!"
       else
         redirect_to new_friend_path, :notice => "Sorry! You can't invite that user!"
@@ -32,7 +32,7 @@ class FriendshipsController < ApplicationController
 
       if current_user.approve inviter
 
-        UserMailer.friends_confirm(inviter, current_user).deliver_now
+        FriendshipMailer.friends_confirm(inviter, current_user).deliver_now
         redirect_to dashboard_path
       else
         redirect_to dashboard_path
