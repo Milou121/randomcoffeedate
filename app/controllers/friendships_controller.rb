@@ -23,7 +23,7 @@ class FriendshipsController < ApplicationController
         FriendshipMailer.friends_request_invitee(@user, invitee).deliver_now
         redirect_to new_friend_path, :notice => "Successfully invited friend!"
       else
-        redirect_to new_friend_path, :notice => "Sorry! You can't invite that user!"
+        redirect_to new_friend_path, :notice => "Sorry! This email is not a user"
       end
     end
 
