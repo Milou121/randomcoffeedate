@@ -19,4 +19,6 @@
 //= require image-picker
 
 // YOUR SCRIPTS
+
+// All our javascript
 //= require pots

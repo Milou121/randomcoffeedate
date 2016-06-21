@@ -86,12 +86,12 @@
   animation: spin 10s infinite linear;
 }
 
-div > span:first-child {
+div > .span-home:first-child {
   -webkit-transform: translatex(210px);
   transform: translatex(210px);
 }
 
-span {
+.span-home {
   width: 0;
   height: 420px;
   position: absolute;

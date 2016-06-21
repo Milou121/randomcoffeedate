@@ -124,12 +124,18 @@ class Dashboard::PotsController < ApplicationController
     matching_pot.update(cup: @cup)
   end
 
-  def marker_string(location)
-    "<div class='infomap-style'><p>" + location.name + "</p><p>" + location.address + "</p></div>"
-  end
 
   def pot_params
     params.require(:pot).permit(:location_id, :start_date, :end_date, :time_10, :time_6, :time_4, :time_2, :time_12)
   end
 
+  def marker_string(location)
+    <<~HEREDOC
+      <div class='infomap-style'>
+        <p>#{location.name}</p>
+        <p>#{location.address}</p>
+        <a href="#" class="btn btn-primary js-pot--select-location" data-location-id="#{location.id}" data-location-name="#{location.name}">SELECT</a>
+      </div>
+    HEREDOC
+  end
 end

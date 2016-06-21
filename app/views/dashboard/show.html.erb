@@ -1,7 +1,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-3">
+    <div class="col-xs-3 white-container">
 
       <h3>
         Friends
@@ -42,7 +42,12 @@
    <h3>
      Pending Cuppa
    </h3>
-
+   <% @cup.each do || %>
+   <%= cup.pending %>
+   <%= form_tag dashboard_pot_path(pending), method: :delete do %>
+   <%= submit_tag("cancel") %>
+   <% end %>
+   <% end %>
  </div>
 
  <div class="col-xs-3">
