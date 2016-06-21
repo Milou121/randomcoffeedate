@@ -23,11 +23,6 @@ a{
 
 }
 
-%goo{
-  filter:url('#shadowed-goo');
-  // debug
-  //background:rgba(255,0,0,0.2);
-}
 %ball{
   background:$fg;
   border-radius:100%;
@@ -84,7 +79,6 @@ $hamburger-spacing:8px;
   }
 }
 .menu{
-  @extend %goo;
   $width:650px;
   $height:150px;
   position: absolute;
