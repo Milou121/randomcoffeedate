@@ -1,3 +1,6 @@
+$(document).on('ready', function() {
+  $(".js-pot--friends-picker").imagepicker();
+
 $(document).on('ready', function(){
   $('#map').on('click', '.js-pot--select-location', function(e){
     e.preventDefault();
