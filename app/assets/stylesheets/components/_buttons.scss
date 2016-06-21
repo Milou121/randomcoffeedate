@@ -3,13 +3,14 @@
   padding: 10px 15px;
   border-radius: 4px;
   font-weight: bold;
-  background: #0B76FF;
+  background: $blue;
   transition: background 0.3s ease;
   border: none;
 }
 .button-blue:hover {
   opacity: 1;
-  background: #FF1744;
+  background: #FBB53D;
   text-decoration: none;
   color: white;
+  cursor: pointer;
 }
