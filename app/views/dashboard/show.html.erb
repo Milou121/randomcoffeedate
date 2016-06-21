@@ -42,11 +42,15 @@
    <h3>
      Pending Cuppa
    </h3>
-   <% @cup.each do || %>
+   <% if @cup %>
+   <% @cup.each do |cup| %>
    <%= cup.pending %>
    <%= form_tag dashboard_pot_path(pending), method: :delete do %>
    <%= submit_tag("cancel") %>
    <% end %>
+   <% end %>
+   <% else %>
+   <%= puts "You don't have a cuppa! Make a pot!" %>
    <% end %>
  </div>
 
