@@ -19,7 +19,9 @@
      <% @user.pending_invited.each do |pending| %>
      <%= pending.email %>
      <%= form_tag friend_path(pending), method: :delete do %>
+     <%= submit_tag("accept") %>
      <%= submit_tag("cancel") %>
+
      <% end %>
      <% end %>
 
