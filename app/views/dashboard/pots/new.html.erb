@@ -9,7 +9,7 @@
       </div>
       <% end %>
 
-      <%= form.association :location %>
+      <%= form.association :location, as: :hidden %>
 
       <div id="map" style="width: 100%; height: 600px;"></div>
 
@@ -25,6 +25,11 @@
   })
   <% end %>
   <% end %>
+
+    <p>
+    Your location is <span class="js-pot--selected-location">not selected</span>
+    </p>
+
   <%= form.input :start_date %>
   <%= form.input :end_date %>
   <%= form.input :time_10 %>
