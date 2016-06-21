@@ -2,12 +2,8 @@
   <div class="row">
     <div class="col-xs-12">
       <%= simple_form_for [:dashboard, @pot] do |form| %>
-      <% @friends.each do |friend| %>
-      <div>
-        <%= check_box_tag "friend_ids[]", friend.id, false, id: "friend_ids_#{friend.id}" %>
-        <%= label_tag "friend_ids_#{friend.id}", friend.email %>
-      </div>
-      <% end %>
+      <%= select_tag "friend_ids[]", options_for_select(@friends.map { |friend| [friend.username, friend.id, "data-img-src" => friend.photo.url] }), multiple: true, class: "js-pot--friends-picker" %>
+
 
       <%= form.association :location, as: :hidden %>
 

@@ -32,6 +32,8 @@ gem "geocoder"
 # Enumarize
 gem 'enumerize'
 
+# Image picker
+gem 'image-picker-rails'
 
 # Figaro
 gem 'figaro'
