@@ -10,3 +10,4 @@ $(document).on('ready', function() {
     $('.js-pot--selected-location').html(locationName);
   });
 });
+

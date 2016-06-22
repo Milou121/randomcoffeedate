@@ -22,3 +22,4 @@
 
 // All our javascript
 //= require pots
+//= require scroll
