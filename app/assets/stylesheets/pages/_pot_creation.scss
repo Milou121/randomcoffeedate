@@ -15,12 +15,12 @@
     transition: border 0.2s ease-in-out;
     max-height: 100px;
     max-width: 100px;
-} 
+}
 
 ul.thumbnails.image_picker_selector li .thumbnail.selected {
     background: #613720;
-    background-image: url('bean.png');
-    background-blend-mode: multiply;
 
-} 
 
+.image_picker_image {
+  	border-radius: 50%;
+   }
