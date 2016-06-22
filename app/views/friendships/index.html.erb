@@ -1,0 +1,19 @@
+<div class="friendship-title">
+	<h3>
+		Your Bean Friends
+	</h3>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12" class="friend">
+			<% @friends.each do |friend| %>
+			<%= friend.username %>
+			<%= select_tag "friend_ids[]", options_for_select(@friends.map { |friend| [friend.username, friend.id, "data-img-src" => friend.photo.url] }), multiple: true, class: "js-pot--friends-picker" %>
+			<%= form_tag friend_path(friend), data: {confirm: "Are you sure?"},  method: :delete do %>
+			<%= submit_tag("delete") %>
+			<% end %>
+			<% end %>
+		</div>
+	</div>
+</div>
+
