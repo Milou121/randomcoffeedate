@@ -8,11 +8,36 @@
   color: #613720;
 }
 
-.cuppa-home{
-  top: 170px;
+.cuppa-home {
   text-align: center;
+  width: 500px;
 }
 
+.top {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center;
+}
+
+.how {
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center;
+}
+
+.facts {
+  background: url(http://res.cloudinary.com/dvcylwwvz/image/upload/v1466595532/coffeefacts_aoliyx.jpg);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center;
+}
 // body {
 //   height: 100%;
 //   width: 100%;

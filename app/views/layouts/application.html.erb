@@ -12,16 +12,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="background-color">
-  <%= render 'shared/flashes' %>
-  <%= render 'shared/menu' %>
-  <%= yield %>
+  <div class="background-color">
+    <%= render 'shared/flashes' %>
+    <%= render 'shared/menu' %>
+    <%= yield %>
+    <%= render 'shared/footer' %>
+    <%= javascript_include_tag "https://maps.google.com/maps/api/js?libraries=places&sensor=false" %>
+    <%= javascript_include_tag "https://cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js" %>
 
-  <%= javascript_include_tag "https://maps.google.com/maps/api/js?libraries=places&sensor=false" %>
-  <%= javascript_include_tag "https://cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js" %>
-
-  <%= javascript_include_tag 'application' %>
-  <%= yield(:after_js) %>
-</div>
+    <%= javascript_include_tag 'application' %>
+    <%= yield(:after_js) %>
+  </div>
 </body>
 </html>
