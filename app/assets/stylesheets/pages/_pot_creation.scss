@@ -19,8 +19,8 @@
 
 ul.thumbnails.image_picker_selector li .thumbnail.selected {
     background: #613720;
+    background-image: url('bean.png');
+    background-blend-mode: multiply;
+
 } 
 
-img { 
-	border-radius: 100px;
- }
