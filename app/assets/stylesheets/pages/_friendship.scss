@@ -60,7 +60,18 @@
 
 }
 
-.friend { 
- padding: 20px;
- border-radius: 100px;
+.friend-photo { 
+ padding: 10px; 
+ border-radius: 100%; 
+ width: 150px;
+ height: 150px;
+ display: block; 
+ margin-left: auto;
+ margin-right: auto;
 }
+
+#friend { 
+padding-top: 50px;
+padding-bottom: 50px;
+padding-left: 75px;
+}  
