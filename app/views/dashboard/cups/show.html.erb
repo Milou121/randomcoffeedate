@@ -1,22 +1,30 @@
-<div class="container yourcup">
+<div class="container page-title">
   <div class="row">
     <div class="col-xs-12">
-      <h1> Let's have a CUPPA coffee!</h1>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-4">
-    <h3></h3>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-4">
-    <h3></h3>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-4">
-    <h3></h3>
+      <h3> Let's have a CUPPA coffee!</h3>
     </div>
   </div>
 </div>
+<div class="container yourcup">
+  <div class="row">
+    <div class="col-xs-6">
+      <h4> When? </h4>
+    </div>
+    <div class="col-xs-6">
+      <h4> Where? </h4>
+    </div>
+    <div class="col-xs-6">
+      <p>Yay! Your recently created pot has matched the pot of one of your friends. You are ready to go on a coffee date on <%=@cup.date%> </p>
+    </div>
+    <div class="col-xs-6">
+      <p>You'll meet your friend at:</p>
+      <p>
+        <% cup_location = @cup.location_id %>
+        <% location = Location.find(cup_location) %>
+        <%= location.name %></p>
+      </div>
+    </div>
+  </div>
+
+
+
