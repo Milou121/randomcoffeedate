@@ -19,6 +19,10 @@ Rails.application.configure do
   # Ensure you have defined default url options in your environments files.
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
+  # To test the email text before sending user
+  config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.default_url_options = { host: ENV['HOST'] || "localhost:3000" }
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 

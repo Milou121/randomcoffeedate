@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.3.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
@@ -7,6 +7,7 @@ gem 'rails', '4.2.6'
 gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+gem 'compass-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -20,18 +21,33 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 
+
 # Cloudinary & Carrierwave
 gem 'cloudinary'
 gem 'carrierwave'
 
+#geocoder
+gem "geocoder"
+
+# Enumarize
+gem 'enumerize'
+
+# Image picker
+gem 'image-picker-rails'
 
 # Figaro
 gem 'figaro'
 
+gem "gmaps4rails"
+
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -46,14 +62,23 @@ gem 'amistad'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-  gem 'devise'
+gem 'devise'
+ #Active Admin
+ gem 'activeadmin', github: "activeadmin/activeadmin"
 
-group :development, :test do
+
+ group :development, :test do
+  gem "letter_opener"
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  gem 'better_errors'
-  gem 'pry-rails'
+  gem "better_errors"
   gem 'binding_of_caller'
+
+
+
+  gem 'pry-rails'
+
+
 end
 
 group :development do
@@ -63,10 +88,10 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
-  # Devise; registration creating user
 end
 
-group :production do
+ group :production do
   gem 'rails_12factor'
   gem 'puma'
 end
+

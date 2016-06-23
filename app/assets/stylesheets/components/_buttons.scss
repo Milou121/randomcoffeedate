@@ -1,0 +1,24 @@
+.button-blue {
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: $blue;
+  transition: background 0.3s ease;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.button-blue-side-margin {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.button-blue:hover {
+  opacity: 1;
+  background: #62A7FF;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}

@@ -2,3 +2,263 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+
+ .cuppa-home {
+  text-align: center;
+  width: 500px;
+}
+
+.top {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center;
+}
+
+.how {
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center;
+}
+
+// Facts
+
+.card {
+  position: relative;
+  height: 250px;
+  // text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-color: white;
+  color: white;
+  position: relative;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.card-content {
+  position: absolute;
+  font-size: 20px;
+  padding: 20px 20px;
+}
+
+.card-content p {
+  color: #613720;
+}
+
+.facts {
+  background: url(http://res.cloudinary.com/dvcylwwvz/image/upload/v1466595532/coffeefacts_aoliyx.jpg);
+  background-size: cover !important;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center;
+}
+// body {
+//   height: 100%;
+//   width: 100%;
+//   background-color: #0B1A21;
+//   -webkit-animation: colors 6s linear normal infinite;
+//   animation: colors 6s linear normal infinite;
+// }
+
+// scroll
+.scroll {
+  margin: 30px 30px;
+  text-align: center;
+}
+
+
+
+#content {
+  width: 1000px;
+  margin: 10px auto;
+  min-height: 200px;
+  position: relative;
+  top: 0px;
+  left: 0px;
+
+  padding: 20px;
+}
+
+#board{
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center;
+}
+
+#box1,#box2,#box3 {
+  position: relative;
+  float: left;
+  margin: 20px;
+}
+
+#box1,#box2,#box3 {
+  overflow: hidden;
+  width: 240px;
+  height: 184px;
+}
+
+#box1 #box_o_t,#box2 #box_o_t,#box3 #box_o_t {
+  left: 0px;
+  position: relative;
+  top: 0px;
+  z-index: 300;
+}
+
+#box1 #box_o_b,#box2 #box_o_b,#box3 #box_o_b {
+  left: 0px;
+  position: relative;
+  top: -33px;
+  z-index: 500;
+}
+
+#kick_jump {
+  position: absolute;
+  z-index: 200;
+  top: -550px;
+  left: 393px;
+  display: none;
+}
+
+
+.color_0 {
+  background-color: #70B3CD !important;
+}
+
+.color_1 {
+  background-color: #B12F2F !important;
+}
+
+.color_2 {
+  background-color: #1F8E1A !important;
+}
+
+
+
+.hide {
+  display: none;
+}
+
+#start_game {
+  cursor: pointer;
+  margin: 0 auto;
+  border: 1px solid #0B76FF;
+  border-bottom-color: #0B76FF;
+  border-top-color: #0B76FF;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 18px;
+  padding: 10px 18px;
+  text-decoration: none;
+
+  /* CSS3 */
+  -moz-box-shadow: 0px 1px 2px #d9d9d9, inset 0px 1px 0px #ffe598;
+  -webkit-box-shadow: 0px 1px 2px #d9d9d9, inset 0px 1px 0px #ffe598;
+  box-shadow: 0px 1px 2px #d9d9d9, inset 0px 1px 0px #ffe598;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  /* Gradient */
+  background-color: #feda71;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#feda71), to(#febb49));
+  /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, #feda71, #febb49);
+  /* Chrome 10+, Saf5.1+ */
+  background-image: -moz-linear-gradient(top, #feda71, #febb49);
+  /* FF3.6 */
+  background-image: -ms-linear-gradient(top, #feda71, #febb49);
+  /* IE10 */
+  background-image: -o-linear-gradient(top, #feda71, #febb49);
+  /* Opera 11.10+ */
+  background-image: linear-gradient(top, #feda71, #febb49);
+}
+
+#start_game:hover {
+  background-color: #fee296;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fee296), to(#fec166));
+  /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, #fee296, #fec166);
+  /* Chrome 10+, Saf5.1+ */
+  background-image: -moz-linear-gradient(top, #fee296, #fec166);
+  /* FF3.6 */
+  background-image: -ms-linear-gradient(top, #fee296, #fec166);
+  /* IE10 */
+  background-image: -o-linear-gradient(top, #fee296, #fec166);
+  /* Opera 11.10+ */
+  background-image: linear-gradient(top, #fee296, #fec166);
+}
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,400);
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.demo a {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  z-index: 2;
+  display: inline-block;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  color: white;
+  font : normal 400 20px/1 'Josefin Sans', sans-serif;
+  letter-spacing: .1em;
+  text-decoration: none;
+  transition: opacity .3s;
+}
+.demo a:hover {
+  opacity: .5;
+}
+
+// #scroll a {
+//   padding-top: 70px;
+// }
+
+#scroll a span {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-animation: sdb05 1.5s infinite;
+  animation: sdb05 1.5s infinite;
+  box-sizing: border-box;
+}
+@-webkit-keyframes sdb05 {
+  0% {
+    -webkit-transform: rotate(-45deg) translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotate(-45deg) translate(-20px, 20px);
+    opacity: 0;
+  }
+}
+@keyframes sdb05 {
+  0% {
+    transform: rotate(-45deg) translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(-45deg) translate(-20px, 20px);
+    opacity: 0;
+  }
+
+}
