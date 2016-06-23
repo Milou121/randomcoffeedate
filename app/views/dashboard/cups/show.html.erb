@@ -1,22 +1,40 @@
-<div class="container yourcup">
-  <div class="row">
-    <div class="col-xs-12">
-      <h1> Let's have a CUPPA coffee!</h1>
+<div id="wrapper">
+  <div class="container" id="cup-page-title">
+    <div class="row">
+      <div class="col-xs-12">
+      <h3 class="cup"> Let's have a CUPPA coffee!</h3>
+      </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-4">
-    <h3></h3>
+  <div class="container yourcup">
+    <div class="row">
+      <div class="col-xs-12">
+        <p>Yay! Your recently created pot has matched the pot of one of your friends. Time to meet up, catch up and have fun!</p>
+      </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-4">
-    <h3></h3>
+  <div class="container yourcup">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1466688789/time_m1sqo4.png" alt="" class="scr">
+      </div>
+      <div class="col-xs-6">
+        <p>You are ready to go on a coffee date on
+          <%= l(@cup.date, format: :long)%> at <%= @cup.time %></p>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-4">
-    <h3></h3>
+    <div class="container yourcup">
+      <div class="row">
+        <div class="col-xs-6">
+          <img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1466683670/filter_ncpxki.png" alt="" class="scr">
+        </div>
+        <div class="col-xs-6">
+          <p>You'll meet your friend for a cuppa at
+            <% cup_location = @cup.location_id %>
+            <% location = Location.find(cup_location) %>
+            <%= location.name %></p>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
