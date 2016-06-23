@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-    <h1> Select your Friends for this Cuppa Date</h1>
+      <h1> Select your Friends for this Cuppa Date</h1>
       <%= simple_form_for [:dashboard, @pot] do |form| %>
       <%= select_tag "friend_ids[]", options_for_select(@friends.map { |friend| [friend.username, friend.id, "data-img-src" => friend.photo.url] }), multiple: true, class: "js-pot--friends-picker" %>
 
@@ -22,22 +22,22 @@
   <% end %>
 
   <div class="location-text">
-  <br>
-   <h1>
-    Your location is <span class="js-pot--selected-location">not selected</span>
-  </h1>
-</div>
+    <br>
+    <h1>
+      Your location is <span class="js-pot--selected-location">not selected</span>
+    </h1>
+  </div>
 
 
-<%= form.input :start_date %>
-<%= form.input :end_date %>
-<%= form.input :time_10 %>
-<%= form.input :time_12 %>
-<%= form.input :time_2 %>
-<%= form.input :time_4 %>
-<%= form.input :time_6 %>
-<%= form.submit %>
-<% end %>
+  <%= form.input :start_date %>
+  <%= form.input :end_date %>
+  <%= form.input :time_10 %>
+  <%= form.input :time_12 %>
+  <%= form.input :time_2 %>
+  <%= form.input :time_4 %>
+  <%= form.input :time_6 %>
+  <%= form.submit %>
+  <% end %>
 </div>
 </div>
 </div>
