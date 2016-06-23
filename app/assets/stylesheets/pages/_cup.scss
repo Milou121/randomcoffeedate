@@ -2,13 +2,26 @@
   display: flex;
   justify-content: center;
   background-color: white;
-  width: 500px;
+  width: 450px;
   border-radius: 10px;
   padding: 30px 30px;
   margin: 30px 30px;
+  opacity: 0.85;
 }
 
 body.dashboard\/cups-show {
-  background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://res.cloudinary.com/dvcylwwvz/image/upload/v1466681002/photo-1464979681340-bdd28a61699e_mqeiuo.jpg') fixed;
+  background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://res.cloudinary.com/dvcylwwvz/image/upload/v1466681002/photo-1464979681340-bdd28a61699e_mqeiuo.jpg');
   background-size: cover !important;
+}
+
+#cup-page-title {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 20px;
+  margin-top: -60px;
+}
+
+.cup {
+  color: white;
 }
