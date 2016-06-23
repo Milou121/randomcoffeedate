@@ -2,22 +2,6 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-4">
-      <h3>
-        friends
-      </h3>
-      <% @user.friends.each do |friend| %>
-      <%= friend.email %>
-      <%= form_tag friend_path(friend), method: :delete do %>
-      <%= submit_tag("delete") %>
-      <% end %>
-      <% end %>
-    </div>
-
-<<<<<<< Updated upstream
-      <div class="col-xs-4">
-       <h3>
-         your pending request
-=======
     <div class="col-xs-12 col-sm-4">
       <%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1466683687/pendingcup_uow2uf.png") %>
       <h3>
@@ -75,7 +59,7 @@
 
         <h3>
          Your pending request
->>>>>>> Stashed changes
+
        </h3>
        <% @user.pending_invited.each do |pending| %>
        <%= pending.email %>

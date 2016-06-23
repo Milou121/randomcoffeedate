@@ -1,0 +1,62 @@
+.friendship-title {
+  text-align: center;
+  color: #613720;
+}
+
+.friendship-form {
+  display: flex;
+}
+
+.friendship-email {
+  flex-grow: 1;
+  border: none;
+  border-radius: 4px;
+  margin-top: 10px;
+  height: 42px;
+}
+
+.bean-size {
+ width: 40px;
+ height: 40px;
+}
+
+
+@keyframes swing {
+  0%, 100% { transform: rotate(-30deg); }
+  20%, 80% {transform: scale(0.95); }
+  50% { transform: rotate(30deg); }
+}
+
+#bean {
+
+  animation: swing 2s infinite ease-in-out;
+
+}
+
+.bean-wrapper {
+  width: 360px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.friend {
+ padding: 20px;
+ border-radius: 100px;
+}
+.friend-photo {
+ padding: 10px;
+ border-radius: 100%;
+ width: 150px;
+ height: 150px;
+ display: block;
+ margin-left: auto;
+ margin-right: auto;
+
+}
+
+#friend {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 75px;
+}
