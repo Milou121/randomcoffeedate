@@ -75,11 +75,8 @@
 
 #content {
   width: 1000px;
-  margin: 10px auto;
   min-height: 200px;
   position: relative;
-  top: 0px;
-  left: 0px;
 
   padding: 20px;
 }
@@ -119,7 +116,7 @@
 #kick_jump {
   position: absolute;
   z-index: 200;
-  top: -550px;
+  top: -510px;
   left: 393px;
   display: none;
 }
