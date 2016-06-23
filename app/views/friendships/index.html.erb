@@ -2,18 +2,21 @@
 	<h3>
 		Your Bean Friends
 	</h3>
+	<br> 
+	<br>
 </div>
 <div class="container">
 	<div class="row">
-		<div class="col-xs-12" class="friend">
-			<% @friends.each do |friend| %>
-			<%= friend.username %>
-			<%= select_tag "friend_ids[]", options_for_select(@friends.map { |friend| [friend.username, friend.id, "data-img-src" => friend.photo.url] }), multiple: true, class: "js-pot--friends-picker" %>
+		<% @friends.each do |friend| %>
+		<div class="col-offset-xs-2 col-xs-10 col-offset-sm-2 col-sm-5  col-offset-md-2 col-md-4" id="friend">
+			<%= image_tag friend.photo, class: "friend-photo" %> 
 			<%= form_tag friend_path(friend), data: {confirm: "Are you sure?"},  method: :delete do %>
-			<%= submit_tag("delete") %>
-			<% end %>
+			<%= friend.username %>
+			<%= submit_tag("delete")%>
 			<% end %>
 		</div>
+		<% end %>
+		
 	</div>
 </div>
 
