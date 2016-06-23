@@ -85,6 +85,7 @@
   display: flex;
   justify-content: center; /* align horizontal */
   align-items: center;
+  margin-top: 260px;
 }
 
 #box1,#box2,#box3 {
@@ -117,7 +118,7 @@
   position: absolute;
   z-index: 200;
   top: -510px;
-  left: 393px;
+  margin-left: 70px;
   display: none;
 }
 
