@@ -2,7 +2,6 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
-
  .cuppa-home {
   text-align: center;
   width: 500px;
@@ -14,6 +13,7 @@
   display: flex;
   justify-content: center; /* align horizontal */
   align-items: center;
+  margin-top: -75px;
 }
 
 .how {
