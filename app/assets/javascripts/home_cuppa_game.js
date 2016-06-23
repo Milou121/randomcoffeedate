@@ -1,20 +1,19 @@
 $(document).ready(function(){
-  var box1 = $("#box1"),
-  box2 = $("#box2"),
-  box3 = $("#box3"),
-  kick = $("#kick_jump"),
-  startButton = $("#start_game"),
-  messageBar = $("#msg_bd"),
-  kickDropDownAnimationDelay = 1500,
-  shuffleSpeed = 500,
-  nuberOfShuffels = 15,
-  z = 0;
+  setTimeout(loopThing, 100)
+  function loopThing() {
+    var box1 = $("#box1"),
+    box2 = $("#box2"),
+    box3 = $("#box3"),
+    kick = $("#kick_jump"),
+    kickDropDownAnimationDelay = 1500,
+    shuffleSpeed = 600,
+    nuberOfShuffels = 5,
+    z = 0;
 
-  var ans = Math.floor(Math.random() * 3) + 1;
+    var ans = Math.floor(Math.random() * 3) + 1;
 
 
-  event.preventDefault();
-  var kickInitialPosition = 0;
+    var kickInitialPosition = 0;
     //Show the character fist
     kick.show();
     // Show the message "Starting the game"
@@ -117,40 +116,22 @@ $(document).ready(function(){
 
 
               }, shuffleSpeed);
-                    $("#box1").html('<img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1466603046/cupwha_yk6jgx.png" alt="">');
-                    $("#box1").append(' <img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1466603046/cupwha_yk6jgx.png" alt="">');
+              $("#box1").html('<img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1466603046/cupwha_yk6jgx.png" alt="">');
+              $("#box1").append(' <img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1466603046/cupwha_yk6jgx.png" alt="">');
 
-                    $("#box2").html('<img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1466603046/cupwha_yk6jgx.png" alt="">');
-                    $("#box2").append(' <img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1466603046/cupwha_yk6jgx.png" alt="">');
+              $("#box2").html('<img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1466603046/cupwha_yk6jgx.png" alt="">');
+              $("#box2").append(' <img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1466603046/cupwha_yk6jgx.png" alt="">');
 
-                    $("#box3").html('<img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1466603046/cupwha_yk6jgx.png" alt="">');
-                    $("#box3").append(' <img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1466603046/cupwha_yk6jgx.png" alt="">');
+              $("#box3").html('<img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1466603046/cupwha_yk6jgx.png" alt="">');
+              $("#box3").append(' <img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1466603046/cupwha_yk6jgx.png" alt="">');
 
               setTimeout(function() {
-
-                var flag = 0;
-                $('div[id^="box"]').css("cursor", "pointer");
-
-
-
-
-              }, nuberOfShuffels * shuffleSpeed);
+                nuberOfShuffels * shuffleSpeed});
               n();
             });
-}
+          }
+        });
+      }
+    });
+  }
 });
-}
-
-
-
-
-});
-
-
-function setMessage(message, color) {
-  messageBar.html(message).addClass(color);
-}
-
-
-
-})();
