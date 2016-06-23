@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
+    <h1> Select your Friends for this Cuppa Date</h1>
       <%= simple_form_for [:dashboard, @pot] do |form| %>
       <%= select_tag "friend_ids[]", options_for_select(@friends.map { |friend| [friend.username, friend.id, "data-img-src" => friend.photo.url] }), multiple: true, class: "js-pot--friends-picker" %>
-
 
       <%= form.association :location, as: :hidden %>
 
