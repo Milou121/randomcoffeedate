@@ -8,7 +8,7 @@
 <div class="container">
 	<div class="row">
 		<% @friends.each do |friend| %>
-		<div class="col-offset-xs-2 col-xs-10 col-offset-sm-2 col-sm-5  col-offset-md-3 col-md-4" id="friend">
+		<div class="col-offset-xs-2 col-xs-10 col-offset-sm-2 col-sm-5  col-offset-md-2 col-md-4" id="friend">
 			<%= image_tag friend.photo, class: "friend-photo" %> 
 			<%= form_tag friend_path(friend), data: {confirm: "Are you sure?"},  method: :delete do %>
 			<%= friend.username %>
