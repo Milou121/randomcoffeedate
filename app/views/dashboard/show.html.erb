@@ -1,44 +1,58 @@
 
 <div class="container">
   <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1466683687/pendingcup_uow2uf.png") %>
+      <h3>
+       Pending Cuppa
+     </h3>
+     <% if @pot %>
+     <% @pot.each do |cup| %>
+     <%= pot.pending %>
+     <%= form_tag dashboard_pot_path(pending), method: :delete do %>
+     <%= submit_tag("cancel") %>
+     <% end %>
+     <% end %>
+     <% else %>
+
+
+     <%= puts "You don't have a cuppa! Make a pot!" %>
+
+
+     <% end %>
+   </div>
+
+   <div class="col-xs-12 col-sm-4">
+     <%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1466683670/confirmcup_peyqpp.png") %>
+     <h3>
+      Your Cuppa Date
+    </h3>
+    <% if @cup %>
+    <% @cup.each do |cup| %>
+    <%= cup.pending %>
+    <%= form_tag dashboard_pot_path(pending), method: :delete do %>
+    <%= submit_tag("cancel") %>
+    <% end %>
+    <% end %>
+    <% else %>
+
+
+    <%= puts "You don't have a cuppa! Make a pot!" %>
+
+
+    <% end %>
+
+  </div>
 
   <div class="col-xs-12 col-sm-4">
-    <%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1466683687/pendingcup_uow2uf.png") %>
+    <%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1466683670/cancelcup_nzlrxh.png") %>
+
     <h3>
-     Pending Cuppa
-   </h3>
-   <% if @cup %>
-   <% @cup.each do |cup| %>
-   <%= cup.pending %>
-   <%= form_tag dashboard_pot_path(pending), method: :delete do %>
-   <%= submit_tag("cancel") %>
-   <% end %>
-   <% end %>
-   <% else %>
+      Canceled Cuppa
+    </h3>
 
+  </div>
 
-   <%= puts "You don't have a cuppa! Make a pot!" %>
-
-
-   <% end %>
- </div>
-
- <div class="col-xs-12 col-sm-4">
-   <%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1466683670/confirmcup_peyqpp.png") %>
-   <h3>
-    Your Cuppa Date
-  </h3>
-
-</div>
-
-<div class="col-xs-12 col-sm-4">
-  <%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1466683670/cancelcup_nzlrxh.png") %>
-
-  <h3>
-    Canceled Cuppa
-  </h3>
-
-</div>
 <div class="row">
 <div class="col-xs-3 col-xs-offset-9">
       <div class="white-container">
