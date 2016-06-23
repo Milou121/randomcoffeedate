@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  setTimeout(loopThing, 100)
+  loopThing()
   function loopThing() {
     var box1 = $("#box1"),
     box2 = $("#box2"),
