@@ -14,22 +14,28 @@
 
   <%= csrf_meta_tags %>
 </head>
+
 <body>
-  <div class="background-color">
+
+<body class = "<%= params[:controller] %>-<%= params[:action] %>">
+  <div class="body-content">
     <%= render 'shared/flashes' %>
     <%= render 'shared/menu' %>
     <%= yield %>
-
     <%= javascript_include_tag "https://maps.google.com/maps/api/js?libraries=places&sensor=false" %>
     <%= javascript_include_tag "https://cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js" %>
 
+    <!-- animation jq -->
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
 
     <script src="js/index.js"></script>
+    <!-- end animation jq -->
 
     <%= javascript_include_tag 'application' %>
     <%= yield(:after_js) %>
   </div>
+  <%= render 'shared/footer' %>
+
 </body>
 </html>

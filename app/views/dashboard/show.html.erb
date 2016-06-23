@@ -3,15 +3,6 @@
   <div class="row">
     <div class="col-xs-12 col-xs-3">
       <div class="white-container">
-        <h3>
-          Friends
-        </h3>
-        <% @user.friends.each do |friend| %>
-        <%= friend.email %>
-        <%= form_tag friend_path(friend), method: :delete do %>
-        <%= submit_tag("delete") %>
-        <% end %>
-        <% end %>
 
         <h3>
          Your pending request
@@ -34,10 +25,17 @@
       <% end %>
     </div>
 
+     <br>
+    <div class="button-blue text-center">
+      <%= link_to("View Friends", friends_url, class: "profile-link") %>
+    </div>
+
+
     <br>
     <div class="button-blue text-center">
       <%= link_to("Edit Profile", edit_user_registration_url, class: "profile-link") %>
     </div>
+
 
   </div>
 
@@ -73,14 +71,21 @@
 
 </div>
 
-</div>
-<!-- <div class="row">
+<!-- </div>
+<div class="row">
   <div class="col-xs-3">
-  <div class="button-blue profile-style-dashboard">
-    <%= link_to("Edit Profile", edit_user_registration_url, class: "profile-link") %>
-  </div>
-  </div>
-</div> -->
+    <div class="button-blue profile-style-dashboard">
+      <%= link_to("Edit Profile", edit_user_registration_url, class: "profile-link") %>
+    </div>
+  </div> -->
+
+  <!-- <div class="row">
+    <div class="col-xs-3">
+      <div class="button-blue profile-style-dashboard">
+        <%= link_to("View Friends", friends_url, class: "profile-link") %>
+      </div>
+    </div>
+  </div> -->
 </div>
 
 
