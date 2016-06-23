@@ -10,12 +10,10 @@
           </a>
         </div>
       </div>
+
       <%= simple_form_for [:dashboard, @pot] do |form| %>
 
       <%= select_tag "friend_ids[]", options_for_select(@friends.map { |friend| [friend.username, friend.id, "data-img-src" => friend.photo.url] }), multiple: true, class: "js-pot--friends-picker" %>
-
-      
-
       <select multiple='multiple' class='image-picker show-labels show-html hide' name='imageList'>
     </div>
   </div>
@@ -46,7 +44,6 @@
   </div>
   <div class="row" class="boxes">
       <div class="col-xs-12" id="time-select">
-
         <%= form.input :start_date %>
         <%= form.input :end_date %>
         <%= form.input :time_10 %>

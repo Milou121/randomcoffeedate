@@ -2,8 +2,7 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
-
-.cuppa-home {
+ .cuppa-home {
   text-align: center;
   width: 500px;
 }
@@ -14,6 +13,7 @@
   display: flex;
   justify-content: center; /* align horizontal */
   align-items: center;
+  margin-top: -75px;
 }
 
 .how {
@@ -49,7 +49,7 @@
 }
 
 .facts {
-  background: url(http://res.cloudinary.com/dvcylwwvz/image/upload/v1466595532/coffeefacts_aoliyx.jpg);
+  background: url(http://res.cloudinary.com/dvcylwwvz/image/upload/v1466680649/photo-1429681601148-75510b2cef43_v3k6uo.jpg);
   background-size: cover !important;
   width: 100vw;
   height: 100vh;
@@ -74,7 +74,7 @@
 
 
 #content {
-  width: 840px;
+  width: 1000px;
   margin: 10px auto;
   min-height: 200px;
   position: relative;
@@ -84,12 +84,10 @@
   padding: 20px;
 }
 
-#board {
-  padding: 300px 0px 20px 0px;
-  overflow: hidden;
-  width: 840px;
-  height: 300px;
-  text-align: center;
+#board{
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center;
 }
 
 #box1,#box2,#box3 {
