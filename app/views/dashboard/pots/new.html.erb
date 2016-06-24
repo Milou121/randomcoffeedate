@@ -32,7 +32,15 @@
         <%= javascript_tag do %>
         $(document).on('ready', function() {
         handler = Gmaps.build('Google');
-        handler.buildMap({ internal: { id: 'map' } }, function(){
+        handler.buildMap({ internal: { id: 'map' }, provider: { styles: [{"stylers":[{"hue":"#2c3e50"},{"saturation":250}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":50},{"visibility":"simplified"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]}, {
+        "featureType": "water",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#AFD2FF"
+            }
+        ]
+    }] } }, function(){
         markers = handler.addMarkers(<%= raw @markers.to_json %>);
         handler.bounds.extendWith(markers);
         handler.fitMapToBounds();
@@ -62,7 +70,7 @@
         <%= form.input :time_2 %>
         <%= form.input :time_4 %>
         <%= form.input :time_6 %>
-        <%= form.submit %>
+        <%= form.submit class: "button-blue"%>
         <% end %>
       </div>
     </div>

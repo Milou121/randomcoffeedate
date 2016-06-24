@@ -4,7 +4,7 @@ class Dashboard::PotsController < ApplicationController
   end
 
   def show
-    @pot = current_user.pots.where(cup_id: nil).find(params[:id])
+    @pots = current_user.pots.where(cup_id: nil).find(params[:id])
     @cup = Cup.find(params[:id]) # how to show the date and time of this event
   end
 
@@ -20,9 +20,10 @@ class Dashboard::PotsController < ApplicationController
       marker.infowindow marker_string(location)
       marker.picture({
                     url: "http://res.cloudinary.com/dvj9whqch/image/upload/v1466683670/filter_ncpxki.png",
-                    width: "55",
-                    height: "48"
+                    width: "100",
+                    height: "100"
                    })
+
     end
   end
 
