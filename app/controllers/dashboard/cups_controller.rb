@@ -15,6 +15,7 @@ class Dashboard::CupsController < ApplicationController
     @sad_person = current_user == @cup.sender ? @cup.receiver : @cup.sender
     #todo : mailer send a canceled mail to other person
     # Mailer.
+    UserMailer.cancel_notification(@sad_person).deliver_now
     redirect_to dashboard_path
   end
 end
