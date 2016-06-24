@@ -123,7 +123,8 @@ class Dashboard::PotsController < ApplicationController
       date: date,
       sender: current_user,
       receiver: matching_pot.user,
-      location_id: location
+      location_id: location,
+      status: "confirmed"
     )
     @pot.update(cup: @cup)
     matching_pot.update(cup: @cup)
