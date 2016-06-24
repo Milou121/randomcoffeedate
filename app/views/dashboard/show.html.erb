@@ -6,8 +6,8 @@
       <h3>
        Pending Cuppa
      </h3>
-     <% if @pot %>
-     <%= @pot.each do |pot| %>
+     <% unless @pots.empty? %>
+     <% @pots.each do |pot| %>
      <%= pot.user_id %>
      <%= form_tag dashboard_pot_path(pot), method: :delete do %>
      <%= submit_tag("cancel") %>
@@ -16,7 +16,7 @@
      <% else %>
 
 
-     <%= puts "You don't have a cuppa! Make a pot!" %>
+     <p>You don't have a cuppa! Make a pot!</p>
 
 
      <% end %>
@@ -27,8 +27,8 @@
      <h3>
       Your Cuppa Date
     </h3>
-    <% if @cup %>
-    <% @cup.each do |cup| %>
+    <% unless @cups.empty? %>
+    <% @cups.each do |cup| %>
     <%= cup.date %>
     <%= form_tag dashboard_pot_path(cup), method: :delete do %>
     <%= submit_tag("cancel") %>
@@ -37,7 +37,7 @@
     <% else %>
 
 
-    <%= puts "You don't have a cuppa! Make a pot!" %>
+    <p>You don't have a cuppa! Make some!</p>
 
 
     <% end %>
@@ -53,8 +53,8 @@
 
   </div>
 
-<div class="row">
-<div class="col-xs-3">
+  <div class="row">
+    <div class="col-xs-3">
       <div class="white-container">
 
         <h3>
