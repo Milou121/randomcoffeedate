@@ -6,7 +6,7 @@
       <div role="group" aria-label="Image Option Buttons">
         <div class="button-blue" style="text-decoration: none;">
           <a href="#" id="toggleAll" data-toggle="button" aria-pressed="false" autocomplete="off" >
-            Select All Friends 
+            Select All Friends
           </a>
         </div>
       </div>
@@ -44,8 +44,7 @@
   </div>
   <div class="row" class="boxes">
       <div class="col-xs-12" id="time-select">
-        <%= form.input :start_date %>
-        <%= form.input :end_date %>
+        <%= form.input :datestring, input_html: { class: "daterange" } %>
         <%= form.input :time_10 %>
         <%= form.input :time_12 %>
         <%= form.input :time_2 %>
