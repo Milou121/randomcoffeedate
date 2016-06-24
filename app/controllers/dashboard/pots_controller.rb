@@ -18,6 +18,11 @@ class Dashboard::PotsController < ApplicationController
       marker.lat location.latitude
       marker.lng location.longitude
       marker.infowindow marker_string(location)
+      marker.picture({
+                    url: "http://res.cloudinary.com/dvj9whqch/image/upload/v1466683670/filter_ncpxki.png",
+                    width: "55",
+                    height: "48"
+                   })
     end
   end
 
