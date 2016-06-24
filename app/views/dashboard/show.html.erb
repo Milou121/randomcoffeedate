@@ -35,6 +35,7 @@
     <% unless @confirmed_cups.empty? %>
     <% @confirmed_cups.each do |cup| %>
     <%= cup.date %>
+    <%= cup.name %>
     <%= form_tag cancel_dashboard_cup_path(cup), method: :patch do %>
     <%= submit_tag("cancel") %>
     <% end %>
@@ -42,7 +43,7 @@
     <% else %>
 
 
-    <p>You don't have a cuppa! Make some!</p>
+    <p>You don't have a cuppa! Cuppa?</p>
 
 
     <% end %>
