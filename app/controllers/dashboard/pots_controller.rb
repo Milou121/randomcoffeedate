@@ -29,17 +29,8 @@ class Dashboard::PotsController < ApplicationController
 
   def create
     @pot = current_user.pots.build(pot_params)
-
-    date_array = @pot.datestring.split(" - ")
-    start_date = Date.parse(date_array[0])
-    end_date = Date.parse(date_array[1])
-
-    @pot.start_date = start_date
-    @pot.end_date = end_date
-
-    params[:friend_ids].each do |friend_id|
-      @pot.pot_friends.new(friend_id: friend_id)
-    end
+    set_dates
+    set_pot_friends
 
     if @pot.save
       check_for_pot_matching
@@ -50,6 +41,7 @@ class Dashboard::PotsController < ApplicationController
         else
         redirect_to dashboard_path
       end
+
     else
       render :new
     end
@@ -140,6 +132,17 @@ class Dashboard::PotsController < ApplicationController
 
   end
 
+  def set_dates
+    date_array = @pot.datestring.split(" - ")
+    @pot.start_date = Date.parse(date_array[0])
+    @pot.end_date = Date.parse(date_array[1])
+  end
+
+  def set_pot_friends
+    params[:friend_ids].each do |friend_id|
+      @pot.pot_friends.new(friend_id: friend_id)
+    end
+  end
 
   def pot_params
     params.require(:pot).permit(:location_id, :datestring, :time_10, :time_6, :time_4, :time_2, :time_12)
