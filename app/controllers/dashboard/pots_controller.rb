@@ -20,9 +20,10 @@ class Dashboard::PotsController < ApplicationController
       marker.infowindow marker_string(location)
       marker.picture({
                     url: "http://res.cloudinary.com/dvj9whqch/image/upload/v1466683670/filter_ncpxki.png",
-                    width: "55",
-                    height: "48"
+                    width: "100",
+                    height: "100"
                    })
+
     end
   end
 
