@@ -44,8 +44,7 @@
   </div>
   <div class="row" class="boxes">
       <div class="col-xs-12" id="time-select">
-        <%= form.input :start_date %>
-        <%= form.input :end_date %>
+        <%= form.input :datestring, input_html: { class: "daterange" } %>
         <%= form.input :time_10 %>
         <%= form.input :time_12 %>
         <%= form.input :time_2 %>

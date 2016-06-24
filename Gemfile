@@ -36,6 +36,10 @@ gem 'enumerize'
 # Image picker
 gem 'image-picker-rails'
 
+# Date picker
+gem 'momentjs-rails'
+gem 'bootstrap-daterangepicker-rails'
+
 # Figaro
 gem 'figaro'
 
