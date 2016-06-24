@@ -7,9 +7,9 @@
        Pending Cuppa
      </h3>
      <% if @pot %>
-     <%= @pot.each do |cup| %>
-     <%= pot.pending %>
-     <%= form_tag dashboard_pot_path(pending), method: :delete do %>
+     <%= @pot.each do |pot| %>
+     <%= pot.user_id %>
+     <%= form_tag dashboard_pot_path(pot), method: :delete do %>
      <%= submit_tag("cancel") %>
      <% end %>
      <% end %>
@@ -29,8 +29,8 @@
     </h3>
     <% if @cup %>
     <% @cup.each do |cup| %>
-    <%= cup.pending %>
-    <%= form_tag dashboard_pot_path(pending), method: :delete do %>
+    <%= cup.date %>
+    <%= form_tag dashboard_pot_path(cup), method: :delete do %>
     <%= submit_tag("cancel") %>
     <% end %>
     <% end %>
