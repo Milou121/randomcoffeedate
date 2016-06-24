@@ -18,12 +18,14 @@
 //= require underscore
 //= require gmaps/google
 //= require image-picker
+//= require moment
+//= require daterangepicker
 
 // YOUR SCRIPTS
 
 // All our javascript
 //= require pots
-
+//= require datepicker
 //= require home_cuppa_game
 
 //= require scroll
