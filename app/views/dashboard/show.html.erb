@@ -8,8 +8,13 @@
      </h3>
      <% unless @pots.empty? %>
      <% @pots.each do |pot| %>
-     <%= pot.user_id %>
-     <%= form_tag dashboard_pot_path(pot), method: :delete do %>
+     <%= pot.start_date %>
+     <br>
+     <% pot_location = pot.location_id %>
+     <% location = Location.find(pot_location) %>
+     <%= location.name %>
+
+     <%= form_tag dashboard_pot_path(pot), method: :destroy do %>
      <%= submit_tag("cancel") %>
      <% end %>
      <% end %>
@@ -27,10 +32,10 @@
      <h3>
       Your Cuppa Date
     </h3>
-    <% unless @cups.empty? %>
-    <% @cups.each do |cup| %>
+    <% unless @confirmed_cups.empty? %>
+    <% @confirmed_cups.each do |cup| %>
     <%= cup.date %>
-    <%= form_tag dashboard_pot_path(cup), method: :delete do %>
+    <%= form_tag cancel_dashboard_cup_path(cup), method: :patch do %>
     <%= submit_tag("cancel") %>
     <% end %>
     <% end %>
@@ -50,6 +55,13 @@
     <h3>
       Canceled Cuppa
     </h3>
+        <% unless @canceled_cups.empty? %>
+    <% @canceled_cups.each do |cup| %>
+    <%= cup.date %>
+    <br>
+    <%= cup.location.name %>
+    <% end %>
+    <% end %>
 
   </div>
 
