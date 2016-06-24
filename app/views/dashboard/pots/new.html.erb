@@ -3,44 +3,45 @@
  <h1 style="text-align: center; margin-top: 100px;">Create a Cuppa Date</h1>
  <div class="scroll">
   <section id="scroll" class="demo">
-  <a href="#beans"><span></span></a>
+    <a href="#beans"><span></span></a>
   </section>
 </div>
-</div> 
+</div>
 
-<div class="wrapper" id="beans">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="scroll">
-            <section id="scroll" class="demo">
-              <a href="#where"><span></span></a>
-            </section>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12" id="friends-select">
-         <h3> Select your Friends </h3>
-         <div role="group" aria-label="Image Option Buttons">
-          <div class="button-blue" style="text-decoration: none;">
-            <a href="#" id="toggleAll" data-toggle="button" aria-pressed="false" autocomplete="off" >
-              Select All Friends
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="friend-select">
-            <%= simple_form_for [:dashboard, @pot] do |form| %>
-            <%= select_tag "friend_ids[]", options_for_select(@friends.map { |friend| [friend.username, friend.id, "data-img-src" => friend.photo.url] }), multiple: true, class: "js-pot--friends-picker" %>
-            <select multiple='multiple' class='image-picker show-labels show-html hide' name='imageList'></select>
-          </div>
+<div class="wrapper-white" id="beans">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="scroll">
+          <section id="scroll" class="demo">
+            <a href="#where"><span></span></a>
+          </section>
         </div>
       </div>
     </div>
+    <div class="row">
+      <div class="col-xs-12" id="friends-select">
+       <h3> Select your Friends </h3>
+       <div role="group" aria-label="Image Option Buttons">
+        <div class="button-blue" id="all_select" style="text-decoration: none;">
+          <a href="#" id="toggleAll" data-toggle="button" aria-pressed="false" autocomplete="off" >
+            Select All Friends
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="friend-select">
+          <%= simple_form_for [:dashboard, @pot] do |form| %>
+          <%= select_tag "friend_ids[]", options_for_select(@friends.map { |friend| [friend.username, friend.id, "data-img-src" => friend.photo.url] }), multiple: true, class: "js-pot--friends-picker" %>
+          <select multiple='multiple' class='image-picker show-labels show-html hide' name='imageList'></select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 
 
@@ -48,7 +49,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12" id="location-select">
-      <h3> Choose a Cafe </h3>
+        <h3> Choose a Cafe </h3>
         <%= form.association :location, as: :hidden %>
         <div id="map" style="width: 75%; height: 550px; margin-top: 20px; margin-right: auto; margin-left: auto; "></div>
         <% content_for(:after_js) do %>
@@ -59,42 +60,50 @@
         "featureType": "water",
         "elementType": "geometry.fill",
         "stylers": [
-            {
-                "color": "#AFD2FF"
-            }
-        ]
+        {
+        "color": "#AFD2FF"
+      }
+      ]
     }] } }, function(){
-        markers = handler.addMarkers(<%= raw @markers.to_json %>);
-        handler.bounds.extendWith(markers);
-        handler.fitMapToBounds();
-      });
-    })
-    <% end %>
-    <% end %>
+    markers = handler.addMarkers(<%= raw @markers.to_json %>);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+  });
+})
+<% end %>
+<% end %>
 
-    <div class="location-text">
-      <br>
-      <h3>
-        Your location is <span class="js-pot--selected-location">not selected</span>
-      </h3>
-    </div>
-  </div>
+<div class="location-text">
+  <h4>
+    Your location is <span class="js-pot--selected-location">not selected yet</span>
+  </h4>
+</div>
+</div>
 </div>
 </div>
 </div>
 
-<div class="wrapper" id="when">
+<div class="wrapper-white" id="when">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12" id="time-select" style="margin-top: 60px;">
+      <div class="col-xs-6" id="time-select" style="margin-top: 60px;">
+        <h3> Pick a date ..</h3>
         <div style="margin-left:auto; margin-right:auto;">
-        <%= form.input :datestring, input_html: { class: "daterange" } %>
+          <%= form.input :datestring, input_html: { class: "daterange" } %>
         </div>
+      </div>
+      <div class="col-xs-6" id="time-select" style="margin-top: 60px;">
+        <h3> .. and select the time(s)!</h3>
         <%= form.input :time_10 %>
         <%= form.input :time_12 %>
         <%= form.input :time_2 %>
         <%= form.input :time_4 %>
         <%= form.input :time_6 %>
+      </div>
+      <div class="col-xs-12" id="time-select" style="margin-top: 60px;">
+        <div class="almost_ready">
+          <p> Selected the friends you want to add to your pot? And chose a nice location? If you are sure that you are available on these dates and times, you're all set and one click away from finding that match!</p>
+        </div>
         <%= form.submit class: "button-blue"%>
         <% end %>
       </div>
