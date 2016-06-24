@@ -9,9 +9,12 @@
 @import "font-awesome";
 @import "compass";
 @import "image-picker";
+@import "daterangepicker-bs3";
 
 // Your CSS
 @import "layout/index";
 @import "components/index";
 @import "pages/index";
 @import "vendor/index";
+
+@import "jquery-ui";

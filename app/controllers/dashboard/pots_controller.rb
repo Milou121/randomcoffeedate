@@ -18,11 +18,23 @@ class Dashboard::PotsController < ApplicationController
       marker.lat location.latitude
       marker.lng location.longitude
       marker.infowindow marker_string(location)
+      marker.picture({
+                    url: "http://res.cloudinary.com/dvj9whqch/image/upload/v1466683670/filter_ncpxki.png",
+                    width: "55",
+                    height: "48"
+                   })
     end
   end
 
   def create
     @pot = current_user.pots.build(pot_params)
+
+    date_array = @pot.datestring.split(" - ")
+    start_date = Date.parse(date_array[0])
+    end_date = Date.parse(date_array[1])
+
+    @pot.start_date = start_date
+    @pot.end_date = end_date
 
     params[:friend_ids].each do |friend_id|
       @pot.pot_friends.new(friend_id: friend_id)
@@ -123,13 +135,13 @@ class Dashboard::PotsController < ApplicationController
     @pot.update(cup: @cup)
     matching_pot.update(cup: @cup)
 
-    UserMailer.cuppa_match(@user, invitee).deliver_now
+    UserMailer.cuppa_match(@user, matching_pot.user).deliver_now
 
   end
 
 
   def pot_params
-    params.require(:pot).permit(:location_id, :start_date, :end_date, :time_10, :time_6, :time_4, :time_2, :time_12)
+    params.require(:pot).permit(:location_id, :datestring, :time_10, :time_6, :time_4, :time_2, :time_12)
   end
 
   def marker_string(location)

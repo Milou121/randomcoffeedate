@@ -7,9 +7,9 @@
        Pending Cuppa
      </h3>
      <% if @pot %>
-     <% @pot.each do |cup| %>
-     <%= pot.pending %>
-     <%= form_tag dashboard_pot_path(pending), method: :delete do %>
+     <%= @pot.each do |pot| %>
+     <%= pot.user_id %>
+     <%= form_tag dashboard_pot_path(pot), method: :delete do %>
      <%= submit_tag("cancel") %>
      <% end %>
      <% end %>
@@ -23,14 +23,14 @@
    </div>
 
    <div class="col-xs-12 col-sm-4">
-     <%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1466683670/confirmcup_peyqpp.png") %>
+     <%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1466761054/confirmcup_ffpgfm.png") %>
      <h3>
       Your Cuppa Date
     </h3>
     <% if @cup %>
     <% @cup.each do |cup| %>
-    <%= cup.pending %>
-    <%= form_tag dashboard_pot_path(pending), method: :delete do %>
+    <%= cup.date %>
+    <%= form_tag dashboard_pot_path(cup), method: :delete do %>
     <%= submit_tag("cancel") %>
     <% end %>
     <% end %>
