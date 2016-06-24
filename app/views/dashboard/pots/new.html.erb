@@ -1,9 +1,27 @@
 <!-- <div class="page-title"><h1> Create Your Pot</h1></div> -->
-  <div class="wrapper" id="beans">
+<div class="wrapper" id ="create">
+ <h1 style="text-align: center; margin-top: 100px;">Create a Cuppa Date</h1>
+ <div class="scroll">
+  <section id="scroll" class="demo">
+  <a href="#beans"><span></span></a>
+  </section>
+</div>
+</div> 
+
+<div class="wrapper" id="beans">
     <div class="container">
       <div class="row">
-        <div class="col-xs-12" class="boxes" id="friends-select">
-         <h3> Select your Friends for this Cuppa Date</h3>
+        <div class="col-xs-12">
+          <div class="scroll">
+            <section id="scroll" class="demo">
+              <a href="#where"><span></span></a>
+            </section>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12" id="friends-select">
+         <h3> Select your Friends </h3>
          <div role="group" aria-label="Image Option Buttons">
           <div class="button-blue" style="text-decoration: none;">
             <a href="#" id="toggleAll" data-toggle="button" aria-pressed="false" autocomplete="off" >
@@ -15,33 +33,24 @@
 
       <div class="row">
         <div class="col-xs-12">
-          <div class="scroll">
-            <section id="scroll" class="demo">
-              <a href="#map"><span></span></a>
-            </section>
+          <div class="friend-select">
+            <%= simple_form_for [:dashboard, @pot] do |form| %>
+            <%= select_tag "friend_ids[]", options_for_select(@friends.map { |friend| [friend.username, friend.id, "data-img-src" => friend.photo.url] }), multiple: true, class: "js-pot--friends-picker" %>
+            <select multiple='multiple' class='image-picker show-labels show-html hide' name='imageList'></select>
           </div>
         </div>
       </div>
-
-
-      <div class="row">
-        <div class="col-xs-12">
-          <%= simple_form_for [:dashboard, @pot] do |form| %>
-          <%= select_tag "friend_ids[]", options_for_select(@friends.map { |friend| [friend.username, friend.id, "data-img-src" => friend.photo.url] }), multiple: true, class: "js-pot--friends-picker" %>
-
-          <select multiple='multiple' class='image-picker show-labels show-html hide' name='imageList'></select>
-        </div>
-      </div>
     </div>
-  </div>
+</div>
 
 
 <div class="wrapper" id="where">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12" class="boxes" id="location-select">
+      <div class="col-xs-12" id="location-select">
+      <h3> Choose a Cafe </h3>
         <%= form.association :location, as: :hidden %>
-        <div id="map" style="width: 75%; height: 550px; margin-top: 20px;"></div>
+        <div id="map" style="width: 75%; height: 550px; margin-top: 20px; margin-right: auto; margin-left: auto; "></div>
         <% content_for(:after_js) do %>
         <%= javascript_tag do %>
         $(document).on('ready', function() {
@@ -55,11 +64,11 @@
     <% end %>
     <% end %>
 
-    <div class="location-text" class="boxes">
+    <div class="location-text">
       <br>
-      <h1>
+      <h3>
         Your location is <span class="js-pot--selected-location">not selected</span>
-      </h1>
+      </h3>
     </div>
   </div>
 </div>
@@ -68,9 +77,11 @@
 
 <div class="wrapper" id="when">
   <div class="container">
-    <div class="row" class="boxes">
+    <div class="row">
       <div class="col-xs-12" id="time-select" style="margin-top: 60px;">
+        <div style="margin-left:auto; margin-right:auto;">
         <%= form.input :datestring, input_html: { class: "daterange" } %>
+        </div>
         <%= form.input :time_10 %>
         <%= form.input :time_12 %>
         <%= form.input :time_2 %>
