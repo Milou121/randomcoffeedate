@@ -16,6 +16,11 @@ class UserMailer < ApplicationMailer
     mail(to: user.email, subject: 'You have a cuppa match!')
   end
 
+  def cancel_notification(user)
+    @user = user
+    mail(to: user.email, subject: 'Your cuppa got canceled')
+  end
+
   # def welcome(user)
   #   @user = user  # Instance variable => available in view
   #   mail(to: user.email, subject: 'Welcome to Cuppa!')

@@ -1,0 +1,31 @@
+.yourcup {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  width: 450px;
+  border-radius: 10px;
+  padding: 30px 30px;
+  margin-bottom: 30px;
+  margin-right: auto;
+  margin-left: auto;
+  opacity: 0.85;
+  z-index: 55;
+}
+
+body.dashboard\/cups-show {
+background: url("http://res.cloudinary.com/dvj9whqch/image/upload/v1467021087/coffe-bean-texture-2_ga7ebq.png");
+top: -900px;
+}
+
+#cup-page-title {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 20px;
+  margin-top: -60px;
+  z-index: 55;
+}
+
+.cup {
+  color: #613720;
+}

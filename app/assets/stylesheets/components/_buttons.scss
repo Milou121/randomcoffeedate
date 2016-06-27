@@ -3,14 +3,28 @@
   padding: 10px 15px;
   border-radius: 4px;
   font-weight: bold;
-  background: $blue;
+  background: #1640B0;
   transition: background 0.3s ease;
   border: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
+
+.button-blue-side-margin {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .button-blue:hover {
   opacity: 1;
-  background: #FBB53D;
+  background: #62A7FF;
   text-decoration: none;
   color: white;
   cursor: pointer;
+}
+
+#all_select {
+  width: 250px;
+  margin-right: auto;
+  margin-left: auto;
 }

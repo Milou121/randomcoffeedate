@@ -7,16 +7,15 @@ class Dashboard::CupsController < ApplicationController
     @cup = current_user.all_cups.find(params[:id])
   end
 
-  def accept
-    @cup = @cup.update(status: "accept")
-    redirect_to dashboard_path
-  end
-
-  def deny
-    @cup = @cup.update(status: "deny")
-    redirect_to dashboard_path
-  end
-
   def cancel
+    @cup = current_user.all_cups.where(status: "confirmed").find(params[:id])
+    @cup.status = "canceled"
+    @cup.canceled_by = current_user
+    @cup.save
+    @sad_person = current_user == @cup.sender ? @cup.receiver : @cup.sender
+    #todo : mailer send a canceled mail to other person
+    # Mailer.
+    UserMailer.cancel_notification(@sad_person).deliver_now
+    redirect_to dashboard_path
   end
 end

@@ -29,4 +29,5 @@ en:
         time_2: "2pm - 4pm"
         time_12: "12pm - 2pm"
         time_10: "10am - 12pm"
+        datestring: "Please select your available date(s) here!"
 

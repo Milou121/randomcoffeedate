@@ -4,29 +4,19 @@ class Dashboard::PotsController < ApplicationController
   end
 
   def show
-    @pot = current_user.pots.where(cup_id: nil).find(params[:id])
+    @pots = current_user.pots.where(cup_id: nil).find(params[:id])
     @cup = Cup.find(params[:id]) # how to show the date and time of this event
   end
 
   def new
     @pot = Pot.new
-    @friends = current_user.friends
-    @locations = Location.all
-
-    # Let's DYNAMICALLY build the markers for the view.
-    @markers = Gmaps4rails.build_markers(@locations) do |location, marker|
-      marker.lat location.latitude
-      marker.lng location.longitude
-      marker.infowindow marker_string(location)
-    end
+    init_pot
   end
 
   def create
     @pot = current_user.pots.build(pot_params)
-
-    params[:friend_ids].each do |friend_id|
-      @pot.pot_friends.new(friend_id: friend_id)
-    end
+    set_dates
+    set_pot_friends
 
     if @pot.save
       check_for_pot_matching
@@ -38,6 +28,8 @@ class Dashboard::PotsController < ApplicationController
         redirect_to dashboard_path
       end
     else
+      init_pot
+      flash.now[:alert] = "Can't create cuppa pot. #{@pot.errors.full_messages.join('! ')}"
       render :new
     end
   end
@@ -118,10 +110,12 @@ class Dashboard::PotsController < ApplicationController
       date: date,
       sender: current_user,
       receiver: matching_pot.user,
-      location_id: location
+      location_id: location,
+      status: "confirmed"
     )
     @pot.update(cup: @cup)
     matching_pot.update(cup: @cup)
+
 
     CupMailer.cuppa_match(@cup, current_user).deliver_now
     CupMailer.cuppa_match(@cup, matching_pot.user).deliver_now
@@ -129,8 +123,41 @@ class Dashboard::PotsController < ApplicationController
   end
 
 
+  def init_pot
+    @friends = current_user.friends
+    @locations = Location.all
+
+    # Let's DYNAMICALLY build the markers for the view.
+    @markers = Gmaps4rails.build_markers(@locations) do |location, marker|
+      marker.lat location.latitude
+      marker.lng location.longitude
+      marker.infowindow marker_string(location)
+      marker.picture({
+                    url: "http://res.cloudinary.com/dvj9whqch/image/upload/v1466683670/filter_ncpxki.png",
+                    width: "100",
+                    height: "100"
+                   })
+
+    end
+  end
+
+  def set_dates
+    date_array = @pot.datestring.split(" - ")
+    @pot.start_date = Date.parse(date_array[0])
+    @pot.end_date = Date.parse(date_array[1])
+  end
+
+  def set_pot_friends
+    @friend_ids = params[:friend_ids]
+    return unless @friend_ids
+
+    @friend_ids.each do |friend_id|
+      @pot.pot_friends.new(friend_id: friend_id)
+    end
+  end
+
   def pot_params
-    params.require(:pot).permit(:location_id, :start_date, :end_date, :time_10, :time_6, :time_4, :time_2, :time_12)
+    params.require(:pot).permit(:location_id, :datestring, :time_10, :time_6, :time_4, :time_2, :time_12)
   end
 
   def marker_string(location)
