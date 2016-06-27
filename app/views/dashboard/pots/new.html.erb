@@ -21,7 +21,7 @@
     </div>
     <div class="row">
       <div class="col-xs-12" id="friends-select">
-       <h3> Select your Friends </h3>
+       <h3> Choose your beans </h3>
        <div role="group" aria-label="Image Option Buttons">
         <div class="button-blue" id="all_select" style="text-decoration: none;">
           <a href="#" id="toggleAll" data-toggle="button" aria-pressed="false" autocomplete="off" >
@@ -49,14 +49,14 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12" id="location-select">
-        <h3> Choose a Cafe </h3>
+        <h3 class="map-title"> Choose a Cafe </h3>
         <%= form.association :location, as: :hidden %>
-        <div id="map" style="width: 75%; height: 550px; margin-top: 20px; margin-right: auto; margin-left: auto; "></div>
+        <div id="map" style="width: 75%; height: 500px; margin-top: 20px; margin-right: auto; margin-left: auto; "></div>
         <% content_for(:after_js) do %>
         <%= javascript_tag do %>
         $(document).on('ready', function() {
         handler = Gmaps.build('Google');
-        handler.buildMap({ internal: { id: 'map' }, provider: { styles: [{"stylers":[{"hue":"#2c3e50"},{"saturation":250}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":50},{"visibility":"simplified"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]}, {
+        handler.buildMap({ internal: { id: 'map' }, provider: {  scrollwheel: false, styles: [{"stylers":[{"hue":"#2c3e50"},{"saturation":250}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":50},{"visibility":"simplified"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]}, {
         "featureType": "water",
         "elementType": "geometry.fill",
         "stylers": [
