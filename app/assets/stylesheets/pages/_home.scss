@@ -20,9 +20,6 @@
 }
 
 .how {
-  background: url(http://res.cloudinary.com/dvj9whqch/image/upload/v1466777777/coffe-stain-texture_ok8zf1.jpg);
-  width: 100vw;
-  height: 120vh;
   display: flex;
   justify-content: center; /* align horizontal */
   align-items: center;
@@ -52,7 +49,7 @@
 }
 
 .facts {
-
+  background: url(http://res.cloudinary.com/dvj9whqch/image/upload/v1466777777/coffe-stain-texture_ok8zf1.jpg);
   background-size: cover !important;
   width: 100vw;
   height: 100vh;
@@ -128,20 +125,6 @@
   margin-left: 70px;
   display: none;
 }
-
-
-.color_0 {
-  background-color: #70B3CD !important;
-}
-
-.color_1 {
-  background-color: #B12F2F !important;
-}
-
-.color_2 {
-  background-color: #1F8E1A !important;
-}
-
 
 
 .hide {

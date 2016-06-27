@@ -35,7 +35,7 @@ $(document).ready(function(){
         top: 'easeOutBounce'
       },
       complete: function() {
-        kick.html("<img src='http://res.cloudinary.com/dvj9whqch/image/upload/v1466598929/bean_fbh78s.png' alt='' />");
+        kick.html("<img src='http://res.cloudinary.com/dvj9whqch/image/upload/v1467032314/beanbw_i6lu5e.png' alt='' />");
         kick.animate({
           top: "370px"
         }, {
@@ -48,17 +48,17 @@ $(document).ready(function(){
 
             // Close all the three boxes in a regular interval.
             box1.delay(500).queue(function(n) {
-              $(this).html("<img src=http://res.cloudinary.com/dvj9whqch/image/upload/v1466599404/cupdown_oimzdf.png alt='' />");
+              $(this).html("<img src='http://res.cloudinary.com/dvj9whqch/image/upload/v1467032314/cupdown_zoduus.png' alt='' />");
               if(ans == 1) kick.hide();
               n();
             });
             box2.delay(1000).queue(function(n) {
-              $(this).html("<img src='http://res.cloudinary.com/dvj9whqch/image/upload/v1466599404/cupdown_oimzdf.png' alt='' />");
+              $(this).html("<img src='http://res.cloudinary.com/dvj9whqch/image/upload/v1467032314/cupdown_zoduus.png' alt='' />");
               if(ans == 2) kick.hide();
               n();
             });
             box3.delay(1500).queue(function(n) {
-              $(this).html("<img src='http://res.cloudinary.com/dvj9whqch/image/upload/v1466599404/cupdown_oimzdf.png' alt='' />");
+              $(this).html("<img src='http://res.cloudinary.com/dvj9whqch/image/upload/v1467032314/cupdown_zoduus.png' alt='' />");
               if(ans == 3) kick.hide();
 
 
@@ -116,14 +116,14 @@ $(document).ready(function(){
 
 
               }, shuffleSpeed);
-              $("#box1").html('<img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1466603046/cupwha_yk6jgx.png" alt="">');
-              $("#box1").append(' <img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1466603046/cupwha_yk6jgx.png" alt="">');
+              $("#box1").html('<img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1467032314/cupdownq_fyzus1.png" alt="">');
+              $("#box1").append('<img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1467032314/cupdownq_fyzus1.png" alt="">');
 
-              $("#box2").html('<img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1466603046/cupwha_yk6jgx.png" alt="">');
-              $("#box2").append(' <img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1466603046/cupwha_yk6jgx.png" alt="">');
+              $("#box2").html('<img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1467032314/cupdownq_fyzus1.png" alt="">');
+              $("#box2").append('<img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1467032314/cupdownq_fyzus1.png" alt="">');
 
-              $("#box3").html('<img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1466603046/cupwha_yk6jgx.png" alt="">');
-              $("#box3").append(' <img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1466603046/cupwha_yk6jgx.png" alt="">');
+              $("#box3").html('<img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1467032314/cupdownq_fyzus1.png" alt="">');
+              $("#box3").append('<img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1467032314/cupdownq_fyzus1.png" alt="">');
 
               setTimeout(function() {
                 nuberOfShuffels * shuffleSpeed});
