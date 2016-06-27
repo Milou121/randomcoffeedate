@@ -29,5 +29,3 @@
 //= require home_cuppa_game
 //= require random_facts
 //= require scroll
-//= require map
-
