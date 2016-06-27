@@ -6,6 +6,24 @@
   position: relative;
 }
 
+#scroll-to-friends {
+  position: absolute;
+  right: 50%;
+  bottom: 270px;
+}
+
+#scroll-to-location {
+  position: absolute;
+  right: 20px;
+  bottom: 50%;
+}
+
+#scroll-to-time {
+  position: absolute;
+  right: 20px;
+  bottom: 50%;
+}
+
 .time-select-wrapper {
   display: flex;
 }
@@ -14,6 +32,7 @@
 #beans {
   width: 100vw;
   height: 100vh;
+  position: relative;
 }
 
 #button-blue {
@@ -77,6 +96,7 @@ ul.thumbnails.image_picker_selector li .thumbnail.selected {
   width: 100vw;
   height: 100vh;
   text-align: center;
+  position: relative;
 }
 
 #location-select {
@@ -89,6 +109,7 @@ ul.thumbnails.image_picker_selector li .thumbnail.selected {
   width: 100vw;
   height: 100vh;
   justify-content: center;
+  position: relative;
 }
 
 #time-select {
