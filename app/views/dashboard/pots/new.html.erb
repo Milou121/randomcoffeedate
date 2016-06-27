@@ -20,14 +20,13 @@
         </a>
       </div>
     </div>
-
     <div class="friend-select">
       <%= simple_form_for [:dashboard, @pot] do |form| %>
-      <%= select_tag "friend_ids[]", options_for_select(@friends.map { |friend| [friend.username, friend.id, "data-img-src" => friend.photo.url] }), multiple: true, class: "js-pot--friends-picker" %>
-      <select multiple='multiple' class='image-picker show-labels show-html hide' name='imageList'>
-      </select>
+      <%= select_tag "friend_ids[]", options_for_select(@friends.map { |friend| [friend.username, friend.id, "data-img-src" => friend.photo.url] }, @friend_ids), multiple: true, class: "js-pot--friends-picker" %>
+      <select multiple='multiple' class='image-picker show-labels show-html hide' name='imageList'></select>
     </div>
   </div>
+</div>
   <div id="scroll">
     <a href="#where"><span></span></a>
   </div>

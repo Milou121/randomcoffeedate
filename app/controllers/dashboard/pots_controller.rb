@@ -29,7 +29,7 @@ class Dashboard::PotsController < ApplicationController
       end
     else
       init_pot
-      flash[:alert] = "Can't create cuppa pot. #{@pot.errors.full_messages.join('! ')}"
+      flash.now[:alert] = "Can't create cuppa pot. #{@pot.errors.full_messages.join('! ')}"
       render :new
     end
   end
@@ -144,9 +144,10 @@ class Dashboard::PotsController < ApplicationController
   end
 
   def set_pot_friends
-    return unless params[:friend_ids]
+    @friend_ids = params[:friend_ids]
+    return unless @friend_ids
 
-    params[:friend_ids].each do |friend_id|
+    @friend_ids.each do |friend_id|
       @pot.pot_friends.new(friend_id: friend_id)
     end
   end

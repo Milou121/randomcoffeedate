@@ -17,7 +17,7 @@ class Pot < ActiveRecord::Base
   private
 
   def has_at_least_two_friends
-    if friend_ids.size < 2
+    if pot_friends.size < 2
       errors.add(:base, "You must select at least 2 friends")
     end
   end
