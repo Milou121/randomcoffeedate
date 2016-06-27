@@ -7,7 +7,11 @@
   margin-right: auto;
   text-align: center;
   width: 500px;
+  color: white;
+}
 
+body.pages-home {
+  background-image: url("http://res.cloudinary.com/dvj9whqch/image/upload/v1467041538/homegb_rkjnhh.png");
 }
 
 .top {
@@ -49,7 +53,7 @@
 }
 
 .facts {
-  background: url(http://res.cloudinary.com/dvj9whqch/image/upload/v1466777777/coffe-stain-texture_ok8zf1.jpg);
+  background: url("http://res.cloudinary.com/dvj9whqch/image/upload/v1467032503/coffestainbw_xjckuq.png");
   background-size: cover !important;
   width: 100vw;
   height: 100vh;
