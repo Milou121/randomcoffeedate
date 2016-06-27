@@ -17,7 +17,7 @@
          <% location = Location.find(pot_location) %>
          <%= location.name %>
 
-         <%= form_tag dashboard_pot_path(pot), method: :destroy do %>
+         <%= form_tag dashboard_pot_path(pot), method: :delete do %>
          <%= submit_tag("cancel") %>
          <% end %>
          <% end %>
