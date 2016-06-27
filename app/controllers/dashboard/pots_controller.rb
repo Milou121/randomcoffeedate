@@ -116,8 +116,12 @@ class Dashboard::PotsController < ApplicationController
     @pot.update(cup: @cup)
     matching_pot.update(cup: @cup)
 
-    UserMailer.cuppa_match(@user, matching_pot.user).deliver_now
+
+    CupMailer.cuppa_match(@cup, current_user).deliver_now
+    CupMailer.cuppa_match(@cup, matching_pot.user).deliver_now
+
   end
+
 
   def init_pot
     @friends = current_user.friends
