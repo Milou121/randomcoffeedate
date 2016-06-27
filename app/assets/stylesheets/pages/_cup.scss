@@ -9,6 +9,7 @@
   margin-right: auto;
   margin-left: auto;
   opacity: 0.85;
+  z-index: 55;
 }
 
 body.dashboard\/cups-show {
@@ -22,8 +23,9 @@ body.dashboard\/cups-show {
   text-align: center;
   padding-bottom: 20px;
   margin-top: -60px;
+  z-index: 55;
 }
 
 .cup {
-  color: white;
+  color: #613720;
 }

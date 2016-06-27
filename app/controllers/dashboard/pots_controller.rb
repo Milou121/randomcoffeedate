@@ -29,7 +29,7 @@ class Dashboard::PotsController < ApplicationController
       end
     else
       init_pot
-      flash[:alert] = "Can't create cuppa pot. #{@pot.errors.full_messages.join('! ')}"
+      flash.now[:alert] = "Can't create cuppa pot. #{@pot.errors.full_messages.join('! ')}"
       render :new
     end
   end
@@ -116,8 +116,12 @@ class Dashboard::PotsController < ApplicationController
     @pot.update(cup: @cup)
     matching_pot.update(cup: @cup)
 
-    UserMailer.cuppa_match(@user, matching_pot.user).deliver_now
+
+    CupMailer.cuppa_match(@cup, current_user).deliver_now
+    CupMailer.cuppa_match(@cup, matching_pot.user).deliver_now
+
   end
+
 
   def init_pot
     @friends = current_user.friends
@@ -144,9 +148,10 @@ class Dashboard::PotsController < ApplicationController
   end
 
   def set_pot_friends
-    return unless params[:friend_ids]
+    @friend_ids = params[:friend_ids]
+    return unless @friend_ids
 
-    params[:friend_ids].each do |friend_id|
+    @friend_ids.each do |friend_id|
       @pot.pot_friends.new(friend_id: friend_id)
     end
   end
