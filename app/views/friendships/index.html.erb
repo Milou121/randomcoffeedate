@@ -2,8 +2,9 @@
 	<h3>
 		Your Bean Friends
 	</h3>
+  <%= link_to "Back to dashboard", :back %>
 	<br>
-	<br>
+  <br>
 </div>
 <div class="container">
 	<div class="row">
@@ -13,11 +14,10 @@
 			<%= form_tag friend_path(friend), data: {confirm: "Are you sure?"},  method: :delete do %>
 			<%= friend.username %>
       <br>
-			<%= submit_tag("delete", class: "button-blue")%>
-			<% end %>
-		</div>
-		<% end %>
-
-	</div>
+      <%= submit_tag("delete", class: "button-blue")%>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
 </div>
 
