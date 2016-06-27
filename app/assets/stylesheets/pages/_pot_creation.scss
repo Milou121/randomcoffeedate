@@ -10,6 +10,30 @@
   display: flex;
 }
 
+///// No friends info
+.no-friends-card {
+  display: flex;
+  background-color: white;
+  width: 450px;
+  height: 250px;
+  padding: 20px 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+}
+
+.no_friends {
+  width: 100vw;
+  height: 40vh;
+}
+
+.add-friends {
+  width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
 ////////////////* Select Friends*/
 #beans {
   width: 100vw;
