@@ -1,9 +1,31 @@
+body.dashboard\/pots-new {
+  background-image: url("http://res.cloudinary.com/dvj9whqch/image/upload/v1467041538/homegb_rkjnhh.png");
+}
+
 
 ///////////////////* First Page */
 .create {
   width: 100vw;
   height: 100vh;
   position: relative;
+}
+
+#scroll-to-friends {
+  position: absolute;
+  right: 50%;
+  top: 270px;
+}
+
+#scroll-to-location {
+  position: absolute;
+  right: 50%;
+  bottom: -900px;
+}
+
+#scroll-to-time {
+  position: absolute;
+  right: 50%;
+  bottom: 15px;
 }
 
 .time-select-wrapper {
@@ -112,13 +134,15 @@ ul.thumbnails.image_picker_selector li .thumbnail.selected {
 #where {
   width: 100vw;
   height: 100vh;
-  justify-content: center;
+  position: relative;
 }
 
 #time-select {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+  width: 350px;
 }
 
 #pot_datestring {
