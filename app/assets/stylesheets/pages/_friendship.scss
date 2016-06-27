@@ -1,6 +1,6 @@
 .friendship-title {
   text-align: center;
-  color: #613720;
+  color: white;
   padding-bottom: 20px;
 }
 
@@ -24,6 +24,12 @@
 
 .layout-center {
   text-align: center;
+}
+
+body.friendships-new {
+  background-image: url("http://res.cloudinary.com/dvj9whqch/image/upload/v1467040869/addfriendbg_x7zsoa.png");
+  background-size: cover !important;
+
 }
 
 @keyframes swing {

@@ -7,7 +7,11 @@
   margin-right: auto;
   text-align: center;
   width: 500px;
+  color: white;
+}
 
+body.pages-home {
+  background-image: url("http://res.cloudinary.com/dvj9whqch/image/upload/v1467041538/homegb_rkjnhh.png");
 }
 
 .top {
@@ -49,7 +53,9 @@
 }
 
 .facts {
-  background: url('http://res.cloudinary.com/dvj9whqch/image/upload/v1466759075/coffe-bean-texture_b9ovid.jpg');
+
+  background: url("http://res.cloudinary.com/dvj9whqch/image/upload/v1467032503/coffestainbw_xjckuq.png");
+
   background-size: cover !important;
   width: 80vw;
   height: 80vh;
@@ -120,20 +126,6 @@
   margin-left: 70px;
   display: none;
 }
-
-
-.color_0 {
-  background-color: #70B3CD !important;
-}
-
-.color_1 {
-  background-color: #B12F2F !important;
-}
-
-.color_2 {
-  background-color: #1F8E1A !important;
-}
-
 
 
 .hide {
