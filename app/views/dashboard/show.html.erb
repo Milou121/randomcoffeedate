@@ -3,7 +3,9 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-4">
-        <%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1466683687/pendingcup_uow2uf.png") %>
+
+        <%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1466683687/pendingcup_uow2uf.png", class:"cup-img-width") %>
+
         <h3>
          Pending Cuppa
        </h3>
@@ -20,16 +22,16 @@
        <% end %>
        <% end %>
        <% else %>
-
-
        <p>You don't have a cuppa! Make a pot!</p>
-
-
        <% end %>
      </div>
 
+
      <div class="col-xs-12 col-sm-4">
-       <%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1466761054/confirmcup_ffpgfm.png") %>
+
+       <%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1466761054/confirmcup_ffpgfm.png", class:"cup-img-width") %>
+
+
        <h3>
         Your Cuppa Date
       </h3>
@@ -42,31 +44,28 @@
       <% end %>
       <% end %>
       <% else %>
-
-
       <p>You don't have a cuppa! Cuppa?</p>
-
-
       <% end %>
 
     </div>
 
     <div class="col-xs-12 col-sm-4">
-      <%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1466683670/cancelcup_nzlrxh.png") %>
 
-      <h3>
-        Canceled Cuppa
-      </h3>
-      <% unless @canceled_cups.empty? %>
-      <% @canceled_cups.each do |cup| %>
-      <%= cup.date %>
-      <br>
-      <%= cup.location.name %>
-      <% end %>
-      <% end %>
+     <%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1466683670/cancelcup_nzlrxh.png", class:"cup-img-width") %>
 
-    </div>
+     <h3>
+      Canceled Cuppa
+    </h3>
+    <% unless @canceled_cups.empty? %>
+    <% @canceled_cups.each do |cup| %>
+    <%= cup.date %>
+    <br>
+    <%= cup.location.name %>
+    <% end %>
+    <% end %>
+
   </div>
+</div>
 </div>
 </div>
 
@@ -112,13 +111,13 @@
 
   <div class="col-xs-12 col-sm-4 aligh-button">
 
-     <div class="button-blue text-center">
-      <%= link_to("View Friends", friends_url, class: "profile-link") %>
-    </div>
+   <div class="button-blue text-center">
+    <%= link_to("View Friends", friends_url, class: "profile-link") %>
+  </div>
 
-    <div class="button-blue text-center">
-      <%= link_to("Edit Profile", edit_user_registration_url, class: "profile-link") %>
-    </div>
+  <div class="button-blue text-center">
+    <%= link_to("Edit Profile", edit_user_registration_url, class: "profile-link") %>
+  </div>
 
 
 </div>
