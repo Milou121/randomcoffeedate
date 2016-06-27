@@ -9,11 +9,12 @@
   margin-right: auto;
   margin-left: auto;
   opacity: 0.85;
+  z-index: 55;
 }
 
 body.dashboard\/cups-show {
-  background: url('http://res.cloudinary.com/dvj9whqch/image/upload/v1466759075/coffe-bean-texture_b9ovid.jpg');
-  background-size: cover !important;
+background: url("http://res.cloudinary.com/dvj9whqch/image/upload/v1467021087/coffe-bean-texture-2_ga7ebq.png");
+top: -900px;
 }
 
 #cup-page-title {
@@ -22,8 +23,9 @@ body.dashboard\/cups-show {
   text-align: center;
   padding-bottom: 20px;
   margin-top: -60px;
+  z-index: 55;
 }
 
 .cup {
-  color: white;
+  color: #613720;
 }
