@@ -20,9 +20,6 @@
 }
 
 .how {
-  background: url(http://res.cloudinary.com/dvj9whqch/image/upload/v1466777777/coffe-stain-texture_ok8zf1.jpg);
-  width: 100vw;
-  height: 120vh;
   display: flex;
   justify-content: center; /* align horizontal */
   align-items: center;
@@ -35,7 +32,7 @@
   height: 250px;
   // text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-color: white;
-  color: white;
+  color: #613720;
   position: relative;
   border-radius: 5px;
   margin-bottom: 20px;
@@ -52,10 +49,10 @@
 }
 
 .facts {
-
+  background: url('http://res.cloudinary.com/dvj9whqch/image/upload/v1466759075/coffe-bean-texture_b9ovid.jpg');
   background-size: cover !important;
-  width: 100vw;
-  height: 100vh;
+  width: 80vw;
+  height: 80vh;
   display: flex;
   justify-content: center; /* align horizontal */
   align-items: center;
@@ -74,7 +71,10 @@
   text-align: center;
 }
 
-
+.home-scroll {
+  display: inline-block;
+  align-self: flex-end;
+}
 
 #content {
   width: 1000px;
@@ -229,8 +229,8 @@
   width: 24px;
   height: 24px;
   margin-left: -12px;
-  border-left: 1px solid white;
-  border-bottom: 1px solid white;
+  border-left: 2px solid white;
+  border-bottom: 2px solid white;
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
   -webkit-animation: sdb05 1.5s infinite;
