@@ -1,7 +1,7 @@
 <!-- <div class="page-title"><h1> Create Your Pot</h1></div> -->
 <% if current_user.friends.any? %>
 <div class="wrapper create">
-  <h1 style="text-align: center; margin-top: 100px; color: white;">
+  <h1 style="text-align: center; margin-top: 100px; color: black;">
     Create a Cuppa Date
   </h1>
   <div id="scroll-to-friends">
@@ -10,7 +10,7 @@
 </div>
 <div class="wrapper" id="beans">
   <div id="friends-select">
-    <h3 style="margin-top: 70px;">
+    <h3 style="margin-top: 120px;">
       Choose your beans
     </h3>
     <div role="group" aria-label="Image Option Buttons">
@@ -28,8 +28,8 @@
   </div>
 </div>
 <div id="scroll-to-location">
-    <a href="#where"><%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1467032314/beanbw_i6lu5e.png") %></a>
-  </div>
+  <a href="#where"><%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1467032314/beanbw_i6lu5e.png") %></a>
+</div>
 </div>
 
 <div class="wrapper location" id="where">
@@ -65,13 +65,13 @@ handler.fitMapToBounds();
   </h4>
 </div>
 </div>
-<div id="scroll-to-time">
-    <a href="#when"><%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1467032314/beanbw_i6lu5e.png") %></a>
-  </div>
+<div id="scroll-to-date">
+  <a href="#when_date"><%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1467032314/beanbw_i6lu5e.png") %></a>
+</div>
 </div>
 
-<div class="wrapper" id="when">
-  <div class="time-select-wrapper">
+<div class="wrapper" id="when_date">
+  <div class="date-select-wrapper">
     <div class="white-container" id="time-select" style="margin-top: 60px;">
       <h3>
         Pick a date ..
@@ -80,6 +80,14 @@ handler.fitMapToBounds();
         <%= form.input :datestring, input_html: { class: "daterange" } %>
       </div>
     </div>
+  </div>
+  <div id="scroll-to-time">
+    <a href="#when_time"><%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1467032314/beanbw_i6lu5e.png") %></a>
+  </div>
+</div>
+
+<div class="wrapper" id="when_time">
+  <div class="time-select-wrapper">
     <div class="white-container" id="time-select" style="margin-top: 60px;">
       <h3>
         .. and select the time(s)!
@@ -91,16 +99,25 @@ handler.fitMapToBounds();
       <%= form.input :time_6 %>
     </div>
   </div>
-  <div class="white-container" id="time-select" style="margin-top: 60px;">
-    <div class="almost_ready">
-      <p style="margin-top: 20px;">
-        Selected the friends you want to add to your pot? And chose a nice location? If you are sure that you are available on these dates and times, you're all set and one click away from finding that match!
-      </p>
-    </div>
-    <%= form.submit class: "button-blue"%>
-    <% end %>
+  <div id="scroll-to-ready">
+    <a href="#almost_ready"><%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1467032314/beanbw_i6lu5e.png") %></a>
   </div>
 </div>
+
+<div class="wrapper" id="almost_ready">
+  <div class="time-select-wrapper">
+    <div class="white-container" id="time-select" style="margin-top: 60px;">
+      <div class="almost_ready">
+        <p style="margin-top: 20px;">
+          Selected the friends you want to add to your pot? And chose a nice location? If you are sure that you are available on these dates and times, you're all set and one click away from finding that match!
+        </p>
+      </div>
+      <%= form.submit class: "button-blue"%>
+      <% end %>
+    </div>
+  </div>
+</div>
+
 <% else %>
 <div class="wrapper no_friends">
   <div class="no-friends-card">
