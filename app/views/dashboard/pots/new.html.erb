@@ -1,16 +1,16 @@
 <!-- <div class="page-title"><h1> Create Your Pot</h1></div> -->
 <% if current_user.friends.any? %>
 <div class="wrapper create">
-  <h1 style="text-align: center; margin-top: 100px;">
+  <h1 style="text-align: center; margin-top: 100px; color: white;">
     Create a Cuppa Date
   </h1>
-  <div id="scroll" class="demo">
-    <a href="#beans"><span></span></a>
+  <div id="scroll-to-friends">
+    <a href="#beans"><%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1467032314/beanbw_i6lu5e.png") %></a>
   </div>
 </div>
-<div class="wrapper-white" id="beans">
+<div class="wrapper" id="beans">
   <div id="friends-select">
-    <h3>
+    <h3 style="margin-top: 70px;">
       Choose your beans
     </h3>
     <div role="group" aria-label="Image Option Buttons">
@@ -27,18 +27,18 @@
     </div>
   </div>
 </div>
-<div id="scroll">
-  <a href="#where"><span></span></a>
-</div>
+<div id="scroll-to-location">
+    <a href="#where"><%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1467032314/beanbw_i6lu5e.png") %></a>
+  </div>
 </div>
 
-<div class="wrapper" id="where">
+<div class="wrapper location" id="where">
   <div id="location-select">
     <h3>
       Choose a Cafe
     </h3>
     <%= form.association :location, as: :hidden %>
-    <div id="map" style="width: 75%; height: 550px; margin-top: 20px; margin-right: auto; margin-left: auto; "></div>
+    <div id="map" style="width: 75%; height: 500px; margin-top: 20px; margin-right: auto; margin-left: auto; "></div>
     <% content_for(:after_js) do %>
     <%= javascript_tag do %>
     $(document).on('ready', function() {
@@ -65,11 +65,14 @@ handler.fitMapToBounds();
   </h4>
 </div>
 </div>
+<div id="scroll-to-time">
+    <a href="#when"><%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1467032314/beanbw_i6lu5e.png") %></a>
+  </div>
 </div>
 
-<div class="wrapper-white" id="when">
+<div class="wrapper" id="when">
   <div class="time-select-wrapper">
-    <div id="time-select" style="margin-top: 60px;">
+    <div class="white-container" id="time-select" style="margin-top: 60px;">
       <h3>
         Pick a date ..
       </h3>
@@ -77,7 +80,7 @@ handler.fitMapToBounds();
         <%= form.input :datestring, input_html: { class: "daterange" } %>
       </div>
     </div>
-    <div id="time-select" style="margin-top: 60px;">
+    <div class="white-container" id="time-select" style="margin-top: 60px;">
       <h3>
         .. and select the time(s)!
       </h3>
@@ -88,9 +91,9 @@ handler.fitMapToBounds();
       <%= form.input :time_6 %>
     </div>
   </div>
-  <div id="time-select" style="margin-top: 60px;">
+  <div class="white-container" id="time-select" style="margin-top: 60px;">
     <div class="almost_ready">
-      <p>
+      <p style="margin-top: 20px;">
         Selected the friends you want to add to your pot? And chose a nice location? If you are sure that you are available on these dates and times, you're all set and one click away from finding that match!
       </p>
     </div>
