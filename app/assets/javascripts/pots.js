@@ -1,11 +1,16 @@
 
 $(document).on('ready', function() {
-  $(".js-pot--friends-picker").imagepicker();
+  $(".js-pot--friends-picker").imagepicker({
+    selected: function (options) {
+      $(".thumbnail.selected img").attr("src", "http://unsplash.it/500/500")
+    }
+  });
+
 
   $('#toggleAll').on('click',function(){
     // click event listener
     $('.thumbnail').addClass("selected");
-    
+
     if($(this).attr('aria-pressed')=='false'){
       console.log("pressed");
 
