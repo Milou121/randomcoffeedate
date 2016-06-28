@@ -1,11 +1,13 @@
-<p>
-  Hello! <%= @user.username %>
+
+  <h2>Hello! <%= @user.username %></h2>
+  <br>
+  <p>
+  <%= @friend.username %> just confirmed your friend request! <br>
+  Now set up a <%= link_to "random coffee date!", dashboard_url(@user) %>
   <br>
   <br>
-  <%= @friend.username %> just confirm your friend request! <br>
-  Now set up a <%= link_to "surprise coffee date!", dashboard_url(@user) %>
+  Cheers,
   <br>
-  <br>
-  regards,
   Cuppa
 </p>
+<%= image_tag 'logo.png' %>

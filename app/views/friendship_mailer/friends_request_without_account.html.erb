@@ -1,9 +1,13 @@
-<p>
-  Hello! <%= @user.username %>
+
+ <h2> Hello, <%= @user.username %>!</h2>
   <br>
-  You sent a request to <%= @invitee_email %>
+  <p>
+  You sent a friend request to <%= @invitee_email %>.
   <br>
   <br>
-  regards,
+  Cheers,
+  <br>
   Cuppa
 </p>
+<%= image_tag 'logo.png' %>
+  

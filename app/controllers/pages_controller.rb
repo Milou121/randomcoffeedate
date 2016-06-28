@@ -5,6 +5,8 @@ class PagesController < ApplicationController
 
   def home
     @users = User.all
+    @cup = Cup.create
+    CupMailer.cuppa_match(@cup, current_user).deliver_now
   end
 
 end
