@@ -12,7 +12,7 @@
 
 body.pages-home {
   background-repeat: no-repeat;
-  background-image: url("http://res.cloudinary.com/dvj9whqch/image/upload/v1467105925/home-1400_dqkzkx.png");
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.1) 100%), url("http://res.cloudinary.com/dvj9whqch/image/upload/v1467105925/home-1400_dqkzkx.png");
 }
 
 .top {
