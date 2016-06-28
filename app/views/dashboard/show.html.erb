@@ -1,10 +1,12 @@
-<div class="dashboard-bg">
-<div>
-  <h3 class="welcome_user">
-    Hi <%= current_user.username %>! Any new friends requests? Or do you want to check your pending cuppa's?
-  </h3>
- </div>
- <div class="wrapper" id="cuppa-dashboard">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <h3 class="welcome_user">
+        Hi <%= current_user.username %>!
+        </h3>
+      </div>
+    </div>
+  </div>
 
   <div class="container">
     <div class="row">
@@ -34,8 +36,10 @@
          <p>You don't have a cuppa! Make a pot!</p>
 
          <% end %>
+
        </div>
      </div>
+
 
 
      <div class="col-xs-12 col-sm-4">
@@ -88,15 +92,6 @@
   </div>
 </div>
 
-
-<div class="arrow-position">
-  <div class="scroll">
-    <section id="scroll" class="demo">
-      <a href="#friend-list"><span></span></a>
-    </section>
-  </div>
-</div>
-
 <div class="wrapper" id="friend-list">
   <div class="container">
     <div class="row">
@@ -138,9 +133,9 @@
     <%= link_to("Edit Profile", edit_user_registration_url, class: "profile-link") %>
   </div>
 </div>
-</div>
 
 </div>
+
 </div>
 </div>
 

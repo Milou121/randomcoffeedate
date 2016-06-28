@@ -11,7 +11,8 @@
 }
 
 body.pages-home {
-  background-image: url("http://res.cloudinary.com/dvj9whqch/image/upload/v1467041538/homegb_rkjnhh.png");
+  background-repeat: no-repeat;
+  background-image: url("http://res.cloudinary.com/dvj9whqch/image/upload/v1467105925/home-1400_dqkzkx.png");
 }
 
 .top {
@@ -32,46 +33,39 @@ body.pages-home {
 // Facts
 
 .card {
+  width: 500px;
   position: relative;
   height: 250px;
   // text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-color: white;
-  color: #613720;
+  color: #1F201B;
   position: relative;
   border-radius: 5px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .card-content {
   position: absolute;
-  font-size: 20px;
-  padding: 20px 20px;
+  font-size: 17px;
+  padding: 35px 25px;
 }
 
 .card-content p {
-  color: #613720;
+  color: #1F201B;
 }
 
 .facts {
-
-  background: url("http://res.cloudinary.com/dvj9whqch/image/upload/v1467032503/coffestainbw_xjckuq.png");
-
-  background-size: cover !important;
-  width: 80vw;
+  margin-bottom: -88px;
+  margin-top: 60px;
+  width: 100vw;
   height: 80vh;
   display: flex;
   justify-content: center; /* align horizontal */
   align-items: center;
+  flex-direction: column;
 }
-// body {
-//   height: 100%;
-//   width: 100%;
-//   background-color: #0B1A21;
-//   -webkit-animation: colors 6s linear normal infinite;
-//   animation: colors 6s linear normal infinite;
-// }
 
-// scroll
 .scroll {
   margin: 30px 30px;
   text-align: center;
@@ -87,10 +81,12 @@ body.pages-home {
 }
 
 #board{
+  position: absolute;
   display: flex;
   justify-content: center; /* align horizontal */
   align-items: center;
   margin-top: 260px;
+  left: 63px;
 }
 
 #box1,#box2,#box3 {
@@ -215,8 +211,8 @@ body.pages-home {
   width: 24px;
   height: 24px;
   margin-left: -12px;
-  border-left: 2px solid purple;
-  border-bottom: 2px solid purple;
+  border-left: 3px solid white;
+  border-bottom: 3px solid white;
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
   -webkit-animation: sdb05 1.5s infinite;

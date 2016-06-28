@@ -7,7 +7,8 @@
 }
 
 .welcome_user {
-  margin: 10px 40px;
+  margin: 10px;
+  color: white;
 }
 
 h3 {
@@ -15,8 +16,9 @@ h3 {
 }
 
 body.dashboard-show{
-  background-image: url("http://res.cloudinary.com/dvj9whqch/image/upload/v1467035117/dashboardbg_buzstj.png");
+  background-image: url("http://res.cloudinary.com/dvj9whqch/image/upload/v1467107441/dashboard_ac5vvg.png");
   background-size: cover !important;
+  background-repeat: no-repeat;
 }
 
 // .dashboard-bg {

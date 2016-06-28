@@ -10,6 +10,12 @@ body.dashboard\/pots-new {
   position: relative;
 }
 
+
+body.dashboard\/pots-new {
+ background-repeat: no-repeat;
+ background-image: url("http://res.cloudinary.com/dvj9whqch/image/upload/v1467104796/pot-newbw_cjhccr.png");
+}
+
 #scroll-to-friends {
   position: absolute;
   right: 50%;
@@ -26,6 +32,7 @@ body.dashboard\/pots-new {
   position: absolute;
   right: 50%;
   bottom: 15px;
+
 }
 
 .time-select-wrapper {
@@ -63,12 +70,12 @@ body.dashboard\/pots-new {
 }
 
 #button-blue {
-margin-left: auto;
-margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #toggleAll a:focus {
-text-color: white;
+  text-color: white;
 }
 
 .friend-select {
@@ -107,13 +114,13 @@ ul.thumbnails.image_picker_selector li {
 }
 
 .thumbnail > img, .thumbnail a > img {
-   width: 100px;
-   height: 100px;
- }
+ width: 100px;
+ height: 100px;
+}
 
 
 ul.thumbnails.image_picker_selector li .thumbnail.selected {
-    background: #613720;
+  background: #613720;
 }
 
 
@@ -131,6 +138,9 @@ ul.thumbnails.image_picker_selector li .thumbnail.selected {
 }
 
 //////////////////* Select Date/Time */
+///
+
+
 #where {
   width: 100vw;
   height: 100vh;

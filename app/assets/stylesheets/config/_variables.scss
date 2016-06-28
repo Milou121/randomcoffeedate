@@ -2,9 +2,9 @@
  * Fonts
  * ------------------------------------- */
 // Google fonts
-@import url("https://fonts.googleapis.com/css?family=Lekton|Palanquin+Dark");
+@import url("https://fonts.googleapis.com/css?family=Lekton|Space+Mono:700");
 $base-font: 'Lekton', sans-serif;
-$header-font: 'Palanquin Dark', sans-serif;
+$header-font: 'Space Mono', monospace;
 
 // Local fonts (uncomment following lines)
 // @font-face {
@@ -18,7 +18,7 @@ $header-font: 'Palanquin Dark', sans-serif;
 
 h1,h2,h3 {
 
-  color: #1F201B;
+  color: white;
 }
 // Font-size and line-height
 $base-size: 16px;
@@ -44,7 +44,7 @@ $gray-light:   lighten(#000, 46.7%); // #777
 $gray-lighter: lighten(#000, 93.5%); // #eee
 
 .body-content {
-  min-height: 80vh;
+  min-height: 85vh;
 }
 
 
