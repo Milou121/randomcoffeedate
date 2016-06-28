@@ -71,14 +71,12 @@ handler.fitMapToBounds();
 </div>
 
 <div class="wrapper" id="when_date">
-  <div class="date-select-wrapper">
-    <div class="white-container" id="time-select" style="margin-top: 60px;">
-      <h3>
-        Pick a date ..
-      </h3>
-      <div style="margin-left:auto; margin-right:auto;">
-        <%= form.input :datestring, input_html: { class: "daterange" } %>
-      </div>
+<div class="white-container" id="date-select" style="margin-top: 110px;">
+    <h3>
+      Pick a date ..
+    </h3>
+    <div style="margin-left:auto; margin-right:auto;">
+      <%= form.input :datestring, input_html: { class: "daterange" } %>
     </div>
   </div>
   <div id="scroll-to-time">
@@ -106,7 +104,7 @@ handler.fitMapToBounds();
 
 <div class="wrapper" id="almost_ready">
   <div class="time-select-wrapper">
-    <div class="white-container" id="time-select" style="margin-top: 60px;">
+    <div class="white-container" id="create_pot_button" style="margin-top: 60px;">
       <div class="almost_ready">
         <p style="margin-top: 20px;">
           Selected the friends you want to add to your pot? And chose a nice location? If you are sure that you are available on these dates and times, you're all set and one click away from finding that match!

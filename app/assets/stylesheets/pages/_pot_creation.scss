@@ -19,13 +19,13 @@ body.dashboard\/pots-new {
 #scroll-to-friends {
   position: absolute;
   right: 50%;
-  top: 270px;
+  top: 345px;
 }
 
 #scroll-to-location {
   position: absolute;
   right: 50%;
-  bottom: -900px;
+  bottom: -1030px;
 }
 
 #scroll-to-date {
@@ -37,17 +37,18 @@ body.dashboard\/pots-new {
 #scroll-to-time {
   position: absolute;
   right: 50%;
-  bottom: 15px;
+  bottom: 90px;
 }
 
 #scroll-to-ready {
   position: absolute;
   right: 50%;
-  bottom: 15px;
+  bottom: 25px;
 }
 
 .time-select-wrapper {
   display: flex;
+  justify-content: center;
 }
 
 ///// No friends info
@@ -154,6 +155,10 @@ ul.thumbnails.image_picker_selector li .thumbnail.selected {
   margin-top: 20px;
 }
 
+.location-text {
+  color: black;
+}
+
 //////////////////* Select Date/Time */
 ///
 
@@ -164,11 +169,21 @@ ul.thumbnails.image_picker_selector li .thumbnail.selected {
   position: relative;
 }
 
+#date-select {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  top: 50%;
+  left: 50%;
+  width: 350px;
+}
+
 #time-select {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  position: relative;
+  top: 50%;
+  left: 50%;
   width: 350px;
 }
 
@@ -180,8 +195,9 @@ ul.thumbnails.image_picker_selector li .thumbnail.selected {
 
 #almost_ready {
   width: 100vw;
-  height: 100vh;
+  height: 80vh;
   position: relative;
+  text-align: center;
 }
 
 .almost_ready {
