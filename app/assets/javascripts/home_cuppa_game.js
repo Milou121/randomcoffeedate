@@ -48,17 +48,17 @@ $(document).ready(function(){
 
             // Close all the three boxes in a regular interval.
             box1.delay(500).queue(function(n) {
-              $(this).html("<img src='http://res.cloudinary.com/dvj9whqch/image/upload/v1467032314/cupdown_zoduus.png' alt='' />");
+              $(this).html("<img src='http://res.cloudinary.com/dvj9whqch/image/upload/v1467105367/cuphomedown_mmkwnb.png' alt='' />");
               if(ans == 1) kick.hide();
               n();
             });
             box2.delay(1000).queue(function(n) {
-              $(this).html("<img src='http://res.cloudinary.com/dvj9whqch/image/upload/v1467032314/cupdown_zoduus.png' alt='' />");
+              $(this).html("<img src='http://res.cloudinary.com/dvj9whqch/image/upload/v1467105367/cuphomedown_mmkwnb.png' alt='' />");
               if(ans == 2) kick.hide();
               n();
             });
             box3.delay(1500).queue(function(n) {
-              $(this).html("<img src='http://res.cloudinary.com/dvj9whqch/image/upload/v1467032314/cupdown_zoduus.png' alt='' />");
+              $(this).html("<img src='http://res.cloudinary.com/dvj9whqch/image/upload/v1467105367/cuphomedown_mmkwnb.png' alt='' />");
               if(ans == 3) kick.hide();
 
 
@@ -116,14 +116,14 @@ $(document).ready(function(){
 
 
               }, shuffleSpeed);
-              $("#box1").html('<img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1467032314/cupdownq_fyzus1.png" alt="">');
-              $("#box1").append('<img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1467032314/cupdownq_fyzus1.png" alt="">');
+              $("#box1").html('<img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1467105367/cuphomedown_mmkwnb.png" alt="">');
+              $("#box1").append('<img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1467105367/cuphomedown_mmkwnb.png" alt="">');
 
-              $("#box2").html('<img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1467032314/cupdownq_fyzus1.png" alt="">');
-              $("#box2").append('<img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1467032314/cupdownq_fyzus1.png" alt="">');
+              $("#box2").html('<img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1467105367/cuphomedown_mmkwnb.png" alt="">');
+              $("#box2").append('<img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1467105367/cuphomedown_mmkwnb.png" alt="">');
 
-              $("#box3").html('<img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1467032314/cupdownq_fyzus1.png" alt="">');
-              $("#box3").append('<img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1467032314/cupdownq_fyzus1.png" alt="">');
+              $("#box3").html('<img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1467105367/cuphomedown_mmkwnb.png" alt="">');
+              $("#box3").append('<img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1467105367/cuphomedown_mmkwnb.png" alt="">');
 
               setTimeout(function() {
                 nuberOfShuffels * shuffleSpeed});
