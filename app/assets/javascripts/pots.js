@@ -1,11 +1,6 @@
 
 $(document).on('ready', function() {
-  $(".js-pot--friends-picker").imagepicker({
-    selected: function (options) {
-      $(".thumbnail.selected img").attr("src", "http://unsplash.it/500/500")
-    }
-  });
-
+  $(".js-pot--friends-picker").imagepicker();
 
   $('#toggleAll').on('click',function(){
     // click event listener
