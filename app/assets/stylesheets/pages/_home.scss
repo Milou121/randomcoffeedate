@@ -21,10 +21,11 @@ body.pages-home {
   display: flex;
   justify-content: center; /* align horizontal */
   align-items: center;
-  margin-top: -175px;
+  margin-top: -280px;
 }
 
 .how {
+  margin-top: 100px;
   display: flex;
   justify-content: center; /* align horizontal */
   align-items: center;
@@ -119,7 +120,7 @@ body.pages-home {
   position: absolute;
   z-index: 200;
   top: -510px;
-  margin-left: 70px;
+  margin-left: 47px;
   display: none;
 }
 
