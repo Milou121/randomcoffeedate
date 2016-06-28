@@ -23,7 +23,7 @@
 
       <div class="col-xs-6 col-offset-6">
         <p>You are ready to go on a coffee date on
-          <%= l(@cup.date, format: :long)%> at <%= @cup.time %></p>
+          <%= l(@cup.date, format: :long)%> at <%= human_cup_time(@cup) %></p>
         </div>
       </div>
     </div>
