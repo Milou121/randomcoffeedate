@@ -19,24 +19,25 @@
           <h3 class="margin-top">
            Pending Cuppa
          </h3>
-         <% unless @pots.empty? %>
-         <% @pots.each do |pot| %>
-         <%= pot.start_date %>
-         <br>
-         <% pot_location = pot.location_id %>
-         <% location = Location.find(pot_location) %>
-         <%= location.name %>
+         <p> Still waiting for a match .. </p>
+         <div class="pending-cuppa">
+           <% unless @pots.empty? %>
+           <% @pots.each do |pot| %>
+           <p class="divider"><strong>On:</strong> <%= pot.start_date %> </p>
+          <% pot_location = pot.location_id %>
+           <% location = Location.find(pot_location) %>
+           <p class="divider-bottom"><strong>Where? </strong><%= location.name %></p>
 
-         <%= form_tag dashboard_pot_path(pot), method: :destroy do %>
-         <%= submit_tag("cancel") %>
-         <% end %>
-         <% end %>
-         <% else %>
+           <%= form_tag dashboard_pot_path(pot), class: "cancel-button", method: :destroy do %>
+           <%= submit_tag("cancel") %>
+           <% end %>
+           <% end %>
+           <% else %>
 
-         <p>You don't have a cuppa! Make a pot!</p>
+           <p>You don't have a cuppa! Make a pot!</p>
 
-         <% end %>
-
+           <% end %>
+         </div>
        </div>
      </div>
 
@@ -54,9 +55,9 @@
         <div class="cuppa-date">
           <% unless @confirmed_cups.empty? %>
           <% @confirmed_cups.each do |cup| %>
-          <p><strong> On: </strong><%= cup.date %> </p>
+          <p class="divider"><strong>On:</strong> <%= cup.date %> </p>
           <% location = cup.location_id %>
-          <p> <strong>Where?</strong> <%= Location.find(location).name %> </p>
+          <p class="divider-bottom"><strong>Where?</strong><%= Location.find(location).name %> </p>
           <br>
           <%= link_to "more info", dashboard_cup_path(cup) , class: "button-blue" %>
           <%= form_tag cancel_dashboard_cup_path(cup), class: "cancel-button" , method: :patch do%>
@@ -86,9 +87,7 @@
         </h3>
         <% unless @canceled_cups.empty? %>
         <% @canceled_cups.each do |cup| %>
-        <%= cup.date %>
-        <br>
-        <%= cup.location.name %>
+        <%= cup.date %> at <%= cup.location.name %>
         <% end %>
         <% end %>
 
