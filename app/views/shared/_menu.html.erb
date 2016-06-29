@@ -15,7 +15,7 @@
 
   <% if user_signed_in? %>
   <%= link_to dashboard_path, class: "menu-item", title: t(".Dashboard", default: "Dashboard") do %>
-  <i class="fa fa-coffee"></i>
+  <i class="fa fa-list-alt"></i>
   <% end  %>
 
   <%= link_to new_friend_path, class: "menu-item", title: t(".add_friend", default: "Add friend!") do %>
@@ -23,7 +23,7 @@
   <% end %>
 
   <%= link_to new_dashboard_pot_path, class: "menu-item", title: t(".new_pot", default: "Brew coffee date!") do %>
-  <i class="fa fa-fire"></i>
+  <i class="fa fa-coffee"></i>
   <% end %>
 
   <%= link_to destroy_user_session_path, method: :delete, class: "menu-item", title: t(".sign_out", default: "Log out") do %>
