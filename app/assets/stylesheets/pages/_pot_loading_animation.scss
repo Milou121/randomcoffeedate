@@ -2,14 +2,14 @@
 
 .cup-position {
   position: relative;
-  left: 36%;
-  margin-top: 15%;
+  left: 0.6%;
+  margin-top: 14%;
   z-index: -1;
 }
 
 .bean-position {
   position: absolute;
-  margin-top: 15%;
+  margin-top: 5%;
   z-index: 9;
 }
 
@@ -41,7 +41,7 @@
 
 .spinning-image {
     position: absolute;
-    top: 50%;
+    top: 33%;
     left: 40%;
     width: 400px;
     height: 400px;
