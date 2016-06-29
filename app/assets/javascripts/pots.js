@@ -2,6 +2,8 @@
 $(document).on('ready', function() {
   $(".js-pot--friends-picker").imagepicker();
 
+
+
   $('#toggleAll').on('click',function(){
     // click event listener
     $('.thumbnail').addClass("selected");
