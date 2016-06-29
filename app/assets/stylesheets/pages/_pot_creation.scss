@@ -18,37 +18,37 @@ body.dashboard\/pots-new {
 
 body.dashboard\/pots-create {
  background-repeat: no-repeat;
- background-image: url("http://res.cloudinary.com/dvj9whqch/image/upload/v1467104796/pot-newbw_cjhccr.png");
+ background-image: url("http://res.cloudinary.com/dvj9whqch/image/upload/v1467115242/pot-new-white_f4zaxl.png");
 }
 
 #scroll-to-friends {
   position: absolute;
   right: 50%;
   top: 310px;
-  left: 580px;
+  left: 46%;
 }
 
 #scroll-to-location {
   position: absolute;
-  left: 580px;
+  left: 46%;
   bottom: -1070px;
 }
 
 #scroll-to-date {
   position: absolute;
-  left: 570px;
+  left: 46%;
   bottom: 0px;
 }
 
 #scroll-to-time {
   position: absolute;
-  left: 560px;
+  left: 46%;
   bottom: 10px;
 }
 
 #scroll-to-ready {
   position: absolute;
-  left: 570px;
+  left: 46%;
   bottom: 25px;
 }
 
@@ -56,7 +56,7 @@ body.dashboard\/pots-create {
   display: flex;
   justify-content: center;
   position: absolute;
-  left: 450px;
+  left: 38%;
   top: 100px;
 }
 
@@ -101,6 +101,8 @@ body.dashboard\/pots-create {
 
 .friend-select {
   margin-top: 100px;
+  min-width: 400px;
+  margin-left: 29%;
 }
 
 .image_picker_image {
@@ -181,7 +183,7 @@ ul.thumbnails.image_picker_selector li .thumbnail.selected {
 #date-select {
   text-align: center;
   top: 100px;
-  left: 450px;
+  left: 38%;
   position: absolute;
   width: 350px;
 }
@@ -191,7 +193,7 @@ ul.thumbnails.image_picker_selector li .thumbnail.selected {
   margin-left: auto;
   margin-right: auto;
   top: 50%;
-  left: 50%;
+  left: 47%;
   width: 350px;
 }
 
