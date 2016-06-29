@@ -1,3 +1,14 @@
+.scroll-to-friend {
+position: absolute;
+right: 40px;
+bottom: 20px;
+}
+
+.cuppa-wrapper {
+  position: relative;
+  height: 100vh;
+}
+
 .white-container {
   background-color: white;
   border-radius: 5px;
@@ -63,16 +74,16 @@ body.dashboard-show{
 .cancel-button {
   position: absolute;
   right: 20px;
-  bottom: 0px; 
+  bottom: 0px;
   background-color: #D8D6D6;
-  border: none; 
+  border: none;
   border-radius: 3px;
   padding: 2px;
-  padding-left: 2px; 
-  padding-right: 2px; 
+  padding-left: 2px;
+  padding-right: 2px;
 }
 
-.cancel-button:hover { 
+.cancel-button:hover {
   background-color: #EDEDED;
 }
 
