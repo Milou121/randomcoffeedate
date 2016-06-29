@@ -57,7 +57,7 @@
         <div class="cuppa-date">
           <p class="divider"><strong>On:</strong> <%= cup.date %> </p>
           <% location = cup.location_id %>
-          <p class="divider-bottom"><strong>Where?</strong><%= Location.find(location).name %> </p>
+          <p class="divider-bottom"><strong>Where?</strong> <%= Location.find(location).name %> </p>
           <br>
           <%= link_to "more info", dashboard_cup_path(cup) , class: "button-blue" %>
           <%= form_tag cancel_dashboard_cup_path(cup), class: "cancel-button" , method: :patch do%>
