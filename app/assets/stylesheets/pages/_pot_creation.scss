@@ -19,36 +19,40 @@ body.dashboard\/pots-new {
 #scroll-to-friends {
   position: absolute;
   right: 50%;
-  top: 345px;
+  top: 310px;
+  left: 580px;
 }
 
 #scroll-to-location {
   position: absolute;
-  right: 50%;
-  bottom: -1030px;
+  left: 580px;
+  bottom: -1070px;
 }
 
 #scroll-to-date {
   position: absolute;
-  right: 50%;
-  bottom: 15px;
+  left: 570px;
+  bottom: 0px;
 }
 
 #scroll-to-time {
   position: absolute;
-  right: 50%;
-  bottom: 90px;
+  left: 560px;
+  bottom: 10px;
 }
 
 #scroll-to-ready {
   position: absolute;
-  right: 50%;
+  left: 570px;
   bottom: 25px;
 }
 
 .time-select-wrapper {
   display: flex;
   justify-content: center;
+  position: absolute;
+  left: 450px;
+  top: 100px;
 }
 
 ///// No friends info
@@ -171,10 +175,9 @@ ul.thumbnails.image_picker_selector li .thumbnail.selected {
 
 #date-select {
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  top: 50%;
-  left: 50%;
+  top: 100px;
+  left: 450px;
+  position: absolute;
   width: 350px;
 }
 
@@ -204,6 +207,12 @@ ul.thumbnails.image_picker_selector li .thumbnail.selected {
   width: 250px;
   margin-right: auto;
   margin-left: auto;
+}
+
+#create_pot_button {
+  margin-top: 10px;
+  position: absolute;
+  left: 25px;
 }
 
 .wrapper-white {
