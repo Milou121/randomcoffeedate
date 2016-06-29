@@ -54,7 +54,8 @@
         <% unless @confirmed_cups.empty? %>
         <% @confirmed_cups.each do |cup| %>
         <%= cup.date %>
-        <%= cup.name %>
+        <% location = cup.location_id %>
+        <%= Location.find(location).name %>
         <%= form_tag cancel_dashboard_cup_path(cup), method: :patch do %>
         <%= submit_tag("cancel") %>
         <% end %>
