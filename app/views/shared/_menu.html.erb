@@ -15,11 +15,11 @@
 
   <% if user_signed_in? %>
   <%= link_to dashboard_path, class: "menu-item", title: t(".Dashboard", default: "Dashboard") do %>
-  <i class="fa fa-user"></i>
+  <i class="fa fa-coffee"></i>
   <% end  %>
 
   <%= link_to new_friend_path, class: "menu-item", title: t(".add_friend", default: "Add friend!") do %>
-  <i class="fa fa-coffee"></i>
+  <i class="fa fa-user"></i>
   <% end %>
 
   <%= link_to new_dashboard_pot_path, class: "menu-item", title: t(".new_pot", default: "Brew coffee date!") do %>

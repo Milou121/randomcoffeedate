@@ -163,9 +163,9 @@ class Dashboard::PotsController < ApplicationController
   def marker_string(location)
     <<~HEREDOC
       <div class='infomap-style'>
-        <p>#{location.name}</p>
+        <p><strong>#{location.name}</strong></p>
         <p>#{location.address}</p>
-        <a href="#" class="btn btn-primary js-pot--select-location" data-location-id="#{location.id}" data-location-name="#{location.name}">SELECT</a>
+        <a href="#" class="btn button-blue  js-pot--select-location" data-location-id="#{location.id}" data-location-name="#{location.name}">SELECT</a>
       </div>
     HEREDOC
   end

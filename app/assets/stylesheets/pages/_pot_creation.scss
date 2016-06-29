@@ -13,7 +13,7 @@
 
 body.dashboard\/pots-new {
  background-repeat: no-repeat;
- background-image: url("http://res.cloudinary.com/dvj9whqch/image/upload/v1467104796/pot-newbw_cjhccr.png");
+ background-image: url("http://res.cloudinary.com/dvj9whqch/image/upload/v1467115242/pot-new-white_f4zaxl.png");
 }
 
 body.dashboard\/pots-create {
@@ -24,24 +24,40 @@ body.dashboard\/pots-create {
 #scroll-to-friends {
   position: absolute;
   right: 50%;
-  top: 270px;
+  top: 310px;
+  left: 580px;
 }
 
 #scroll-to-location {
   position: absolute;
-  right: 50%;
-  bottom: -900px;
+  left: 580px;
+  bottom: -1070px;
+}
+
+#scroll-to-date {
+  position: absolute;
+  left: 570px;
+  bottom: 0px;
 }
 
 #scroll-to-time {
   position: absolute;
-  right: 50%;
-  bottom: 15px;
+  left: 560px;
+  bottom: 10px;
+}
 
+#scroll-to-ready {
+  position: absolute;
+  left: 570px;
+  bottom: 25px;
 }
 
 .time-select-wrapper {
   display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 450px;
+  top: 100px;
 }
 
 ///// No friends info
@@ -131,15 +147,25 @@ ul.thumbnails.image_picker_selector li .thumbnail.selected {
 
 
 ///////////////////* Select Location*/
-#when {
+#when_date {
   width: 100vw;
   height: 100vh;
-  text-align: center;
+  position: relative;
+}
+
+#when_time {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
 }
 
 #location-select {
   text-align: center;
   margin-top: 20px;
+}
+
+.location-text {
+  color: black;
 }
 
 //////////////////* Select Date/Time */
@@ -152,24 +178,46 @@ ul.thumbnails.image_picker_selector li .thumbnail.selected {
   position: relative;
 }
 
+#date-select {
+  text-align: center;
+  top: 100px;
+  left: 450px;
+  position: absolute;
+  width: 350px;
+}
+
 #time-select {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  position: relative;
+  top: 50%;
+  left: 50%;
   width: 350px;
 }
 
 #pot_datestring {
  margin-right: auto;
  margin-left: auto;
- width: 20%;
+ width: 68%;
+}
+
+#almost_ready {
+  width: 100vw;
+  height: 80vh;
+  position: relative;
+  text-align: center;
 }
 
 .almost_ready {
   width: 250px;
   margin-right: auto;
   margin-left: auto;
+}
+
+#create_pot_button {
+  margin-top: 10px;
+  position: absolute;
+  left: 25px;
 }
 
 .wrapper-white {
