@@ -1,6 +1,6 @@
-body.dashboard\/pots-new {
-  background-image: url("http://res.cloudinary.com/dvj9whqch/image/upload/v1467041538/homegb_rkjnhh.png");
-}
+// body.dashboard\/pots-new {
+//   background-image: url("http://res.cloudinary.com/dvj9whqch/image/upload/v1467041538/homegb_rkjnhh.png");
+// }
 
 
 ///////////////////* First Page */
@@ -12,6 +12,11 @@ body.dashboard\/pots-new {
 
 
 body.dashboard\/pots-new {
+ background-repeat: no-repeat;
+ background-image: url("http://res.cloudinary.com/dvj9whqch/image/upload/v1467104796/pot-newbw_cjhccr.png");
+}
+
+body.dashboard\/pots-create {
  background-repeat: no-repeat;
  background-image: url("http://res.cloudinary.com/dvj9whqch/image/upload/v1467104796/pot-newbw_cjhccr.png");
 }

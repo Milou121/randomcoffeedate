@@ -7,6 +7,14 @@
     </h1>
   </div>
 
+  <div class="pour-top-top">
+   <div class="centered pour">
+    <div class="stripes"></div>
+    <div class="stripes"></div>
+    <div class="stripes"></div>
+  </div>
+</div>
+
   <div class="pour-top">
    <div class="centered pour">
     <div class="stripes"></div>
@@ -143,9 +151,21 @@ handler.fitMapToBounds();
         Selected the friends you want to add to your pot? And chose a nice location? If you are sure that you are available on these dates and times, you're all set and one click away from finding that match!
       </p>
     </div>
-    <%= form.submit class: "button-blue"%>
-    <% end %>
+
+
+    <div id="container">
+    <%= form.button :submit, class: "button-blue", id: "overlay-menu", html: { id: "overlay-menu" } %>
+   </div>
+   <div class="overlay overlay-data">
+    <img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1467186381/loadingcup_ye0uoy.png" alt="" class="cup-position" />
+
+
+    <img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1467186382/loadingbean_zipjjs.png" alt="" class="bean-position spinning-image" />
+
   </div>
+
+  <% end %>
+</div>
 </div>
 <% else %>
 <div class="wrapper no_friends">
@@ -160,5 +180,18 @@ handler.fitMapToBounds();
 </div>
 <% end %>
 
+<%= content_for(:after_js) do %>
+<script>
+  $('#overlay-menu').click(function (e) {
+    e.preventDefault();                   // prevent default anchor behavior
+    setTimeout(submitForm, 3000);
+    $( ".overlay" ).addClass
+    ('overlay-open');
+  });
 
+ function submitForm() {
+      $(".simple_form").submit()
+  }
+</script>
+<% end %>
 

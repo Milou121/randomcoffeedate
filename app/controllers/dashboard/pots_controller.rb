@@ -133,7 +133,7 @@ class Dashboard::PotsController < ApplicationController
       marker.lng location.longitude
       marker.infowindow marker_string(location)
       marker.picture({
-                    url: "http://res.cloudinary.com/dvj9whqch/image/upload/v1466683670/filter_ncpxki.png",
+                    url: "http://res.cloudinary.com/dvj9whqch/image/upload/v1467187760/filter_slzard.png",
                     width: "100",
                     height: "100"
                    })
