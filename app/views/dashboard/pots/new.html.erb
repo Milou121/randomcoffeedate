@@ -56,7 +56,7 @@
 </div>
 <div class="wrapper" id="beans">
   <div id="friends-select">
-    <h3 style="margin-top: 70px;">
+    <h3 style="margin-top: 120px;">
       Choose your beans
     </h3>
     <div role="group" aria-label="Image Option Buttons">
@@ -89,15 +89,7 @@
     <%= javascript_tag do %>
     $(document).on('ready', function() {
     handler = Gmaps.build('Google');
-    handler.buildMap({ internal: { id: 'map' }, provider: {  scrollwheel: false, styles: [{"stylers":[{"hue":"#2c3e50"},{"saturation":250}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":50},{"visibility":"simplified"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]}, {
-    "featureType": "water",
-    "elementType": "geometry.fill",
-    "stylers": [
-    {
-    "color": "#AFD2FF"
-  }
-  ]
-}] } }, function(){
+    handler.buildMap({ internal: { id: 'map' }, provider: {  scrollwheel: false, styles: [{"featureType":"administrative.country","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"administrative.province","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"administrative.locality","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"administrative.neighborhood","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"administrative.land_parcel","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#7f7b7b"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"color":"#ffffff"}]},{"featureType":"road","elementType":"geometry","stylers":[{"visibility":"on"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#000000"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"off"}]}] } }, function(){
 markers = handler.addMarkers(<%= raw @markers.to_json %>);
 handler.bounds.extendWith(markers);
 handler.fitMapToBounds();
@@ -111,21 +103,27 @@ handler.fitMapToBounds();
   </h4>
 </div>
 </div>
-<div id="scroll-to-time">
-  <a href="#when"><%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1467032314/beanbw_i6lu5e.png") %></a>
+<div id="scroll-to-date">
+  <a href="#when_date"><%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1467032314/beanbw_i6lu5e.png") %></a>
 </div>
 </div>
 
-<div class="wrapper" id="when">
-  <div class="time-select-wrapper">
-    <div class="white-container" id="time-select" style="margin-top: 60px;">
-      <h3>
-        Pick a date ..
-      </h3>
-      <div style="margin-left:auto; margin-right:auto;">
-        <%= form.input :datestring, input_html: { class: "daterange" } %>
-      </div>
+<div class="wrapper" id="when_date">
+<div class="white-container" id="date-select" style="margin-top: 110px;">
+    <h3>
+      Pick a date ..
+    </h3>
+    <div style="margin-left:auto; margin-right:auto;">
+      <%= form.input :datestring, input_html: { class: "daterange" } %>
     </div>
+  </div>
+  <div id="scroll-to-time">
+    <a href="#when_time"><%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1467032314/beanbw_i6lu5e.png") %></a>
+  </div>
+</div>
+
+<div class="wrapper" id="when_time">
+  <div class="time-select-wrapper">
     <div class="white-container" id="time-select" style="margin-top: 60px;">
       <h3>
         .. and select the time(s)!
@@ -137,16 +135,25 @@ handler.fitMapToBounds();
       <%= form.input :time_6 %>
     </div>
   </div>
-  <div class="white-container" id="time-select" style="margin-top: 60px;">
-    <div class="almost_ready">
-      <p style="margin-top: 20px;">
-        Selected the friends you want to add to your pot? And chose a nice location? If you are sure that you are available on these dates and times, you're all set and one click away from finding that match!
-      </p>
-    </div>
-    <%= form.submit class: "button-blue"%>
-    <% end %>
+  <div id="scroll-to-ready">
+    <a href="#almost_ready"><%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1467032314/beanbw_i6lu5e.png") %></a>
   </div>
 </div>
+
+<div class="wrapper" id="almost_ready">
+  <div class="time-select-wrapper">
+    <div class="white-container" id="create_pot_button" style="margin-top: 60px;">
+      <div class="almost_ready">
+        <p style="margin-top: 20px;">
+          Selected the friends you want to add to your pot? And chose a nice location? If you are sure that you are available on these dates and times, you're all set and one click away from finding that match!
+        </p>
+      </div>
+      <%= form.submit class: "button-blue"%>
+      <% end %>
+    </div>
+  </div>
+</div>
+
 <% else %>
 <div class="wrapper no_friends">
   <div class="no-friends-card">
