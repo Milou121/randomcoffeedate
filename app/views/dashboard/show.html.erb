@@ -2,7 +2,7 @@
     <div class="row">
       <div class="col-xs-12 col-sm-6">
         <h3 class="welcome_user">
-        Hi <%= current_user.username %>!
+          Hi <%= current_user.username %>!
         </h3>
       </div>
     </div>
@@ -51,22 +51,26 @@
          <h3 class="margin-top">
           Your Cuppa Date
         </h3>
-        <% unless @confirmed_cups.empty? %>
-        <% @confirmed_cups.each do |cup| %>
-        <%= cup.date %>
-        <% location = cup.location_id %>
-        <%= Location.find(location).name %>
-        <%= form_tag cancel_dashboard_cup_path(cup), method: :patch do %>
-        <%= submit_tag("cancel") %>
-        <% end %>
-        <% end %>
-        <% else %>
+        <div class="cuppa-date">
+          <% unless @confirmed_cups.empty? %>
+          <% @confirmed_cups.each do |cup| %>
+          <p><strong> On: </strong><%= cup.date %> </p>
+          <% location = cup.location_id %>
+          <p> <strong>Where?</strong> <%= Location.find(location).name %> </p>
+          <br>
+          <%= link_to "more info", dashboard_cup_path(cup) , class: "button-blue" %>
+          <%= form_tag cancel_dashboard_cup_path(cup), class: "cancel-button" , method: :patch do%>
+          <%= submit_tag("cancel")%>
+          <% end %>
+          <% end %>
+          <% else %>
 
 
-        <p>You don't have a cuppa! Cuppa?</p>
+          <p>You don't have a cuppa! Cuppa?</p>
 
 
-        <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
 
