@@ -3,8 +3,13 @@
  * (margin/padding adjustments)
  * ------------------------------------- */
 
-.how-icon-margin{
 
+.how-position {
+color: white;
+position: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
 }
 
  .cuppa-home {
@@ -17,7 +22,7 @@
 
 body.pages-home {
   background-repeat: no-repeat;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.1) 100%), url("http://res.cloudinary.com/dvj9whqch/image/upload/v1467105925/home-1400_dqkzkx.png");
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.1) 100%), url("http://res.cloudinary.com/dvj9whqch/image/upload/v1467204436/new-bg-home_q9jee7.png");
 }
 
 .top {
@@ -80,8 +85,8 @@ body.pages-home {
 }
 
 .facts {
-  margin-bottom: -116px;
-  margin-top: 60px;
+  margin-bottom: -26px;
+  margin-top: -57px;
   width: 100vw;
   height: 80vh;
   display: flex;
@@ -99,7 +104,7 @@ body.pages-home {
 
 #scroll-to-how {
   position: absolute;
-  left: 45%;
+  left: 46%;
   bottom: 10px;
 }
 
