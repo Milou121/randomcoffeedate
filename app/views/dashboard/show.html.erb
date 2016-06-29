@@ -28,7 +28,7 @@
            <% location = Location.find(pot_location) %>
            <p class="divider-bottom"><strong>Where? </strong><%= location.name %></p>
 
-           <%= form_tag dashboard_pot_path(pot), class: "cancel-button", method: :destroy do %>
+           <%= form_tag dashboard_pot_path(pot), class: "cancel-button", method: :delete do %>
            <%= submit_tag("cancel") %>
            <% end %>
          </div>
