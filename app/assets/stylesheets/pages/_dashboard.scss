@@ -64,12 +64,17 @@ body.dashboard-show{
   position: absolute;
   right: 20px;
   bottom: 0px; 
-  // background-color: #D3D3D3;
-  // border: none; 
-  // border-radius: 3px;
-  // padding: 2px; 
+  background-color: #D8D6D6;
+  border: none; 
+  border-radius: 3px;
+  padding: 2px;
+  padding-left: 2px; 
+  padding-right: 2px; 
 }
 
+.cancel-button:hover { 
+  background-color: #EDEDED;
+}
 
 
 
