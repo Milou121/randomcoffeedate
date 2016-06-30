@@ -1,126 +1,16 @@
-<div class="wrapper" id="cuppa-dashboard">
 
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-4">
-        <div class="padding-left">
-         <%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1466683687/pendingcup_uow2uf.png", class:"cup-img-width") %>
-
-         <h3>
-           Pending Cuppa
-         </h3>
-         <% unless @pots.empty? %>
-         <% @pots.each do |pot| %>
-         <%= pot.start_date %>
-         <br>
-         <% pot_location = pot.location_id %>
-         <% location = Location.find(pot_location) %>
-         <%= location.name %>
-
-         <%= form_tag dashboard_pot_path(pot), method: :destroy do %>
-         <%= submit_tag("cancel") %>
-         <% end %>
-         <% end %>
-         <% else %>
-         <p>You don't have a cuppa! Make a pot!</p>
-         <% end %>
-       </div>
-     </div>
-
-
-     <div class="col-xs-12 col-sm-4">
-       <div class="padding-left">
-         <%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1466761054/confirmcup_ffpgfm.png", class:"cup-img-width") %>
-         <h3>
-          Your Cuppa Date
-        </h3>
-        <% unless @confirmed_cups.empty? %>
-        <% @confirmed_cups.each do |cup| %>
-        <%= cup.date %>
-        <%= cup.name %>
-        <%= form_tag cancel_dashboard_cup_path(cup), method: :patch do %>
-        <%= submit_tag("cancel") %>
-        <% end %>
-        <% end %>
-        <% else %>
-        <p>You don't have a cuppa! Cuppa?</p>
-        <% end %>
-      </div>
-    </div>
-
-    <div class="col-xs-12 col-sm-4">
-      <div class="padding-left">
-       <%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1466683670/cancelcup_nzlrxh.png", class:"cup-img-width") %>
-       <h3>
-        Canceled Cuppa
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <h3 class="welcome_user">
+        Hi <%= current_user.username %>!
       </h3>
-      <% unless @canceled_cups.empty? %>
-      <% @canceled_cups.each do |cup| %>
-      <%= cup.date %>
-      <br>
-      <%= cup.location.name %>
-      <% end %>
-      <% end %>
     </div>
   </div>
-</div>
-</div>
-</div>
-
-<div class="arrow-position">
-  <div class="scroll">
-    <section id="scroll" class="demo">
-      <a href="#friend-list"><span></span></a>
-    </section>
-  </div>
+  <%= render 'cuppa' %>
+  <%= render 'requests' %>
 </div>
 
 
-<div class="wrapper" id="friend-list">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-4">
-        <div class="white-container">
-          <h3>
-           Your pending request
-         </h3>
-         <% @user.pending_invited.each do |pending| %>
-         <%= pending.email %>
-         <%= form_tag friend_path(pending), method: :delete do %>
-         <%= submit_tag("cancel") %>
-         <% end %>
-         <% end %>
-       </div>
-     </div>
-
-     <div class="col-xs-12 col-sm-4">
-      <div class="white-container">
-       <h3>
-        Friends' pending request
-      </h3>
-      <% @user.pending_invited_by.each do |pending|  %>
-      <%= pending.email %>
-      <%= form_tag friend_path(pending), method: :patch do %>
-      <%= submit_tag "Approve friend" %>
-      <% end %>
-      <% end %>
-    </div>
-  </div>
-
-  <div class="col-xs-12 col-sm-4 aligh-button">
-
-   <div class="button-blue text-center">
-    <%= link_to("View Friends", friends_url, class: "profile-link") %>
-  </div>
-
-  <div class="button-blue text-center">
-    <%= link_to("Edit Profile", edit_user_registration_url, class: "profile-link") %>
-  </div>
-
-
-</div>
-</div>
-</div>
-</div>
 
 

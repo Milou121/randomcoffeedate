@@ -1,9 +1,34 @@
+.button-gray {
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: #929292;
+  transition: background 0.3s ease;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.button-gray:hover {
+  opacity: 1;
+  background: #929292;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.button-gray-side-margin {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .button-blue {
   color: white;
   padding: 10px 15px;
   border-radius: 4px;
   font-weight: bold;
-  background: #1640B0;
+  background: #00DCC6;
   transition: background 0.3s ease;
   border: none;
   margin-top: 10px;
@@ -17,7 +42,7 @@
 
 .button-blue:hover {
   opacity: 1;
-  background: #62A7FF;
+  background: #00C7B2;
   text-decoration: none;
   color: white;
   cursor: pointer;

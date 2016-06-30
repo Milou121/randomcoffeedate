@@ -1,0 +1,13 @@
+
+  <h2>Hello,<%= @invitee_email %>!</h2>
+  <br>
+  <p>
+  <%= @user.username %> sent you a friend request!
+  Join Cuppa now <%= link_to "here", root_url %> and have a random coffee date with <%= @user.username %>, or one of your other friends. 
+  <br>
+  <br>
+  Cheers, 
+  <br>
+  Cuppa
+</p>
+<%= image_tag 'logo.png' %>

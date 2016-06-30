@@ -29,7 +29,7 @@ class Dashboard::PotsController < ApplicationController
       end
     else
       init_pot
-      flash[:alert] = "Can't create cuppa pot. #{@pot.errors.full_messages.join('! ')}"
+      flash.now[:alert] = "Can't create cuppa pot. #{@pot.errors.full_messages.join('! ')}"
       render :new
     end
   end
@@ -116,8 +116,12 @@ class Dashboard::PotsController < ApplicationController
     @pot.update(cup: @cup)
     matching_pot.update(cup: @cup)
 
-    UserMailer.cuppa_match(@user, matching_pot.user).deliver_now
+
+    CupMailer.cuppa_match(@cup, current_user).deliver_now
+    CupMailer.cuppa_match(@cup, matching_pot.user).deliver_now
+
   end
+
 
   def init_pot
     @friends = current_user.friends
@@ -129,7 +133,7 @@ class Dashboard::PotsController < ApplicationController
       marker.lng location.longitude
       marker.infowindow marker_string(location)
       marker.picture({
-                    url: "http://res.cloudinary.com/dvj9whqch/image/upload/v1466683670/filter_ncpxki.png",
+                    url: "http://res.cloudinary.com/dvj9whqch/image/upload/v1467187760/filter_slzard.png",
                     width: "100",
                     height: "100"
                    })
@@ -144,9 +148,10 @@ class Dashboard::PotsController < ApplicationController
   end
 
   def set_pot_friends
-    return unless params[:friend_ids]
+    @friend_ids = params[:friend_ids]
+    return unless @friend_ids
 
-    params[:friend_ids].each do |friend_id|
+    @friend_ids.each do |friend_id|
       @pot.pot_friends.new(friend_id: friend_id)
     end
   end
@@ -158,9 +163,9 @@ class Dashboard::PotsController < ApplicationController
   def marker_string(location)
     <<~HEREDOC
       <div class='infomap-style'>
-        <p>#{location.name}</p>
+        <p><strong>#{location.name}</strong></p>
         <p>#{location.address}</p>
-        <a href="#" class="btn btn-primary js-pot--select-location" data-location-id="#{location.id}" data-location-name="#{location.name}">SELECT</a>
+        <a href="#" class="btn button-blue  js-pot--select-location" data-location-id="#{location.id}" data-location-name="#{location.name}">SELECT</a>
       </div>
     HEREDOC
   end

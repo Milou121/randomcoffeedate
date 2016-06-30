@@ -1,27 +1,105 @@
+// body.dashboard\/pots-new {
+//   background-image: url("http://res.cloudinary.com/dvj9whqch/image/upload/v1467041538/homegb_rkjnhh.png");
+// }
+
 
 ///////////////////* First Page */
-#create {
-  width: 100vw;
+.create {
   height: 100vh;
+  position: relative;
+}
+
+
+body.dashboard\/pots-new {
+ background-repeat: no-repeat;
+ background-image: url("http://res.cloudinary.com/dvj9whqch/image/upload/v1467204439/pot-new-bg-white-new_tfpurl.png");
+}
+
+body.dashboard\/pots-create {
+ background-repeat: no-repeat;
+ background-image: url("http://res.cloudinary.com/dvj9whqch/image/upload/v1467204439/pot-new-bg-white-new_tfpurl.png");
+}
+
+#scroll-to-friends {
+  position: absolute;
+  right: 50%;
+  top: 310px;
+  left: 46%;
+}
+
+#scroll-to-location {
+  position: absolute;
+  left: 46%;
+  bottom: -1070px;
+}
+
+#scroll-to-date {
+  position: absolute;
+  left: 46%;
+  bottom: 0px;
+}
+
+#scroll-to-time {
+  position: absolute;
+  left: 46%;
+  bottom: 10px;
+}
+
+#scroll-to-ready {
+  position: absolute;
+  left: 46%;
+  bottom: 25px;
+}
+
+.time-select-wrapper {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 38%;
+  top: 100px;
+}
+
+///// No friends info
+.no-friends-card {
+  display: flex;
+  background-color: white;
+  width: 450px;
+  height: 275px;
+  padding: 20px 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+}
+
+.no_friends {
+  height: 40vh;
+}
+
+.add-friends {
+  width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 ////////////////* Select Friends*/
 #beans {
-  width: 100vw;
   height: 100vh;
 }
 
 #button-blue {
-margin-left: auto;
-margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #toggleAll a:focus {
-text-color: white;
+  text-color: white;
 }
 
 .friend-select {
   margin-top: 100px;
+  min-width: 400px;
+  margin-left: 29%;
 }
 
 .image_picker_image {
@@ -36,8 +114,8 @@ text-color: white;
  border-radius: 50%;
  width: 100px;
  height: 100px;
- background-color: none;
- box-shadow: 0px 0px 0px 5px #613720;
+ // background-color: none;
+ box-shadow: 0px 0px 0px 5px #00C7B2;
 }
 
 ul.thumbnails.image_picker_selector li {
@@ -47,7 +125,7 @@ ul.thumbnails.image_picker_selector li {
    width: 100px;
    height: 100px;
    overflow: hidden;
-   background: none !important;
+   // background: none !important;
    border-radius: 50%;
    padding: 0px;
    margin: 10px;
@@ -55,22 +133,26 @@ ul.thumbnails.image_picker_selector li {
 }
 
 .thumbnail > img, .thumbnail a > img {
-   width: 100px;
-   height: 100px;
- }
-
+ width: 100px;
+ height: 100px;
+}
 
 ul.thumbnails.image_picker_selector li .thumbnail.selected {
-    background: #613720;
+  background: url("http://res.cloudinary.com/dvj9whqch/image/upload/v1467205594/bean-for-photo_fvbtzl.png");
+  background-repeat: no-repeat;
 }
 
 
 
 ///////////////////* Select Location*/
-#when {
-  width: 100vw;
+#when_date {
   height: 100vh;
-  text-align: center;
+  position: relative;
+}
+
+#when_time {
+  height: 100vh;
+  position: relative;
 }
 
 #location-select {
@@ -78,23 +160,46 @@ ul.thumbnails.image_picker_selector li .thumbnail.selected {
   margin-top: 20px;
 }
 
+.location-text {
+  color: black;
+}
+
 //////////////////* Select Date/Time */
+///
+
+
 #where {
-  width: 100vw;
   height: 100vh;
-  justify-content: center;
+  position: relative;
+}
+
+#date-select {
+  text-align: center;
+  top: 100px;
+  left: 38%;
+  position: absolute;
+  width: 350px;
 }
 
 #time-select {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  top: 50%;
+  left: 47%;
+  width: 350px;
 }
 
 #pot_datestring {
  margin-right: auto;
  margin-left: auto;
- width: 20%;
+ width: 68%;
+}
+
+#almost_ready {
+  height: 80vh;
+  position: relative;
+  text-align: center;
 }
 
 .almost_ready {
@@ -103,8 +208,15 @@ ul.thumbnails.image_picker_selector li .thumbnail.selected {
   margin-left: auto;
 }
 
+#create_pot_button {
+  margin-top: 10px;
+  position: absolute;
+  left: 25px;
+}
+
 .wrapper-white {
   background-color: white;
+  position: relative;
 }
 
 .map-title {

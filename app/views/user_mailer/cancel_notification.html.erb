@@ -1,12 +1,13 @@
-<p>
-  Hello! <%= @user.username %>
+
+  <h2>Hello,<%= @user.username %>!</h2>
   <br>
-  <br>
+  <p>
   We are sorry to notify you that
   one of your cuppa match got canceled! :( <br>
   Want to set a new <%= link_to "cuppa?", new_dashboard_pot_url(@user) %>
   <br>
   <br>
-  regards,<br>
+  Cheers, <br>
   Cuppa
 </p>
+<%= image_tag 'logo.png' %>

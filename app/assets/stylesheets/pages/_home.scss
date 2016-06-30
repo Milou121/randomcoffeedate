@@ -2,79 +2,125 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
- .cuppa-home {
+
+ .background-color{
+  background-color: #AFD2FF;
+}
+
+.p-bigger {
+  font-size: 18px;
+}
+
+.p-mideum {
+  font-size: 17px;
+}
+
+ .how-position {
+  color: white;
+  position: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.cuppa-home {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
   width: 500px;
+  color: white;
+}
 
+body.pages-home {
+  background-repeat: no-repeat;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.1) 100%), url("http://res.cloudinary.com/dvj9whqch/image/upload/v1467204436/new-bg-home_q9jee7.png");
 }
 
 .top {
-  width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center; /* align horizontal */
   align-items: center;
-  margin-top: -175px;
+  margin-top: -280px;
 }
 
 .how {
+  margin-top: 100px;
   display: flex;
   justify-content: center; /* align horizontal */
   align-items: center;
+  height: 100vh;
+  position: relative
+}
+
+.how-2 {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center;
+  height: 100vh;
+  position: relative
 }
 
 // Facts
 
+.bg-facts {
+  background-color: #00C7B2;
+  margin-top: -20px;
+}
+
 .card {
+  width: 500px;
   position: relative;
-  height: 250px;
+  height: 350px;
   // text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-color: white;
-  color: #613720;
+  color: #1F201B;
   position: relative;
   border-radius: 5px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .card-content {
   position: absolute;
-  font-size: 20px;
-  padding: 20px 20px;
+  font-size: 17px;
+  padding: 35px 25px;
 }
 
 .card-content p {
-  color: #613720;
+  color: #1F201B;
 }
 
 .facts {
-  background: url('http://res.cloudinary.com/dvj9whqch/image/upload/v1466759075/coffe-bean-texture_b9ovid.jpg');
-  background-size: cover !important;
-  width: 80vw;
+  margin-bottom: -26px;
+  margin-top: -57px;
   height: 80vh;
   display: flex;
   justify-content: center; /* align horizontal */
   align-items: center;
+  flex-direction: column;
 }
-// body {
-//   height: 100%;
-//   width: 100%;
-//   background-color: #0B1A21;
-//   -webkit-animation: colors 6s linear normal infinite;
-//   animation: colors 6s linear normal infinite;
-// }
 
-// scroll
+// SCROLL
+
 .scroll {
   margin: 30px 30px;
   text-align: center;
 }
 
-.home-scroll {
-  display: inline-block;
-  align-self: flex-end;
+#scroll-to-how {
+  position: absolute;
+  left: 46%;
+  bottom: 10px;
 }
+
+#scroll-to-how-2 {
+  position: absolute;
+  left: 45%;
+  bottom: 10px;
+}
+
 
 #content {
   width: 1000px;
@@ -86,10 +132,12 @@
 }
 
 #board{
+  position: absolute;
   display: flex;
   justify-content: center; /* align horizontal */
   align-items: center;
   margin-top: 260px;
+  left: 63px;
 }
 
 #box1,#box2,#box3 {
@@ -122,23 +170,9 @@
   position: absolute;
   z-index: 200;
   top: -510px;
-  margin-left: 70px;
+  margin-left: 47px;
   display: none;
 }
-
-
-.color_0 {
-  background-color: #70B3CD !important;
-}
-
-.color_1 {
-  background-color: #B12F2F !important;
-}
-
-.color_2 {
-  background-color: #1F8E1A !important;
-}
-
 
 
 .hide {
@@ -224,13 +258,12 @@
 
 #scroll a span {
   position: absolute;
-  top: 80px;
   left: 50%;
   width: 24px;
   height: 24px;
   margin-left: -12px;
-  border-left: 2px solid white;
-  border-bottom: 2px solid white;
+  border-left: 3px solid white;
+  border-bottom: 3px solid white;
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
   -webkit-animation: sdb05 1.5s infinite;
@@ -264,3 +297,12 @@
   }
 
 }
+
+/// Random Facts
+///
+
+.animate-message {
+  animation: bigEntrance 2s ease;
+  // animation: tossing 2s ease;
+}
+
