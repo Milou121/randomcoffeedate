@@ -22,7 +22,7 @@
       <% @user.pending_invited_by.each do |pending|  %>
         <%= pending.email %>
         <%= form_tag friend_path(pending), method: :patch do %>
-          <%= submit_tag "Approve friend" %>
+          <%= submit_tag "Approve friend", class: "button-blue" %>
         <% end %>
       <% end %>
       </div>
