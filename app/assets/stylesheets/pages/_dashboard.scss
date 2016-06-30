@@ -4,9 +4,15 @@
   bottom: 20px;
 }
 
+// .arrow-wrapper {
+//   position: relative;
+//   text-align: center;
+
+// }
+
 .arrow-position {
-max-width: 100px;
-right: 2%;
+  position: absolute;
+  left: 33%;
 }
 
 .cuppa-wrapper {
@@ -140,11 +146,6 @@ body.dashboard-show{
   height: 50vh;
   margin-top: 60px;
 
-}
-
-.arrow-position {
-  position: relative;
-  margin-top: -500px;
 }
 
 .aligh-button {
