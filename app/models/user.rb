@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :pots, dependent: :destroy
+  has_many :friend_pots, dependent: :destroy, class_name: "PotFriend", foreign_key: "friend_id"
 
   devise :database_authenticatable, :registerable, :recoverable, :rememberable,
    :trackable, :validatable, :confirmable
