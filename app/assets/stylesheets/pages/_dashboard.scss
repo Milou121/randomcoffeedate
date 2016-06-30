@@ -1,7 +1,12 @@
 .scroll-to-friend {
-position: absolute;
-right: 40px;
-bottom: 20px;
+  position: absolute;
+  right: 40px;
+  bottom: 20px;
+}
+
+.arrow-position {
+max-width: 100px;
+right: 2%;
 }
 
 .cuppa-wrapper {
@@ -133,7 +138,7 @@ body.dashboard-show{
 #friend-list {
   padding: 15px;
   height: 50vh;
-  margin-top: 500px;
+  margin-top: 60px;
 
 }
 
