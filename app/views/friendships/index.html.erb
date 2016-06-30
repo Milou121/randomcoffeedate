@@ -13,7 +13,7 @@
 			<%= form_tag friend_path(friend), data: {confirm: "Are you sure?"},  method: :delete do %>
 			<%= friend.username %>
       <br>
-			<%= submit_tag("delete", class: "button-blue")%>
+			<%= submit_tag("delete", class: "cancel-friends-button")%>
 			<% end %>
 		</div>
 		<% end %>

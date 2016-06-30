@@ -1,9 +1,21 @@
 .profile-link{
   text-decoration: none;
   color: white;
+  position: absolute;
+  width: 200px;
+}
+
+.view-friends {
+  top: 10px;
+  text-decoration: none;
+}
+
+.edit-profile {
+  top: 65px;
+  text-decoration: none;
 }
 
 .profile-link:hover{
-text-decoration: none;
-color: white;
+  text-decoration: none;
+  color: white;
 }
