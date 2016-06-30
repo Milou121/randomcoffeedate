@@ -27,8 +27,10 @@ class FriendshipsController < ApplicationController
       FriendshipMailer.friends_request(@user, invitee).deliver_now
       FriendshipMailer.friends_request_invitee(@user, invitee).deliver_now
       redirect_to new_friend_path, :notice => "Successfully invited friend!"
+    elsif current_user.friends.include?(invitee)
+      notice: "You are already a friend with #{invitee.name}!"
     else
-      redirect_to new_friend_path, :notice => "Sorry! This email is not a user"
+      redirect_to new_friend_path, :notice => "Sorry! Something went wrong"
     end
   end
 
