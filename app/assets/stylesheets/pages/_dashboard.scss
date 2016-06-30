@@ -1,8 +1,11 @@
-.scroll-to-friend {
+.scroll-down{
 position: absolute;
-right: 40px;
-bottom: 20px;
+max-height: 120px;
+max-width: 120px;
+float: right;
 }
+
+
 
 .cuppa-wrapper {
   position: relative;
