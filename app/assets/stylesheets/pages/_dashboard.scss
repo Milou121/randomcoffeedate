@@ -103,6 +103,18 @@ body.dashboard-show{
   padding-right: 2px;
 }
 
+.cancel-button-pending-friends {
+  position: absolute;
+  right: 40px;
+  bottom: 20px;
+  background-color: #D8D6D6;
+  border: none;
+  border-radius: 3px;
+  padding: 2px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
 .cancel-button:hover {
   background-color: #EDEDED;
 }
