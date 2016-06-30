@@ -1,0 +1,91 @@
+<div class="row">
+  <div class="cuppa-wrapper">
+    <div class="col-xs-12 col-sm-4">
+      <div class="img-margin-left">
+        <%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1467033784/cupdownq_btrsop.png") %>
+      </div>
+      <div class="white-card">
+        <h3 class="margin-top">
+         Pending Cuppa
+       </h3>
+       <% unless @pots.empty? %>
+       <p>
+         Still waiting for a match ..
+       </p>
+       <% @pots.each do |pot| %>
+       <div class="pending-cuppa">
+         <p class="divider">
+          <strong>On:</strong> <%= pot.start_date %>
+        </p>
+        <% pot_location = pot.location_id %>
+        <% location = Location.find(pot_location) %>
+        <p class="divider-bottom">
+         <strong>Where? </strong><%= location.name %>
+       </p>
+       <%= form_tag dashboard_pot_path(pot),data: {confirm: "Are you sure you want to cancel this Cuppa?"}, method: :delete do %>
+       <%= submit_tag("cancel", class: "cancel-button-pending-cuppa")%>
+       <% end %>
+     </div>
+     <% end %>
+     <% else %>
+     <p>
+       You don't have a cuppa! Make a pot!
+     </p>
+     <% end %>
+   </div>
+ </div>
+ <div class="col-xs-12 col-sm-4">
+
+   <div class="img-margin-left">
+     <%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1467032314/dashboardcuppabean_tntpqi.png") %>
+   </div>
+   <div class="white-card">
+     <h3 class="margin-top">
+       Your Cuppa Date
+     </h3>
+     <% unless @confirmed_cups.empty? %>
+     <% @confirmed_cups.each do |cup| %>
+     <div class="cuppa-date">
+      <p class="divider">
+        <strong>On:</strong> <%= cup.date %>
+      </p>
+      <% location = cup.location_id %>
+      <p class="divider-bottom">
+        <strong>Where?</strong> <%= Location.find(location).name %>
+      </p>
+      <br>
+      <%= link_to "more info", dashboard_cup_path(cup) , class: "button-blue" %>
+      <%= form_tag cancel_dashboard_cup_path(cup), class: "cancel-button" , method: :patch do%>
+      <%= submit_tag("cancel", class: "cancel-button-pending-cuppa-date")%>
+      <% end %>
+    </div>
+    <% end %>
+    <% else %>
+    <p>You don't have a cuppa! Cuppa?</p>
+    <% end %>
+  </div>
+
+  <br>
+  <div class="arrow-position">
+    <a href="#friend-list"><%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1467189376/arrow_mmr72e.png") %></a>
+  </div>
+
+</div>
+
+<div class="col-xs-12 col-sm-4">
+  <div class="img-margin-left">
+    <%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1467033704/cupcancel_tuyzql.png") %>
+  </div>
+  <div class="white-card">
+    <h3 class="margin-top">
+      Cancelled Cuppa
+    </h3>
+    <% unless @canceled_cups.empty? %>
+    <% @canceled_cups.each do |cup| %>
+    <p><%= cup.date %> at <%= cup.location.name %></p>
+    <% end %>
+    <% end %>
+  </div>
+</div>
+</div>
+</div>
