@@ -1,0 +1,10 @@
+td:not(#foo) > input[type=checkbox] + label
+{
+  background: url('/images/bean.png') 0 0px no-repeat;
+ height: 16px;
+ padding: 0 0 0 0px;
+}
+
+td:not(#foo) > input[type=checkbox]:checked + label {
+ background: url('/images/bean.png') 0 0px no-repeat;
+}

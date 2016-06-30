@@ -1,5 +1,12 @@
+body.friendships-index {
+ background-repeat: no-repeat;
+ background-image: url("http://res.cloudinary.com/dvj9whqch/image/upload/v1467115242/pot-new-white_f4zaxl.png");
+}
+
 .friendship-title {
   text-align: center;
+  color: white;
+  padding-bottom: 20px;
 }
 
 .friendship-form {
@@ -10,51 +17,62 @@
   flex-grow: 1;
   border: none;
   border-radius: 4px;
+  margin-top: 10px;
+  height: 42px;
 }
 
-.animation-title {
-  color: #fff;
-  font-size: 3.82rem;
-  font-weight: 700;
-  margin:0 0 0.5rem 0;
-  line-height: 1;
-  letter-spacing: 0.1em;
+.bean-size {
+ width: 40px;
+ height: 40px;
 }
 
-.wave {
-  -webkit-animation: moveTheWave 2400ms linear infinite;
-  animation: moveTheWave 2400ms linear infinite;
-  stroke-dasharray: 0 16 101 16;
+
+.layout-center {
+  text-align: center;
 }
 
-@-webkit-keyframes moveTheWave {
-
-  0% {
-    stroke-dashoffset: 0;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-
-  100% {
-    stroke-dashoffset: -133;
-    -webkit-transform: translate3d(-90px, 0, 0);
-    transform: translate3d(-90px, 0, 0);
-  }
+body.friendships-new {
+  background-image: url("http://res.cloudinary.com/dvj9whqch/image/upload/v1467104796/addfriend_k0ukhe.png");
+  background-size: cover !important;
 
 }
 
-@keyframes moveTheWave {
+@keyframes swing {
+  0%, 100% { transform: rotate(-30deg); }
+  20%, 80% {transform: scale(0.95); }
+  50% { transform: rotate(30deg); }
+}
 
-  0% {
-    stroke-dashoffset: 0;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
+#bean {
 
-  100% {
-    stroke-dashoffset: -133;
-    -webkit-transform: translate3d(-90px, 0, 0);
-    transform: translate3d(-90px, 0, 0);
-  }
+  animation: swing 2s infinite ease-in-out;
 
+}
+
+.bean-wrapper {
+  width: 360px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.friend {
+ padding: 20px;
+ border-radius: 100px;
+}
+.friend-photo {
+ padding: 10px;
+ border-radius: 100%;
+ width: 150px;
+ height: 150px;
+ display: block;
+ margin-left: auto;
+ margin-right: auto;
+
+}
+
+#friend {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 75px;
 }

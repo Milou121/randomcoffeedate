@@ -1,6 +1,6 @@
 
 //vars
-$fg:#62A7FF;
+$fg:#00DCC6;
 
 $pi:3.14;
 
@@ -16,24 +16,19 @@ a{
 
 .logo-home{
   position: fixed;
-  top: 20px;
+  top: 10px;
   right: 30px;
-  width: 79px;
+  width: 99px;
   z-index: 99999999;
 
 }
 
-%goo{
-  filter:url('#shadowed-goo');
-  // debug
-  //background:rgba(255,0,0,0.2);
-}
 %ball{
   background:$fg;
   border-radius:100%;
   width:80px;
   height:80px;
-  margin-left:-40px;
+  margin-left:-58px;
   position:absolute;
   top:20px;
   color:white;
@@ -84,10 +79,9 @@ $hamburger-spacing:8px;
   }
 }
 .menu{
-  @extend %goo;
   $width:650px;
   $height:150px;
-  position:fixed;
+  position: absolute;
   left:80px;
   padding-top:40px;
   width:$width;
@@ -100,6 +94,7 @@ $hamburger-spacing:8px;
 
 
 .menu-item{
+  transform:scale(0.9,0.9) translate3d(0,0,0);
   &:hover{
     background:white;
     color:$fg;
@@ -116,11 +111,11 @@ $hamburger-spacing:8px;
   z-index:2;
   transition-timing-function:cubic-bezier(0.175, 0.885, 0.320, 1.275);
   transition-duration:400ms;
-  transform:scale(1.1,1.1) translate3d(0,0,0);
+  transform:scale(0.9,0.9) translate3d(0,0,0);
   cursor:pointer;
 }
 .menu-open-button:hover{
-  transform:scale(1.2,1.2) translate3d(0,0,0);
+  transform:scale(1.0,1.0) translate3d(0,0,0);
 }
 .menu-open:checked+.menu-open-button{
   transition-timing-function:linear;

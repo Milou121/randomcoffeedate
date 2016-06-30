@@ -1,0 +1,32 @@
+.yourcup {
+  display: flex;
+  justify-content: center;
+  width: 450px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: white;
+  border: 4px solid;
+  padding: 20px;
+  border-color: #1F201B;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+body.dashboard\/cups-show {
+  background: url('http://res.cloudinary.com/dvj9whqch/image/upload/v1467104796/cup-show_u3txmn.png');
+  background-size: cover !important;
+}
+
+#cup-page-title {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 20px;
+  margin-top: -60px;
+  z-index: 55;
+}
+
+.cup {
+  color: white;
+}

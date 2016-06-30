@@ -2,9 +2,11 @@
  * Fonts
  * ------------------------------------- */
 // Google fonts
-@import url("https://fonts.googleapis.com/css?family=Lekton|Yatra+One");
+
+@import url("https://fonts.googleapis.com/css?family=Lekton:400,700|Space+Mono:700");
+
 $base-font: 'Lekton', sans-serif;
-$header-font: 'Yatra One', cursive;
+$header-font: 'Space Mono', monospace;
 
 // Local fonts (uncomment following lines)
 // @font-face {
@@ -16,6 +18,10 @@ $header-font: 'Yatra One', cursive;
 // }
 // $my-font: "Font Name";
 
+h1,h2,h3 {
+
+  color: white;
+}
 // Font-size and line-height
 $base-size: 16px;
 $base-height: 1.4;
@@ -27,7 +33,7 @@ $base-height: 1.4;
 $brand-color: #D23333;
 
 $red: #EE5F5B;
-$blue: #469AE0;
+$blue: #32B796;
 $yellow: #FDB631;
 $orange: #E67E22;
 $green: #32B796;
@@ -38,3 +44,9 @@ $gray-dark:    lighten(#000, 20%);   // #333
 $gray:         lighten(#000, 33.5%); // #555
 $gray-light:   lighten(#000, 46.7%); // #777
 $gray-lighter: lighten(#000, 93.5%); // #eee
+
+.body-content {
+  min-height: 85vh;
+}
+
+

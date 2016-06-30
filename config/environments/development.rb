@@ -16,11 +16,14 @@ Rails.application.configure do
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
-  # Ensure you have defined default url options in your environments files.
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # Enable serving of images, stylesheets, and JavaScripts from an asset server.
+  config.action_controller.asset_host = "//#{ENV['HOST'] || "localhost:3000"}"
+  config.action_mailer.asset_host = "http:#{config.action_controller.asset_host}"
 
   # To test the email text before sending user
   config.action_mailer.delivery_method = :letter_opener
+  # Ensure you have defined default url options in your environments files.
   config.action_mailer.default_url_options = { host: ENV['HOST'] || "localhost:3000" }
 
   # Print deprecation notices to the Rails logger.

@@ -14,6 +14,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+gem 'jquery-ui-rails'
 
 # Le Wagon stylesheets
 gem 'bootstrap-sass'
@@ -32,6 +33,12 @@ gem "geocoder"
 # Enumarize
 gem 'enumerize'
 
+# Image picker
+gem 'image-picker-rails'
+
+# Date picker
+gem 'momentjs-rails'
+gem 'bootstrap-daterangepicker-rails'
 
 # Figaro
 gem 'figaro'

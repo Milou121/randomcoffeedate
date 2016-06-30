@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160617135613) do
+ActiveRecord::Schema.define(version: 20160624133136) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,15 +22,17 @@ ActiveRecord::Schema.define(version: 20160617135613) do
     t.integer  "receiver_id"
     t.string   "time"
     t.date     "date"
-    t.string   "sender_status"
-    t.string   "receiver_status"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "status"
+    t.integer  "canceled_by_id"
   end
 
+  add_index "cups", ["canceled_by_id"], name: "index_cups_on_canceled_by_id", using: :btree
   add_index "cups", ["location_id"], name: "index_cups_on_location_id", using: :btree
   add_index "cups", ["receiver_id"], name: "index_cups_on_receiver_id", using: :btree
   add_index "cups", ["sender_id"], name: "index_cups_on_sender_id", using: :btree
+  add_index "cups", ["status"], name: "index_cups_on_status", using: :btree
 
   create_table "friendships", force: :cascade do |t|
     t.integer "friendable_id"
@@ -73,6 +75,7 @@ ActiveRecord::Schema.define(version: 20160617135613) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "cup_id"
+    t.string   "datestring"
   end
 
   add_index "pots", ["cup_id"], name: "index_pots_on_cup_id", using: :btree
@@ -92,9 +95,9 @@ ActiveRecord::Schema.define(version: 20160617135613) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
+    t.boolean  "admin",                  default: false, null: false
     t.string   "photo"
     t.string   "username"
-    t.boolean  "admin",                  default: false, null: false
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
@@ -105,6 +108,7 @@ ActiveRecord::Schema.define(version: 20160617135613) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "cups", "locations"
+  add_foreign_key "cups", "users", column: "canceled_by_id"
   add_foreign_key "cups", "users", column: "receiver_id"
   add_foreign_key "cups", "users", column: "sender_id"
   add_foreign_key "pot_friends", "pots"

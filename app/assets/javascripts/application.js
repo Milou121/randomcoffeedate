@@ -9,10 +9,24 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
+
+// External libraries
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require bootstrap-sprockets
-//= require_tree .
 //= require underscore
 //= require gmaps/google
+//= require image-picker
+//= require moment
+//= require daterangepicker
+
+// YOUR SCRIPTS
+
+// All our javascript
+//= require pots
+//= require datepicker
+//= require home_cuppa_game
+//= require random_facts
+//= require scroll
+//= require flash

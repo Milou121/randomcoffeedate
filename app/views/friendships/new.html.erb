@@ -1,4 +1,3 @@
-
 <div class="container">
   <div class="row">
     <div class="col-xs-4 col-xs-offset-4">
@@ -8,20 +7,24 @@
     </div>
     <div class="col-xs-4 col-xs-offset-4">
       <%= form_tag(friends_path, class: "friendship-form") do %>
-      <%= email_field(:user, :address, class: "friendship-email") %>
-      <%= submit_tag "Add", class: "button-blue" %>
+
+      <%= email_field(:user, :address, class: "friendship-email", placeholder: "  your_friends_email@here.com") %>
+      <%= submit_tag "Add", class: "button-blue button-blue-side-margin" %>
+
       <% end %>
     </div>
   </div>
+  <br>
 
-  <div class="row">
-    <div class="hero" style="max-height: 700px; padding: 40px; margin: 0px auto; text-align: center;" >
-      <svg width="80" height="60" viewBox="5 0 80 60">
-        <path class="wave" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" d="M 0 37.5 c 7.684299348848887 0 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15" $="1$=010.0" />
-      </svg>
-    </div>
+  <div class="bean-wrapper">
+    <img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1467032314/beanbw_i6lu5e.png" id="bean" class="bean-size">
+
+
+    <img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1467032314/beanbw_i6lu5e.png" id="bean" class="bean-size">
+
+
+
+    <img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1467032314/beanbw_i6lu5e.png" id="bean" class="bean-size">
   </div>
-
 </div>
-
 

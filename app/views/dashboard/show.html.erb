@@ -1,67 +1,16 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-3">
-
-      <h3>
-        Friends
+    <div class="col-xs-12 col-sm-6">
+      <h3 class="welcome_user">
+        Hi <%= current_user.username %>!
       </h3>
-      <% @user.friends.each do |friend| %>
-      <%= friend.email %>
-      <%= form_tag friend_path(friend), method: :delete do %>
-      <%= submit_tag("delete") %>
-      <% end %>
-      <% end %>
-
-      <h3>
-       Your pending request
-     </h3>
-     <% @user.pending_invited.each do |pending| %>
-     <%= pending.email %>
-     <%= form_tag friend_path(pending), method: :delete do %>
-     <%= submit_tag("cancel") %>
-     <% end %>
-     <% end %>
-
-     <h3>
-      Friends' pending request
-    </h3>
-    <% @user.pending_invited_by.each do |pending|  %>
-    <%= pending.email %>
-    <%= form_tag friend_path(pending), method: :patch do %>
-    <%= submit_tag "Approve friend" %>
-    <% end %>
-    <% end %>
-    <br>
-    <br>
-    <%= link_to("Edit Profile", edit_user_registration_url, class: "profile-link") %>
-
+    </div>
   </div>
-
-  <div class="col-xs-3">
-   <h3>
-     Pending Cuppa
-   </h3>
-
- </div>
-
- <div class="col-xs-3">
-   <h3>
-    Your Cuppa Date
-  </h3>
-
+  <%= render 'cuppa' %>
+  <%= render 'requests' %>
 </div>
 
-<div class="col-xs-3">
- <h3>
-  Canceled Cuppa
-</h3>
-
-</div>
-
-
-</div>
-</div>
 
 
 

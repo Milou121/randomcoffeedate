@@ -12,9 +12,7 @@ Rails.application.routes.draw do
 
     resources :cups, only: [:index, :show] do
       member do
-        get :accept
-        get :deny
-        get :cancel
+        patch :cancel
       end
     end
   end

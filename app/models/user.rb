@@ -1,24 +1,21 @@
 class User < ActiveRecord::Base
+  has_many :pots, dependent: :destroy
+  has_many :friend_pots, dependent: :destroy, class_name: "PotFriend", foreign_key: "friend_id"
 
-  has_many :pots
-
-  # before_create :confirmation_token
-  # after_create :send_welcome_email
-  #
-
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable,
    :trackable, :validatable, :confirmable
 
   include Amistad::FriendModel
   mount_uploader :photo, PhotoUploader
 
+  has_many :sent_cups, dependent: :destroy, class_name: "Cup", foreign_key: "sender_id"
+  has_many :received_cups, dependent: :destroy, class_name: "Cup", foreign_key: "receiver_id"
+
   validates :username, presence: true, uniqueness: true
+  validates :photo, presence: true
 
-  private
+  def all_cups
+    Cup.where("sender_id = :id OR receiver_id = :id", id: id)
+  end
 
-  # def send_welcome_email
-  #   UserMailer.welcome(self).deliver_now
-  # end
 end

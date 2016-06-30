@@ -1,3 +1,46 @@
-<h1> Look at this cool cup aka coffee date </h1>
+<div id="wrapper">
+  <div class="container" id="cup-page-title">
+    <div class="row">
+      <div class="col-xs-12 col-offset-6">
+        <h3 class="cup"> Your CUPPA match!</h3>
+      </div>
+    </div>
+  </div>
 
-<%= @cup %>
+  <div class="container yourcup">
+    <div class="row">
+      <div class="col-xs-12 col-offset-6">
+        <p>Yay! Your recently created pot has matched the pot of one of your friends. Time to meet up, catch up and have fun!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container yourcup">
+    <div class="row">
+      <div class="col-xs-6 col-offset-6">
+        <img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1467032314/timebw_wvebcm.png" alt="" class="scr">
+      </div>
+
+      <div class="col-xs-6 col-offset-6">
+        <p>You are ready to go on a coffee date on
+          <%= l(@cup.date, format: :long)%> at <%= human_cup_time(@cup) %>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container yourcup">
+      <div class="row">
+        <div class="col-xs-6 col-offset-6">
+          <img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1467187760/filter_slzard.png" alt="" class="scr">
+        </div>
+
+        <div class="col-xs-6 col-offset-6">
+          <p>You'll meet your friend for a cuppa at
+            <% cup_location = @cup.location_id %>
+            <% location = Location.find(cup_location) %>
+            <%= location.name %>, where you'll meet each other at the bar!</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
