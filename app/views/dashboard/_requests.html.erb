@@ -22,18 +22,18 @@
       <% @user.pending_invited_by.each do |pending|  %>
         <%= pending.email %>
         <%= form_tag friend_path(pending), method: :patch do %>
-          <%= submit_tag "Approve friend" %>
+          <%= submit_tag "Approve friend", class: "button-blue" %>
         <% end %>
       <% end %>
       </div>
     </div>
 
     <div class="col-xs-12 col-sm-4 aligh-button">
-      <div class="button-blue text-center">
-        <%= link_to("View Friends", friends_path, class: "profile-link") %>
+      <div>
+        <%= link_to("View Friends", friends_path, class: "profile-link button-blue text-center view-friends") %>
       </div>
-      <div class="button-blue text-center">
-        <%= link_to("Edit Profile", edit_user_registration_path, class: "profile-link") %>
+      <div>
+        <%= link_to("Edit Profile", edit_user_registration_path, class: "profile-link button-blue text-center edit-profile") %>
       </div>
     </div>
   </div>
