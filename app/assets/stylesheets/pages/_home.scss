@@ -2,9 +2,27 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+<<<<<<< Updated upstream
  .background-color{
   background-color: #AFD2FF;
   min-height: 1400px;
+=======
+
+.p-bigger {
+  font-size: 18px;
+}
+
+.p-mideum {
+  font-size: 17px;
+}
+
+ .how-position {
+  color: white;
+  position: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+>>>>>>> Stashed changes
 }
 
 .cuppa-home{
