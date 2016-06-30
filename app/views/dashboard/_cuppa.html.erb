@@ -8,10 +8,10 @@
         <h3 class="margin-top">
          Pending Cuppa
        </h3>
+       <% unless @pots.empty? %>
        <p>
          Still waiting for a match ..
        </p>
-       <% unless @pots.empty? %>
        <% @pots.each do |pot| %>
        <div class="pending-cuppa">
          <p class="divider">
@@ -23,7 +23,7 @@
          <strong>Where? </strong><%= location.name %>
        </p>
        <%= form_tag dashboard_pot_path(pot),data: {confirm: "Are you sure you want to cancel this Cuppa?"}, method: :delete do %>
-       <%= submit_tag("cancel", class: "cancel-button")%>
+       <%= submit_tag("cancel", class: "cancel-button-pending-cuppa")%>
        <% end %>
      </div>
      <% end %>
@@ -56,7 +56,7 @@
       <br>
       <%= link_to "more info", dashboard_cup_path(cup) , class: "button-blue" %>
       <%= form_tag cancel_dashboard_cup_path(cup), class: "cancel-button" , method: :patch do%>
-      <%= submit_tag("cancel", class: "cancel-button")%>
+      <%= submit_tag("cancel", class: "cancel-button-pending-cuppa-date")%>
       <% end %>
     </div>
     <% end %>
