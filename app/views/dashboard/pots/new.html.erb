@@ -1,24 +1,78 @@
 <!-- <div class="page-title"><h1> Create Your Pot</h1></div> -->
+<% if current_user.friends.any? %>
 <div class="wrapper create">
-  <h1 style="text-align: center; margin-top: 100px;">
-    Create a Cuppa Date
-  </h1>
-  <div id="scroll" class="demo">
-    <a href="#beans"><span></span></a>
+  <div class="cuppa-title-position">
+    <h1 style="text-align: center; margin-top: 100px; color: black;">
+      Create a Cuppa Pot
+    </h1>
+  </div>
+
+  <div class="pour-top-top">
+   <div class="centered pour">
+    <div class="stripes"></div>
+    <div class="stripes"></div>
+    <div class="stripes"></div>
   </div>
 </div>
 
-<div class="wrapper-white" id="beans">
+  <div class="pour-top">
+   <div class="centered pour">
+    <div class="stripes"></div>
+    <div class="stripes"></div>
+    <div class="stripes"></div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+
+      <div class="pot-new-animation-top">
+        <div class="centered pot">
+
+          <div class="centered coffee">
+            <div class="ripple"></div>
+          </div>
+
+          <div class="centered pour">
+            <div class="stripes"></div>
+            <div class="stripes"></div>
+            <div class="stripes"></div>
+          </div>
+          <div>
+            <div class="centered splash"></div>
+            <div class="centered splash"></div>
+            <div class="centered splash"></div>
+          </div>
+        </div>
+      </div>
+      <div class="animation-top-cup">
+        <img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1467032754/cupup_keniwj.png" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div id="scroll-to-friends">
+  <a href="#beans"><%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1467189376/arrow_mmr72e.png") %></a>
+</div>
+</div>
+<div class="wrapper" id="beans">
   <div id="friends-select">
-    <h3>
+    <h3 style="margin-top: 120px;">
       Choose your beans
     </h3>
     <div role="group" aria-label="Image Option Buttons">
+      <a href="#" id="toggleAll" data-toggle="button" aria-pressed="false" autocomplete="off" style="text-decoration: none;">
       <div class="button-blue" id="all_select" style="text-decoration: none;">
-        <a href="#" id="toggleAll" data-toggle="button" aria-pressed="false" autocomplete="off" >
           Select All Friends
-        </a>
       </div>
+    </a>
     </div>
     <div class="friend-select">
       <%= simple_form_for [:dashboard, @pot] do |form| %>
@@ -27,31 +81,23 @@
     </div>
   </div>
 </div>
-  <div id="scroll">
-    <a href="#where"><span></span></a>
-  </div>
+<div id="scroll-to-location">
+  <a href="#where"><%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1467189376/arrow_mmr72e.png") %></a>
+</div>
 </div>
 
-<div class="wrapper" id="where">
+<div class="wrapper location" id="where">
   <div id="location-select">
     <h3>
       Choose a Cafe
     </h3>
     <%= form.association :location, as: :hidden %>
-    <div id="map" style="width: 75%; height: 550px; margin-top: 20px; margin-right: auto; margin-left: auto; "></div>
+    <div id="map" style="width: 75%; height: 500px; margin-top: 20px; margin-right: auto; margin-left: auto; "></div>
     <% content_for(:after_js) do %>
     <%= javascript_tag do %>
     $(document).on('ready', function() {
     handler = Gmaps.build('Google');
-    handler.buildMap({ internal: { id: 'map' }, provider: {  scrollwheel: false, styles: [{"stylers":[{"hue":"#2c3e50"},{"saturation":250}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":50},{"visibility":"simplified"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]}, {
-    "featureType": "water",
-    "elementType": "geometry.fill",
-    "stylers": [
-    {
-    "color": "#AFD2FF"
-  }
-  ]
-}] } }, function(){
+    handler.buildMap({ internal: { id: 'map' }, provider: {  scrollwheel: false, styles: [{"featureType":"administrative.country","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"administrative.province","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"administrative.locality","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"administrative.neighborhood","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"administrative.land_parcel","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#7f7b7b"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"color":"#ffffff"}]},{"featureType":"road","elementType":"geometry","stylers":[{"visibility":"on"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#000000"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"off"}]}] } }, function(){
 markers = handler.addMarkers(<%= raw @markers.to_json %>);
 handler.bounds.extendWith(markers);
 handler.fitMapToBounds();
@@ -65,21 +111,30 @@ handler.fitMapToBounds();
   </h4>
 </div>
 </div>
+<div id="scroll-to-date">
+  <a href="#when_date"><%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1467189376/arrow_mmr72e.png") %></a>
+</div>
 </div>
 
-<div class="wrapper-white" id="when">
-  <div class="time-select-wrapper">
-    <div id="time-select" style="margin-top: 60px;">
-      <h3>
-        Pick a date ..
-      </h3>
-      <div style="margin-left:auto; margin-right:auto;">
-        <%= form.input :datestring, input_html: { class: "daterange" } %>
-      </div>
+<div class="wrapper" id="when_date">
+<div class="white-container" id="date-select" style="margin-top: 110px;">
+    <h3>
+      Pick a date
+    </h3>
+    <div style="margin-left:auto; margin-right:auto;">
+      <%= form.input :datestring, input_html: { class: "daterange" } %>
     </div>
-    <div id="time-select" style="margin-top: 60px;">
+  </div>
+  <div id="scroll-to-time">
+    <a href="#when_time"><%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1467189376/arrow_mmr72e.png") %></a>
+  </div>
+</div>
+
+<div class="wrapper" id="when_time">
+  <div class="time-select-wrapper">
+    <div class="white-container" id="time-select" style="margin-top: 60px;">
       <h3>
-        .. and select the time(s)!
+        Select the time(s)!
       </h3>
       <%= form.input :time_10 %>
       <%= form.input :time_12 %>
@@ -88,17 +143,60 @@ handler.fitMapToBounds();
       <%= form.input :time_6 %>
     </div>
   </div>
-  <div id="time-select" style="margin-top: 60px;">
-    <div class="almost_ready">
-      <p>
-        Selected the friends you want to add to your pot? And chose a nice location? If you are sure that you are available on these dates and times, you're all set and one click away from finding that match!
-      </p>
-    </div>
-    <%= form.submit class: "button-blue"%>
-    <% end %>
+  <div id="scroll-to-ready">
+    <a href="#almost_ready"><%= image_tag("http://res.cloudinary.com/dvj9whqch/image/upload/v1467189376/arrow_mmr72e.png") %></a>
   </div>
 </div>
 
+<div class="wrapper" id="almost_ready">
+  <div class="time-select-wrapper">
+    <div class="white-container" id="create_pot_button" style="margin-top: 60px;">
+      <div class="almost_ready">
+        <p style="margin-top: 20px;">
+          Selected the friends you want to add to your pot? And chose a nice location? If you are sure that you are available on these dates and times, you're all set and one click away from finding that match!
+        </p>
+      </div>
+
+    <div id="container">
+    <%= form.button :submit, class: "button-blue", id: "overlay-menu", html: { id: "overlay-menu" } %>
+   </div>
+   <div class="overlay overlay-data">
+    <img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1467186381/loadingcup_ye0uoy.png" alt="" class="cup-position" />
 
 
+    <img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1467186382/loadingbean_zipjjs.png" alt="" class="bean-position spinning-image" />
+
+  </div>
+
+  <% end %>
+</div>
+</div>
+
+<% else %>
+<div class="wrapper no_friends">
+  <div class="no-friends-card">
+    <h3 style="text-align: center;">
+      Oops! Seems like you need some friends in order to create a pot. Many of your friends might already be on CUPPA. Add your friends or invite them to join!
+    </h3>
+  </div>
+  <div class="button-blue add-friends">
+    <%= link_to("Add Friends", new_friend_path) %>
+  </div>
+</div>
+<% end %>
+
+<%= content_for(:after_js) do %>
+<script>
+  $('#overlay-menu').click(function (e) {
+    e.preventDefault();                   // prevent default anchor behavior
+    setTimeout(submitForm, 2600);
+    $( ".overlay" ).addClass
+    ('overlay-open');
+  });
+
+ function submitForm() {
+      $(".simple_form").submit()
+  }
+</script>
+<% end %>
 

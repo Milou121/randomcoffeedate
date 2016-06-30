@@ -2,10 +2,12 @@
 $(document).on('ready', function() {
   $(".js-pot--friends-picker").imagepicker();
 
+
+
   $('#toggleAll').on('click',function(){
     // click event listener
     $('.thumbnail').addClass("selected");
-    
+
     if($(this).attr('aria-pressed')=='false'){
       console.log("pressed");
 
@@ -21,6 +23,10 @@ $(document).on('ready', function() {
       $(".js-pot--friends-picker").data('picker').sync_picker_with_select();
     }
   });
+
+  $(".js-pot--friends-picker").imagepicker();
+
+
 
   $('#map').on('click', '.js-pot--select-location', function(e){
     e.preventDefault();

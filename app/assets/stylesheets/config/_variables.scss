@@ -2,7 +2,9 @@
  * Fonts
  * ------------------------------------- */
 // Google fonts
-@import url("https://fonts.googleapis.com/css?family=Lekton|Space+Mono:700");
+
+@import url("https://fonts.googleapis.com/css?family=Lekton:400,700|Space+Mono:700");
+
 $base-font: 'Lekton', sans-serif;
 $header-font: 'Space Mono', monospace;
 
@@ -18,7 +20,7 @@ $header-font: 'Space Mono', monospace;
 
 h1,h2,h3 {
 
-  color: #613720;
+  color: white;
 }
 // Font-size and line-height
 $base-size: 16px;
@@ -31,7 +33,7 @@ $base-height: 1.4;
 $brand-color: #D23333;
 
 $red: #EE5F5B;
-$blue: #1640B0;
+$blue: #32B796;
 $yellow: #FDB631;
 $orange: #E67E22;
 $green: #32B796;
@@ -44,8 +46,7 @@ $gray-light:   lighten(#000, 46.7%); // #777
 $gray-lighter: lighten(#000, 93.5%); // #eee
 
 .body-content {
-  min-height: 80vh;
-  color: #613720;
+  min-height: 85vh;
 }
 
 

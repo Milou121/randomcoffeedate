@@ -1,11 +1,13 @@
-<p>
-  Hello! <%= @friend.username %>
+
+  <h2>Hello,<%= @friend.username %>!</h2>
   <br>
+  <p>
   <%= @user.username %> sent you a friend request!
-  Answer the request on your <%= link_to "dashboard", dashboard_url %>
+  Answer the request on your <%= link_to "dashboard", dashboard_url %>.
   <br>
   <br>
-  regards,
+  Cheers,
   <br>
   Cuppa
 </p>
+<%= image_tag 'logo.png' %>

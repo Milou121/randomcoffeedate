@@ -1,6 +1,11 @@
+body.friendships-index {
+ background-repeat: no-repeat;
+ background-image: url("http://res.cloudinary.com/dvj9whqch/image/upload/v1467115242/pot-new-white_f4zaxl.png");
+}
+
 .friendship-title {
   text-align: center;
-  color: #613720;
+  color: white;
   padding-bottom: 20px;
 }
 
@@ -24,6 +29,12 @@
 
 .layout-center {
   text-align: center;
+}
+
+body.friendships-new {
+  background-image: url("http://res.cloudinary.com/dvj9whqch/image/upload/v1467104796/addfriend_k0ukhe.png");
+  background-size: cover !important;
+
 }
 
 @keyframes swing {
