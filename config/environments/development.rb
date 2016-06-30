@@ -19,7 +19,7 @@ Rails.application.configure do
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   config.action_controller.asset_host = "//#{ENV['HOST'] || "localhost:3000"}"
-  config.action_mailer.asset_host = config.action_controller.asset_host
+  config.action_mailer.asset_host = "http:#{config.action_controller.asset_host}"
 
   # To test the email text before sending user
   config.action_mailer.delivery_method = :letter_opener
