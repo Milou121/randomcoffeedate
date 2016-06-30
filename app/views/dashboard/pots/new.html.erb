@@ -8,20 +8,20 @@
   </div>
 
   <div class="pour-top-top">
-   <div class="centered pour">
-    <div class="stripes"></div>
-    <div class="stripes"></div>
-    <div class="stripes"></div>
+    <div class="centered pour">
+      <div class="stripes"></div>
+      <div class="stripes"></div>
+      <div class="stripes"></div>
+    </div>
   </div>
-</div>
 
   <div class="pour-top">
-   <div class="centered pour">
-    <div class="stripes"></div>
-    <div class="stripes"></div>
-    <div class="stripes"></div>
+    <div class="centered pour">
+      <div class="stripes"></div>
+      <div class="stripes"></div>
+      <div class="stripes"></div>
+    </div>
   </div>
-</div>
 
 <div class="container">
   <div class="row">
@@ -69,10 +69,10 @@
     </h3>
     <div role="group" aria-label="Image Option Buttons">
       <a href="#" id="toggleAll" data-toggle="button" aria-pressed="false" autocomplete="off" style="text-decoration: none;">
-      <div class="button-blue" id="all_select" style="text-decoration: none;">
+        <div class="button-blue" id="all_select" style="text-decoration: none;">
           Select All Friends
-      </div>
-    </a>
+        </div>
+      </a>
     </div>
     <div class="friend-select">
       <%= simple_form_for [:dashboard, @pot] do |form| %>
@@ -98,10 +98,10 @@
     $(document).on('ready', function() {
     handler = Gmaps.build('Google');
     handler.buildMap({ internal: { id: 'map' }, provider: {  scrollwheel: false, styles: [{"featureType":"administrative.country","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"administrative.province","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"administrative.locality","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"administrative.neighborhood","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"administrative.land_parcel","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#7f7b7b"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"color":"#ffffff"}]},{"featureType":"road","elementType":"geometry","stylers":[{"visibility":"on"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#000000"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"off"}]}] } }, function(){
-markers = handler.addMarkers(<%= raw @markers.to_json %>);
-handler.bounds.extendWith(markers);
-handler.fitMapToBounds();
-});
+    markers = handler.addMarkers(<%= raw @markers.to_json %>);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+  });
 })
 <% end %>
 <% end %>
@@ -117,7 +117,7 @@ handler.fitMapToBounds();
 </div>
 
 <div class="wrapper" id="when_date">
-<div class="white-container" id="date-select" style="margin-top: 110px;">
+  <div class="white-container" id="date-select" style="margin-top: 110px;">
     <h3>
       Pick a date
     </h3>
@@ -157,46 +157,46 @@ handler.fitMapToBounds();
         </p>
       </div>
 
-    <div id="container">
-    <%= form.button :submit, class: "button-blue", id: "overlay-menu", html: { id: "overlay-menu" } %>
-   </div>
-   <div class="overlay overlay-data">
-    <img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1467186381/loadingcup_ye0uoy.png" alt="" class="cup-position" />
+      <div id="container">
+        <%= form.button :submit, class: "button-blue", id: "overlay-menu", html: { id: "overlay-menu" } %>
+      </div>
+      <div class="overlay overlay-data">
+        <img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1467186381/loadingcup_ye0uoy.png" alt="" class="cup-position" />
 
 
-    <img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1467186382/loadingbean_zipjjs.png" alt="" class="bean-position spinning-image" />
+        <img src="http://res.cloudinary.com/dvj9whqch/image/upload/v1467186382/loadingbean_zipjjs.png" alt="" class="bean-position spinning-image" />
 
+      </div>
+
+      <% end %>
+    </div>
   </div>
 
+  <% else %>
+  <div class="wrapper no_friends">
+    <div class="no-friends-card">
+      <h3 style="text-align: center;">
+        Oops! Seems like you need some friends in order to create a pot. Many of your friends might already be on CUPPA. Add your friends or invite them to join!
+      </h3>
+    </div>
+    <div class="button-blue add-friends">
+      <%= link_to("Add Friends", new_friend_path) %>
+    </div>
+  </div>
   <% end %>
-</div>
-</div>
 
-<% else %>
-<div class="wrapper no_friends">
-  <div class="no-friends-card">
-    <h3 style="text-align: center;">
-      Oops! Seems like you need some friends in order to create a pot. Many of your friends might already be on CUPPA. Add your friends or invite them to join!
-    </h3>
-  </div>
-  <div class="button-blue add-friends">
-    <%= link_to("Add Friends", new_friend_path) %>
-  </div>
-</div>
-<% end %>
-
-<%= content_for(:after_js) do %>
-<script>
-  $('#overlay-menu').click(function (e) {
+  <%= content_for(:after_js) do %>
+  <script>
+    $('#overlay-menu').click(function (e) {
     e.preventDefault();                   // prevent default anchor behavior
     setTimeout(submitForm, 2600);
     $( ".overlay" ).addClass
     ('overlay-open');
   });
 
- function submitForm() {
+    function submitForm() {
       $(".simple_form").submit()
-  }
-</script>
-<% end %>
+    }
+  </script>
+  <% end %>
 
